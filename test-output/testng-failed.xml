@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [NopeCommerce Regression]">
-  <test thread-count="5" name="Regression Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.UserRegistrationTest">
+      <class name="tests.MyAccountTest">
         <methods>
+          <include name="ChangePasswordSuccessfully"/>
           <include name="startDriver"/>
           <include name="stopDriver"/>
-          <include name="UserCanRegisterSuccessfully"/>
         </methods>
-      </class> <!-- tests.UserRegistrationTest -->
+      </class> <!-- tests.MyAccountTest -->
     </classes>
-  </test> <!-- Regression Test(failed) -->
-</suite> <!-- Failed suite [NopeCommerce Regression] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

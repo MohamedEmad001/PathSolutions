@@ -17,6 +17,9 @@ public class HomePage extends PageBase {
 	@FindBy (linkText = "Log in")
 	WebElement Loginlink;
 	
+	@FindBy (linkText = "My account")
+	WebElement MyAccount;
+	
 	public void OpenRegister ()
 	{
 		clickButton(Registerlink);
@@ -25,6 +28,11 @@ public class HomePage extends PageBase {
 	public void OpenLogin()
 	{
 		clickButton(Loginlink);
+	}
+	
+	public void OpenMyAccount()
+	{
+		clickButton(MyAccount);
 	}
 
 }

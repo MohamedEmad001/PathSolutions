@@ -11,14 +11,6 @@ public class UserRegistrationTest extends TestBase {
 	
 	HomePage homepage;
 	UserRegistrationPage registrationPage;
-	//LoginPage loginPage;
-/*	public String mailgenerate (String mail)
-	{
-		for (int i = 0; i < 1000; i++) {
-			mail = mail + i + "@mm.mmm";
-		} 
-		return mail;
-	}*/
 	
 	@Test (priority = 1 , alwaysRun=true)
 	public void UserCanRegisterSuccessfully()
@@ -26,7 +18,7 @@ public class UserRegistrationTest extends TestBase {
 		homepage = new HomePage(driver);
 		homepage.OpenRegister();
 		registrationPage = new UserRegistrationPage(driver);
-		registrationPage.userRegistration("mohamed", "emad", "nnn@nn.com", "123456");
+		registrationPage.userRegistration("mohamed", "emad", "medo2121@gmail.com", "123456");
 		Assert.assertTrue(registrationPage.successMessage.getText().contains("Your registration completed"));
 	}
 	
@@ -41,7 +33,7 @@ public class UserRegistrationTest extends TestBase {
 	{
 		homepage.OpenLogin();
 		LoginPage LoginPage = new LoginPage(driver);
-		LoginPage.UserLogin("nnn@nn.com", "123456");
+		LoginPage.UserLogin("medo2121@gmail.com", "123456");
 		Assert.assertTrue(registrationPage.logoutLink.getText().contains("Log out"));
 	}
 	

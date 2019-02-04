@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23638" started-at="2019-01-13T20:33:13Z" finished-at="2019-01-13T20:33:37Z">
+  <suite name="Default suite" duration-ms="26204" started-at="2019-02-04T22:10:31Z" finished-at="2019-02-04T22:10:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23638" started-at="2019-01-13T20:33:13Z" finished-at="2019-01-13T20:33:37Z">
-      <class name="tests.UserRegistrationTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.UserRegistrationTest@6f7fd0e6]" name="startDriver" is-config="true" duration-ms="27254" started-at="2019-01-13T20:32:46Z" finished-at="2019-01-13T20:33:13Z">
+    <test name="Default test" duration-ms="26204" started-at="2019-02-04T22:10:31Z" finished-at="2019-02-04T22:10:57Z">
+      <class name="tests.MyAccountTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.MyAccountTest@6f7fd0e6]" name="startDriver" is-config="true" duration-ms="14408" started-at="2019-02-04T22:10:17Z" finished-at="2019-02-04T22:10:31Z">
           <params>
             <param index="0">
               <value>
@@ -18,23 +18,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="UserCanRegisterSuccessfully()[pri:1, instance:tests.UserRegistrationTest@6f7fd0e6]" name="UserCanRegisterSuccessfully" duration-ms="12959" started-at="2019-01-13T20:33:14Z" finished-at="2019-01-13T20:33:27Z">
+        <test-method status="PASS" signature="UserCanRegisterSuccessfully()[pri:1, instance:tests.MyAccountTest@6f7fd0e6]" name="UserCanRegisterSuccessfully" duration-ms="9547" started-at="2019-02-04T22:10:31Z" finished-at="2019-02-04T22:10:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserCanRegisterSuccessfully -->
-        <test-method status="PASS" signature="UserLogOut()[pri:0, instance:tests.UserRegistrationTest@6f7fd0e6]" name="UserLogOut" duration-ms="2249" started-at="2019-01-13T20:33:27Z" depends-on-methods="tests.UserRegistrationTest.UserCanRegisterSuccessfully" finished-at="2019-01-13T20:33:29Z">
+        <test-method status="PASS" signature="ChangePasswordSuccessfully()[pri:2, instance:tests.MyAccountTest@6f7fd0e6]" name="ChangePasswordSuccessfully" duration-ms="8525" started-at="2019-02-04T22:10:41Z" finished-at="2019-02-04T22:10:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangePasswordSuccessfully -->
+        <test-method status="PASS" signature="UserLogOut()[pri:3, instance:tests.MyAccountTest@6f7fd0e6]" name="UserLogOut" duration-ms="3012" started-at="2019-02-04T22:10:49Z" finished-at="2019-02-04T22:10:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogOut -->
-        <test-method status="PASS" signature="UserCanLoginSuccessfully()[pri:0, instance:tests.UserRegistrationTest@6f7fd0e6]" name="UserCanLoginSuccessfully" duration-ms="7607" started-at="2019-01-13T20:33:29Z" depends-on-methods="tests.UserRegistrationTest.UserLogOut" finished-at="2019-01-13T20:33:37Z">
+        <test-method status="PASS" signature="UserCanLoginSuccessfully()[pri:4, instance:tests.MyAccountTest@6f7fd0e6]" name="UserCanLoginSuccessfully" duration-ms="5071" started-at="2019-02-04T22:10:52Z" finished-at="2019-02-04T22:10:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserCanLoginSuccessfully -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.UserRegistrationTest@6f7fd0e6]" name="stopDriver" is-config="true" duration-ms="1781" started-at="2019-01-13T20:33:37Z" finished-at="2019-01-13T20:33:39Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.MyAccountTest@6f7fd0e6]" name="stopDriver" is-config="true" duration-ms="890" started-at="2019-02-04T22:10:58Z" finished-at="2019-02-04T22:10:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.UserRegistrationTest -->
+      </class> <!-- tests.MyAccountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

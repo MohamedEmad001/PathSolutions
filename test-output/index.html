@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Mohamed\AppData\Local\Temp\testng-eclipse-750385503\testng-customsuite.xml</span>
+                    <span>C:\Users\Mohamed\AppData\Local\Temp\testng-eclipse-2085974116\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +102,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.UserRegistrationTest" hash-for-method="UserCanLoginSuccessfully">UserCanLoginSuccessfully</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.MyAccountTest" hash-for-method="ChangePasswordSuccessfully">ChangePasswordSuccessfully</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.UserRegistrationTest" hash-for-method="UserCanRegisterSuccessfully">UserCanRegisterSuccessfully</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.MyAccountTest" hash-for-method="UserCanLoginSuccessfully">UserCanLoginSuccessfully</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.UserRegistrationTest" hash-for-method="UserLogOut">UserLogOut</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.MyAccountTest" hash-for-method="UserCanRegisterSuccessfully">UserCanRegisterSuccessfully</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.MyAccountTest" hash-for-method="UserLogOut">UserLogOut</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -130,9 +135,16 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.UserRegistrationTest</span>
+              <span class="class-name">tests.MyAccountTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ChangePasswordSuccessfully">
+                  </a> <!-- ChangePasswordSuccessfully -->
+                  <span class="method-name">ChangePasswordSuccessfully</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="UserCanLoginSuccessfully">
@@ -159,7 +171,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Mohamed\AppData\Local\Temp\testng-eclipse-750385503\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Mohamed\AppData\Local\Temp\testng-eclipse-2085974116\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -168,7 +180,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.UserRegistrationTest&quot;/&gt;
+      &lt;class name=&quot;tests.MyAccountTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -208,24 +220,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'UserCanRegisterSuccessfully')
-data.setCell(0, 2, 'tests.UserRegistrationTest')
-data.setCell(0, 3, 12959);
+data.setCell(0, 2, 'tests.MyAccountTest')
+data.setCell(0, 3, 9547);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'UserCanLoginSuccessfully')
-data.setCell(1, 2, 'tests.UserRegistrationTest')
-data.setCell(1, 3, 7607);
+data.setCell(1, 1, 'ChangePasswordSuccessfully')
+data.setCell(1, 2, 'tests.MyAccountTest')
+data.setCell(1, 3, 8525);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'UserLogOut')
-data.setCell(2, 2, 'tests.UserRegistrationTest')
-data.setCell(2, 3, 2249);
+data.setCell(2, 1, 'UserCanLoginSuccessfully')
+data.setCell(2, 2, 'tests.MyAccountTest')
+data.setCell(2, 3, 5071);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'UserLogOut')
+data.setCell(3, 2, 'tests.MyAccountTest')
+data.setCell(3, 3, 3012);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -251,26 +267,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.UserRegistrationTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.MyAccountTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">startDriver(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">UserCanRegisterSuccessfully</span>
-                <span class="method-start">28040 ms</span>
+                <span class="method-start">14438 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ChangePasswordSuccessfully</span>
+                <span class="method-start">23997 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">UserLogOut</span>
-                <span class="method-start">41027 ms</span>
+                <span class="method-start">32525 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">UserCanLoginSuccessfully</span>
-                <span class="method-start">43280 ms</span>
+                <span class="method-start">35540 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">stopDriver</span>
-                <span class="method-start">51330 ms</span>
+                <span class="method-start">40719 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
