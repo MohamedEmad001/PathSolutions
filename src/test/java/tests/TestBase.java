@@ -1,13 +1,18 @@
 package tests;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import utilities.Helper;
 
 
 public class TestBase {
@@ -36,4 +41,17 @@ public class TestBase {
 		driver.quit();
 	}
 
+	//Take ScreenShots when TC fail and add it to Screenshots folder
+	@AfterMethod
+	public void takeScreenshots(ITestResult result) throws IOException
+	{
+		if(result.getStatus() == ITestResult.FAILURE)
+		{
+			System.out.println("Failure!...." + "Taking Screenshot");
+			Helper.CaptureScreenshots(driver, result.getName());
+			
+		}
+			
+	}
+	
 }

@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.MyAccountTest">
+      <class name="tests.UserRegistrationTest">
         <methods>
-          <include name="ChangePasswordSuccessfully"/>
           <include name="startDriver"/>
+          <include name="UserCanLoginSuccessfully"/>
           <include name="stopDriver"/>
+          <include name="UserLogOut"/>
+          <include name="takeScreenshots"/>
+          <include name="UserCanRegisterSuccessfully"/>
         </methods>
-      </class> <!-- tests.MyAccountTest -->
+      </class> <!-- tests.UserRegistrationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
