@@ -48,8 +48,20 @@ public class TestBase {
 		if(result.getStatus() == ITestResult.FAILURE)
 		{
 			System.out.println("Failure!...." + "Taking Screenshot");
-			Helper.CaptureScreenshots(driver, result.getName());
-			
+			Helper.CaptureScreenshots(driver, result.getTestName());
+				
+		}
+		
+		if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			System.out.println("Success!...." + "Taking Screenshot");
+			Helper.CaptureScreenshots(driver, result.getTestName());
+		}
+		
+		else
+		{
+			System.out.println("Blocked!...." + "Taking Screenshot");
+			Helper.CaptureScreenshots(driver, result.getTestName());
 		}
 			
 	}
