@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-02-11T18:57:21Z" name="Default suite" finished-at="2019-02-11T18:57:25Z" duration-ms="3866">
+  <suite started-at="2019-02-13T10:32:04Z" name="Default suite" finished-at="2019-02-13T10:32:32Z" duration-ms="28543">
     <groups>
     </groups>
-    <test started-at="2019-02-11T18:57:21Z" name="Default test" finished-at="2019-02-11T18:57:25Z" duration-ms="3866">
-      <class name="tests.SearchProductTest">
-        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:tests.SearchProductTest@2d2ffcb7]" started-at="2019-02-11T18:57:12Z" name="startDriver" finished-at="2019-02-11T18:57:21Z" duration-ms="8591" status="PASS">
+    <test started-at="2019-02-13T10:32:04Z" name="Default test" finished-at="2019-02-13T10:32:32Z" duration-ms="28543">
+      <class name="tests.SearchProductUsingAutoSuggestTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:tests.SearchProductUsingAutoSuggestTest@2d2ffcb7]" started-at="2019-02-13T10:31:47Z" name="startDriver" finished-at="2019-02-13T10:32:04Z" duration-ms="17139" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,26 +18,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="CheckSearchProductTest()[pri:0, instance:tests.SearchProductTest@2d2ffcb7]" started-at="2019-02-11T18:57:21Z" name="CheckSearchProductTest" finished-at="2019-02-11T18:57:25Z" duration-ms="3542" status="PASS">
+        <test-method signature="CheckAutoComplete()[pri:0, instance:tests.SearchProductUsingAutoSuggestTest@2d2ffcb7]" started-at="2019-02-13T10:32:04Z" name="CheckAutoComplete" finished-at="2019-02-13T10:32:32Z" duration-ms="28212" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckSearchProductTest -->
-        <test-method is-config="true" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.SearchProductTest@2d2ffcb7]" started-at="2019-02-11T18:57:25Z" name="takeScreenshots" finished-at="2019-02-11T18:57:25Z" duration-ms="312" status="PASS">
+        </test-method> <!-- CheckAutoComplete -->
+        <test-method is-config="true" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.SearchProductUsingAutoSuggestTest@2d2ffcb7]" started-at="2019-02-13T10:32:32Z" name="takeScreenshots" finished-at="2019-02-13T10:32:32Z" duration-ms="319" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckSearchProductTest status=SUCCESS method=SearchProductTest.CheckSearchProductTest()[pri:0, instance:tests.SearchProductTest@2d2ffcb7] output={null}]]]>
+                <![CDATA[[TestResult name=CheckAutoComplete status=SUCCESS method=SearchProductUsingAutoSuggestTest.CheckAutoComplete()[pri:0, instance:tests.SearchProductUsingAutoSuggestTest@2d2ffcb7] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method is-config="true" signature="stopDriver()[pri:0, instance:tests.SearchProductTest@2d2ffcb7]" started-at="2019-02-11T18:57:25Z" name="stopDriver" finished-at="2019-02-11T18:57:25Z" duration-ms="607" status="PASS">
+        <test-method is-config="true" signature="stopDriver()[pri:0, instance:tests.SearchProductUsingAutoSuggestTest@2d2ffcb7]" started-at="2019-02-13T10:32:32Z" name="stopDriver" finished-at="2019-02-13T10:32:33Z" duration-ms="611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.SearchProductTest -->
+      </class> <!-- tests.SearchProductUsingAutoSuggestTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

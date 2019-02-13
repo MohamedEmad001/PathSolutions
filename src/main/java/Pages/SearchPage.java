@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +22,13 @@ public class SearchPage extends PageBase {
 //	@FindBy (id = "ui-id-6")
 //	WebElement prodcutList;
 	
+	//get weblelemtn List content
+	@FindBy (id = "ui-id-1")
+	public List<WebElement> productAutoSuggestList;
+	
+	@FindBy (id = "ui-id-4")
+	public WebElement productAutoSuggestselect;
+	
 	@FindBy (css = "div.product-selectors")
 	public WebElement clickSearchResult;
 	
@@ -31,5 +40,13 @@ public class SearchPage extends PageBase {
 		setTextElementText(searchTxt, productName);
 		clickButton(searchBtn);
 		clickButton(clickSearchResult);
+	}
+	
+	public void searchUsingAutoSuggesst(String productName) throws InterruptedException
+	{
+		setTextElementText(searchTxt, productName);
+		Thread.sleep(3000);
+		productAutoSuggestList.get(0).click();
+		
 	}
 }
