@@ -54,13 +54,7 @@ public class ProductSetupPage extends PageBase {
 
 
 
-	public void ProductSetupModule(	String productsetupTypeValue,
-									String ClassCodevalue ,
-									String Repaymentvalue, 	
-									String Namevalue,
-									String ParentframeID,
-									String SubFramesID,
-									String repaymentcode) throws InterruptedException, IOException
+	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue, String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
 
 	{
 

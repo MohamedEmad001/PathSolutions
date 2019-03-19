@@ -11,14 +11,10 @@ public class ProductSetupTest extends TestBase {
 
 	String UserName = "administrator";
 	String UserPass = "admin12";
-
-
 	String productsetupTypeValue = "R";
-	String ClassCodevalue = "01/01/2018";
+	String ClassCodevalue = "1000";
 	String Namevalue = "Testcompositerules";
 	String repaymentcode="846";
-
-
 	String ParentframeID = "frame_150082";
 	String SubFramesID = "parentModuleID150082";
 
@@ -35,7 +31,7 @@ public class ProductSetupTest extends TestBase {
 	public void SaveProductSetup() throws InterruptedException, IOException
 	{
 		ProductSetupPage productSetupObj = new ProductSetupPage(driver);
-		productSetupObj.ProductSetupModule(productsetupTypeValue, ClassCodevalue, repaymentcode, Namevalue, ParentframeID, SubFramesID, repaymentcode);
+		productSetupObj.ProductSetupModule(productsetupTypeValue, ClassCodevalue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
 
 
 	}
