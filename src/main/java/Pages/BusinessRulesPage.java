@@ -20,7 +20,7 @@ public class BusinessRulesPage extends PageBase {
 		
 		@FindBy(id="txtModuleID") WebElement ModuleIDTxt;
 		@FindBy(css="#txtModuleID_lovImage") WebElement ModuleLOVBtn;
-		
+		@FindBy(css="#txtModuleID_lovImage") WebElement ModuleLOVBtn2;
 	
 
 }
