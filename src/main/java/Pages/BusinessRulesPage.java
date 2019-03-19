@@ -20,11 +20,11 @@ public class BusinessRulesPage extends PageBase {
 		
 		@FindBy(id="txtModuleID") WebElement ModuleIDTxt;
 		@FindBy(css="#txtModuleID_lovImage") WebElement ModuleLOVBtn;
-<<<<<<< HEAD
+
 		@FindBy(css="#txtModuleID_lovImage") WebElement ModuleLOVBtnAmr;
-=======
+		
 		@FindBy(css="#txtModuleID_lovImage") WebElement ModuleLOVBtn2;
->>>>>>> 458f4b3ea209b3f15595ab09b6fb6dc79677c2a0
+
 	
 
 }
