@@ -37,13 +37,31 @@ public class ProductSetupPage extends PageBase {
 
 	@FindBy(id= "FPROD_PRODUCT_START_DATE")
 	WebElement Date;
-	
-	@FindBy (id="V1TC_V0TP1_REPT_DESCRIPTION1")
-	WebElement Repayment;
+
+	@FindBy (css="#REPT_DESCRIPTION1_lovImage")
+	WebElement RepaymentLov;
+
+	@FindBy (css = "#advancedFilter")
+	WebElement repaymentcodeQuickSearch;
+
+	@FindBy (css = "#filtergrid > div.k-grid-content > table > tbody > tr")
+	WebElement RepaymentSearchResult;
 
 
 
-	public void ProductSetupModule(String productsetupTypeValue , String ClassCodevalue ,String Repaymentvalue, String Namevalue,String ParentframeID) throws InterruptedException, IOException
+	@FindBy (id = "SaveButton__Button")
+	WebElement saveData;
+
+
+
+	public void ProductSetupModule(	String productsetupTypeValue,
+									String ClassCodevalue ,
+									String Repaymentvalue, 	
+									String Namevalue,
+									String ParentframeID,
+									String SubFramesID,
+									String repaymentcode) throws InterruptedException, IOException
+
 	{
 
 		Thread.sleep(7000);
@@ -61,13 +79,19 @@ public class ProductSetupPage extends PageBase {
 		DropListSelect(productsetupType, productsetupTypeValue);
 		setTextElementText(ClassCodetxt, ClassCodevalue);
 		setTextElementText(Nametxt, Namevalue);
-	
-		waitMethod(3);
-		
-		setTextElementText(Repayment, Repaymentvalue);
 
+		waitMethod(3);
+
+		waitMethod(3);
+		clickButton(RepaymentLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+		Thread.sleep(5000);
+		setTextElementText(repaymentcodeQuickSearch, repaymentcode);
+		Thread.sleep(5000);
+		DoubleClickonElement(RepaymentSearchResult);	
 		switchFrame(ParentframeID);
-		
+
 		System.out.println("ay kalam");
 
 	}
