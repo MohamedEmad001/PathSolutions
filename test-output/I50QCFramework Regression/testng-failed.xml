@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [I50QCFramework Regression]" parallel="methods">
+  <test thread-count="5" name="chromeTest(failed)" parallel="methods">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="tests.FundTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="checkSettlement"/>
+          <include name="stopDriver"/>
+          <include name="CheckLogin"/>
+          <include name="takeScreenshots"/>
+          <include name="checkAddFund"/>
+        </methods>
+      </class> <!-- tests.FundTest -->
+    </classes>
+  </test> <!-- chromeTest(failed) -->
+</suite> <!-- Failed suite [I50QCFramework Regression] -->

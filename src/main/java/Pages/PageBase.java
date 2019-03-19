@@ -1,48 +1,124 @@
 package Pages;
 
-//import java.sql.Driver;
-
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class PageBase {
 
 	//define protect webdriverclass object to be visible through this class or child classes only
-	protected WebDriver driver;
-
+	//public static WebDriver driver;
 	//Create Constructor to centralize the webdriver
-	public PageBase (WebDriver driver)
+
+	protected WebDriver driver1;
+	public Select select;
+	public Actions Action;
+
+	public PageBase(WebDriver driver)
 
 	{
+
 		//this.driver = driver;
 		PageFactory.initElements(driver, this);
+		driver1=driver;
 
 	}
-	
+
+
 	//create generic method to click function
 	//create generic method to send keys function with passing the key words string
-	protected static void DropListSelect (Select dropList, String text)
+
+	protected static void DropListSelect (WebElement dropList, String text)
 	{
-		dropList.selectByVisibleText(text);
+		Select dropMenuSelect = new Select(dropList);
+		dropMenuSelect.selectByValue(text);
 	}
-	
+
 	protected void clickButton(WebElement button)
 	{
 		button.click();
 	}
-	
+
 	protected void setTextElementText (WebElement textbox , String text)
 	{
 		textbox.sendKeys(text);
 	}
-	
+
 	protected void Checkingcheckbox (WebElement Checkbox)
 	{
 		Checkbox.click();
 	}
+
+	protected void DoubleClickonElement(WebElement button)
+	{
+		Action = new Actions(driver1);
+		Action.doubleClick(button).perform();
+
+	}
+
+	protected void switchFrame (String frameID)
+	{
+		//WebDriverWait wait = new WebDriverWait(driver1,3000);
+		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameID));
+		driver1.switchTo().frame(frameID);
+	}
+
+	protected void waitMethod(int timeInSeconds)
+	{
+		driver1.manage().timeouts().implicitlyWait(timeInSeconds, TimeUnit.SECONDS);
+
+	}
+
+
+
+	protected void ConfirmAlert()
+	{
+		driver1.switchTo().alert().accept();
+	}
+
+
+	/*	protected void SearchModule (WebElement textbox , String moduleName , String frameID) throws InterruptedException
+	{
+		Thread.sleep(20000);
+		textbox.sendKeys(moduleName);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		textbox.sendKeys(Keys.ENTER);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		textbox.sendKeys(Keys.ALT, Keys.ENTER);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.switchTo().frame(frameID);
+
+	}*/
 	
 	
-	
+	public void TakeScreenShots(WebDriver driver , String ScreenShortname) throws IOException
+	{
+
+		Path dest = Paths.get("./ScreenShots" , ScreenShortname +".png");
+		Files.createDirectories(dest.getParent());		
+		FileOutputStream out = new FileOutputStream(dest.toString());
+		out.write(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES));
+		out.close();
+
+	}
+
+
+	protected String  StoreData (WebElement textbox)
+	{
+		return textbox.getAttribute("value");
+	}
+
+
+
 }

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="NopeCommerce Regression" parallel="false">
-	<paramater name="browser" value="chrome"></paramater>
-	<test name="Regression Test">
-		<classes>
-			<class name="tests.UserRegistrationTest" />
-		</classes>
-	</test>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="I50QCFramework Regression" parallel="methods" thread-count="5">
+     <test name="chromeTest">
+     <parameter name="browser" value="chrome">
+     <classes>
+      <class name="tests.FundTest"/>
+     </classes>
+     </parameter>
+
+</test> <!-- Test -->     
 </suite>

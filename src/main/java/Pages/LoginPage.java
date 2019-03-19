@@ -4,31 +4,50 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import tests.TestBase;
+
 public class LoginPage extends PageBase {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-
+		driver1 = driver;
 	}
 
-	@FindBy (id="Email")
-	WebElement Loginemail;
+	WebDriver driver1;
 
-	@FindBy (id = "Password")
+	TestBase testBaseObj;
+
+	@FindBy (id="txtUserName")
+	WebElement LoginName;
+
+	@FindBy (id = "txtpassword")
 	WebElement Loginpassword;
 
-	@FindBy (id = "RememberMe")
+	@FindBy (id = "chkremember")
 	WebElement Rememberme;
 
-	@FindBy (css = "input.button-1.login-button")
+	@FindBy (id = "btnLogin")
 	WebElement Loginbtn;
 
-	public void UserLogin(String mail , String password)
+	String moduleID = "15002003";
+
+	String frameID = "frame_15002003";
+
+	@FindBy (id = "txt_PlaceHolder")
+	WebElement searchBox;
+
+	//public static Dimension x ;
+
+	public void UserLogin(String mail , String password) throws InterruptedException
 	{
-		setTextElementText(Loginemail, mail);
+		setTextElementText(LoginName, mail);
 		setTextElementText(Loginpassword, password);
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
+
+
 	}
+	
+
 
 }

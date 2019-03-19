@@ -2,7 +2,6 @@ package tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -13,6 +12,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import utilities.Helper;
+
 
 
 public class TestBase {
@@ -30,7 +30,31 @@ public class TestBase {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
-		driver.navigate().to("http://demo.nopcommerce.com/");
+		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
+	}
+	
+	@AfterMethod
+	public void takeScreenshots(ITestResult result) throws IOException
+	{
+		if(result.getStatus() == ITestResult.FAILURE)
+		{
+			System.out.println("Success!...." + "Taking Screenshot " + result.getMethod().getMethodName() + " " + result.getMethod().getDate());
+			Helper.CaptureScreenshots(driver, result.getMethod().getMethodName());
+				
+		}
+		
+		else if (result.getStatus() == ITestResult.SUCCESS)
+		{
+			System.out.println("Success!...." + "Taking Screenshot " + result.getMethod().getMethodName() + " " + result.getMethod().getDate());
+			Helper.CaptureScreenshots(driver, result.getMethod().getMethodName());
+		}
+		
+		else
+		{
+			System.out.println("Success!...." + "Taking Screenshot " + result.getMethod().getMethodName() + " " + result.getMethod().getDate());
+			Helper.CaptureScreenshots(driver, result.getMethod().getMethodName());
+		}
+			
 	}
 	
 	//after suite annotation will execute code after any @Test annotation
@@ -41,29 +65,31 @@ public class TestBase {
 		driver.quit();
 	}
 
-	//Take ScreenShots when TC fail and add it to Screenshots folder
-	@AfterMethod
-	public void takeScreenshots(ITestResult result) throws IOException
-	{
-		if(result.getStatus() == ITestResult.FAILURE)
-		{
-			System.out.println("Failure!...." + "Taking Screenshot");
-			Helper.CaptureScreenshots(driver, result.getTestName());
-				
-		}
-		
-		if (result.getStatus() == ITestResult.SUCCESS)
-		{
-			System.out.println("Success!...." + "Taking Screenshot");
-			Helper.CaptureScreenshots(driver, result.getTestName());
-		}
-		
-		else
-		{
-			System.out.println("Blocked!...." + "Taking Screenshot");
-			Helper.CaptureScreenshots(driver, result.getTestName());
-		}
-			
-	}
+	//Take ScreenShots when TC fail and add it to Screenshots folder	
 	
+						
+					/*		@AfterMethod
+											public void takeScreenshots(ITestResult result) throws IOException
+												{
+														if(result.getStatus() == ITestResult.FAILURE)
+														{
+																System.out.println("Failure!...." + "Taking Screenshot");
+																Helper.CaptureScreenshots(driver, result.getTestName());
+																		
+																}
+																
+																	if (result.getStatus() == ITestResult.SUCCESS)
+																	{
+																		System.out.println("Success!...." + "Taking Screenshot");
+																			Helper.CaptureScreenshots(driver, result.getTestName());
+																		}
+																		
+																			else
+																			{
+																				System.out.println("Blocked!...." + "Taking Screenshot");
+																				Helper.CaptureScreenshots(driver, result.getTestName());
+																			}
+																				
+																		}	
+	*/
 }
