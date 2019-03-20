@@ -18,24 +18,24 @@ public class JsonDataReader
 
 	JSONParser parser = new JSONParser();
 
-	public void JsonReaderData() throws FileNotFoundException, IOException, ParseException {
+	public void JsonReaderData(String testCaseName) throws FileNotFoundException, IOException, ParseException {
 
 		String filePath = System.getProperty("user.dir") + "/src/test/java/TestData/FundData.json";
 		File jFile = new File(filePath);
 		JSONArray jArray = (JSONArray) parser.parse(new FileReader(jFile));
-				
-		for (Object jsonObj : jArray) {
-
-					JSONObject jObj = (JSONObject) jsonObj;
-				
-					if (jObj.get("UserName") != null) 
-					{
-						UserName = (String) jObj.get("UserName");
-						System.out.println(UserName);
-						UserPass = (String) jObj.get("UserPass");
-						System.out.println(UserPass);
-					}
-					
+	//looping on objects of Json array
+		for (Object jsonObj : jArray)
+		{
+			JSONObject jObj = (JSONObject) jsonObj;	
+	//check the condition of needed data object to run 
+			if (jObj.get("tcTitle").equals(testCaseName)) 
+			{
+				UserName = (String) jObj.get("UserName");
+				System.out.println(UserName);
+				UserPass = (String) jObj.get("UserPass");
+				System.out.println(UserPass);    			
+				//break;		
+			}
 		
 	}
 

@@ -19,7 +19,7 @@ public class LoginTest extends TestBase {
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
-		jsonFileReader.JsonReaderData();
+		jsonFileReader.JsonReaderData("Login Test Case");
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jsonFileReader.UserName, jsonFileReader.UserPass);
 

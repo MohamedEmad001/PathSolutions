@@ -45,7 +45,6 @@ public class LoginPage extends PageBase {
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
 
-
 	}
 	
 

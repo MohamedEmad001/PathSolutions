@@ -1,10 +1,10 @@
 [
 
-		{
-		"tcTitle" : "Login Test",
-		"UserName" : "administrator",
-		"UserPass" : "admin12"
-		}	
+	{
+	"tcTitle" : "Login Test Case",
+	"UserName" : "administrator",
+	"UserPass" : "admin12"
+	}	
 	,
 		
 	{
