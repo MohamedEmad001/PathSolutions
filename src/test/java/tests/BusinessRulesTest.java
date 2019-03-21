@@ -20,9 +20,12 @@ public class BusinessRulesTest extends TestBase {
 		String ParentFrameIDValue="frame_2100000031";
 		String SubFrameValue="parentModuleID2100000031";
 		
-		//For Murabaha Module
+		//Variables for Condition Builder
+		String ModuleIDValue = "1500900011";
+		String NameValue="Test Business Rule";
+		String FactorTypeValue="Module Fields";
+		String AmountValue="1000";
 		
-		String MurabahaModule = "1500900011";
 		
 		
 		
@@ -40,7 +43,8 @@ public class BusinessRulesTest extends TestBase {
 		{
 			BusinessRulesObject = new BusinessRulesPage(driver);
 			BusinessRulesObject.OpenBussinessRule(BusinessRulesModuleID,ParentFrameIDValue);
-			BusinessRulesObject.InsertAllMandatoryFields(NameText, FrameID, SubFrame);
+			BusinessRulesObject.InsertAllMandatoryFields(NameValue, ParentFrameIDValue,
+					SubFrameValue, ModuleIDValue, FactorTypeValue, AmountValue);
 			
 		}
 		

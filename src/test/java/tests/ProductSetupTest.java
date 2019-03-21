@@ -11,18 +11,14 @@ public class ProductSetupTest extends TestBase {
 
 	String UserName = "administrator";
 	String UserPass = "admin12";
-
-
 	String productsetupTypeValue = "R";
-	String ClassCodevalue = "01/01/2018";
+	String ClassCodevalue = "1000";
 	String Namevalue = "Testcompositerules";
-	String Repaymentvalue="846";
-	
-	
+	String repaymentcode="846";
 	String ParentframeID = "frame_150082";
-	String SubFramesID = "parentModuleID15002003";
-	
-	
+	String SubFramesID = "parentModuleID150082";
+
+
 	@Test (priority = 1)
 	public void CheckLogin() throws InterruptedException
 	{
@@ -30,14 +26,14 @@ public class ProductSetupTest extends TestBase {
 		loginPageObj.UserLogin(UserName, UserPass);
 
 	}
-	
+
 	@Test (dependsOnMethods = {"CheckLogin"})
 	public void SaveProductSetup() throws InterruptedException, IOException
 	{
 		ProductSetupPage productSetupObj = new ProductSetupPage(driver);
-		productSetupObj.ProductSetupModule(productsetupTypeValue,Namevalue,Repaymentvalue,ParentframeID, ClassCodevalue);
-		
-		
+		productSetupObj.ProductSetupModule(productsetupTypeValue, ClassCodevalue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
+
+
 	}
 
 }
