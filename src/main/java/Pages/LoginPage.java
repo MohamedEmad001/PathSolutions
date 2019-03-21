@@ -38,13 +38,12 @@ public class LoginPage extends PageBase {
 
 	//public static Dimension x ;
 
-	public void UserLogin(String mail , String password) throws InterruptedException
+	public void UserLogin(String userLoginName , String password) throws InterruptedException
 	{
-		setTextElementText(LoginName, mail);
+		setTextElementText(LoginName, userLoginName);
 		setTextElementText(Loginpassword, password);
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
-
 
 	}
 	
