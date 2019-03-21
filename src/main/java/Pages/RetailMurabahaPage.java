@@ -39,6 +39,8 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#SaveButton__Button") WebElement SaveAndCloseBtn;
 
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
+	@FindBy(id="FCON_CODE") WebElement ContractCodeTxt;
+	public static String MurabahaCode;
 
 
 
@@ -82,24 +84,25 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);
-		Thread.sleep(5000);
+		Thread.sleep(500);
 		clickButton(ViewItemBtn);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
 		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		clickButton(SaveAndCloseBtn);
-		Thread.sleep(7000);
+		Thread.sleep(2000);
 		switchFrame(ParentframeID);
 	}
 
 	public void SaveRetailMurabaha()
 	{
 		clickButton(MasterSaveBtn);
+		MurabahaCode = StoreData(ContractCodeTxt);				
 
 	}
 

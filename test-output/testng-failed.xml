@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.RetailMurabahaTest">
+      <class name="tests.BusinessRulesTest">
         <methods>
           <include name="startDriver"/>
-          <include name="CheckSaveRetailMurabaha"/>
           <include name="stopDriver"/>
           <include name="takeScreenshots"/>
+          <include name="OpenBusinessRules"/>
         </methods>
-      </class> <!-- tests.RetailMurabahaTest -->
+      </class> <!-- tests.BusinessRulesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

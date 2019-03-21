@@ -25,7 +25,7 @@ public class RetailMurabahaTest extends TestBase {
 	String ProductCodee="608";
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
-	String ItemName="ItemNameValue";
+	String ItemName="Test Item";
 	String ItemCategory="47";
 	String Price ="12000";
 	String Cost="12000";
@@ -33,6 +33,8 @@ public class RetailMurabahaTest extends TestBase {
 	String SubFramesID = "parentModuleID1500900011";
 	
 	String RetailMurabahamoduleID= "1500900011";
+	
+	String RMurabahaCode;
 
 		
 	@Test (priority = 1)
@@ -64,6 +66,9 @@ public class RetailMurabahaTest extends TestBase {
 	public void CheckSaveRetailMurabaha()
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();
+		RMurabahaCode = RetailMurabahaObject.MurabahaCode;
+		System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
+
 	}
 	
 	
