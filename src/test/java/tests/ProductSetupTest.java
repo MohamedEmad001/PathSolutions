@@ -54,8 +54,13 @@ public class ProductSetupTest extends TestBase {
 		productSetupObj.ProductSetupModule(productsetupTypeValue, ClassCodevalue ,curCode, DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
 		productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
 		productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
-		productSetupObj.SaveButton();
+		
 	}
 	
+	@Test (priority = 2)
+	public void SaveProductSetup() throws InterruptedException {
+		
+		productSetupObj.SaveButton();
+	}
 		
 }
