@@ -3,15 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.ProductSetupTest">
         <methods>
-          <include name="CheckLogin"/>
           <include name="startDriver"/>
+          <include name="CheckLogin"/>
           <include name="stopDriver"/>
           <include name="FillData"/>
           <include name="takeScreenshots"/>
+          <include name="SaveProductSetup"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.ProductSetupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

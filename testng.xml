@@ -5,6 +5,8 @@
      <parameter name="browser" value="chrome">
      <classes>
       <class name="tests.FundTest"/>
+      <class name="tests.FundTest"/>
+      <class name="tests.FundTest"/>
      </classes>
      </parameter>
 

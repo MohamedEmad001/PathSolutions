@@ -27,7 +27,7 @@ public class ProductSetupTest extends TestBase {
 	
 	//Business Rules
 	
-	String Rulecode = "27";
+	String Rulecode = "45";
 	String RuleActionValue="APP";
 	String ProductFactor="MAXT";
 	

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="135674" started-at="2019-03-21T09:12:45Z" finished-at="2019-03-21T09:15:01Z">
+  <suite name="Default suite" duration-ms="144766" started-at="2019-03-24T09:48:48Z" finished-at="2019-03-24T09:51:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="135674" started-at="2019-03-21T09:12:45Z" finished-at="2019-03-21T09:15:01Z">
+    <test name="Default test" duration-ms="144766" started-at="2019-03-24T09:48:48Z" finished-at="2019-03-24T09:51:13Z">
       <class name="tests.ProductSetupTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="startDriver" is-config="true" duration-ms="4696" started-at="2019-03-21T09:12:40Z" finished-at="2019-03-21T09:12:45Z">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="startDriver" is-config="true" duration-ms="5198" started-at="2019-03-24T09:48:43Z" finished-at="2019-03-24T09:48:48Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.ProductSetupTest@91161c7]" name="CheckLogin" duration-ms="364" started-at="2019-03-21T09:12:45Z" finished-at="2019-03-21T09:12:45Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.ProductSetupTest@91161c7]" name="CheckLogin" duration-ms="374" started-at="2019-03-24T09:48:48Z" finished-at="2019-03-24T09:48:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="1356" started-at="2019-03-21T09:12:45Z" finished-at="2019-03-21T09:12:47Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="626" started-at="2019-03-24T09:48:48Z" finished-at="2019-03-24T09:48:49Z">
           <params>
             <param index="0">
               <value>
@@ -33,11 +33,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupTest@91161c7]" name="FillData" duration-ms="128196" started-at="2019-03-21T09:12:47Z" depends-on-methods="tests.ProductSetupTest.CheckLogin" finished-at="2019-03-21T09:14:55Z">
+        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupTest@91161c7]" name="FillData" duration-ms="138030" started-at="2019-03-24T09:48:49Z" depends-on-methods="tests.ProductSetupTest.CheckLogin" finished-at="2019-03-24T09:51:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FillData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="345" started-at="2019-03-21T09:14:55Z" finished-at="2019-03-21T09:14:55Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="331" started-at="2019-03-24T09:51:07Z" finished-at="2019-03-24T09:51:07Z">
           <params>
             <param index="0">
               <value>
@@ -48,11 +48,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="SaveProductSetup()[pri:2, instance:tests.ProductSetupTest@91161c7]" name="SaveProductSetup" duration-ms="5098" started-at="2019-03-21T09:14:55Z" finished-at="2019-03-21T09:15:00Z">
+        <test-method status="PASS" signature="SaveProductSetup()[pri:2, instance:tests.ProductSetupTest@91161c7]" name="SaveProductSetup" duration-ms="5093" started-at="2019-03-24T09:51:07Z" finished-at="2019-03-24T09:51:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SaveProductSetup -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="297" started-at="2019-03-21T09:15:00Z" finished-at="2019-03-21T09:15:01Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="294" started-at="2019-03-24T09:51:12Z" finished-at="2019-03-24T09:51:13Z">
           <params>
             <param index="0">
               <value>
@@ -63,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.ProductSetupTest@91161c7]" name="stopDriver" is-config="true" duration-ms="657" started-at="2019-03-21T09:15:01Z" finished-at="2019-03-21T09:15:01Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.ProductSetupTest@91161c7]" name="stopDriver" is-config="true" duration-ms="632" started-at="2019-03-24T09:51:13Z" finished-at="2019-03-24T09:51:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
