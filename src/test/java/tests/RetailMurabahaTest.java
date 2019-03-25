@@ -5,12 +5,21 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import Pages.LoginPage;
+import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
 
+
+@Test (groups = { "RetailMurabahaTest"})
 public class RetailMurabahaTest extends TestBase {
 
+	
+	//object from product setup testcase to call generated product code
+	//ProductSetupTest productSetupObj = new ProductSetupTest();
+	
+	
 	//Objects from RetailMurabahaPage
+	
+	
 	RetailMurabahaPage RetailMurabahaObject ;
 	//Global Variables
 	WebDriver driver1;
@@ -22,7 +31,7 @@ public class RetailMurabahaTest extends TestBase {
 	String RequestedDate = "01012018";
 	String ValueDate ="01012018";
 	String CustomerID="194";
-	String ProductCodee="608";
+
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
 	String ItemName="ItemNameValue";
@@ -34,7 +43,7 @@ public class RetailMurabahaTest extends TestBase {
 	
 	String RetailMurabahamoduleID= "1500900011";
 
-		
+/*			
 	@Test (priority = 1)
 	public void CheckLogin() throws InterruptedException
 	{
@@ -42,25 +51,26 @@ public class RetailMurabahaTest extends TestBase {
 		loginPageObj.UserLogin(UserName, UserPass);
 
 	}
-
-	@Test(priority=2)
+*/
+	@Test(dependsOnGroups = {"ProductSetupTest"})
 	public void CheckOpenRetailMurabah() throws InterruptedException {
 	
 		RetailMurabahaObject = new RetailMurabahaPage(driver);
 		RetailMurabahaObject.OpenRetailMurabaha(ParentframeID, RetailMurabahamoduleID);
 	}
 	
-	@Test (priority=3)
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah"})
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
+		System.out.println("x" + ProductSetupPage.ActualProductCode);
 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
-				CustomerID, ProductCodee,
+				CustomerID, ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
 	}
 	
-	@Test (priority=4)
+	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})
 	public void CheckSaveRetailMurabaha()
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();

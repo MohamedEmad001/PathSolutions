@@ -218,11 +218,6 @@ public class FundPage extends PageBase {
 		ConfirmAlert();
 		waitMethod(5);
 
-
 	}
-
-
-
-
 
 }

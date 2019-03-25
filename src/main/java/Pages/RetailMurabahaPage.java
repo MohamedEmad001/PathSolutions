@@ -48,6 +48,10 @@ public class RetailMurabahaPage extends PageBase {
 	{
 		//Search on RetailMurabahamoduleID and open it
 		Thread.sleep(7000);
+		driver1.switchTo().defaultContent();
+		waitMethod(5);
+		searchBox.clear();
+		Thread.sleep(7000);
 		searchBox.sendKeys(RetailMurabahamoduleID);
 		waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);
@@ -79,6 +83,7 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(ValueDateTxt, ValueDateValue);
 		setTextElementText(CustomerIDTxt, CustomerIDValue);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(2000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);

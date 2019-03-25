@@ -30,7 +30,7 @@ public class TestBase {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
-		driver.navigate().to("http://192.168.112.33/I50DEV/Security/SignIn.aspx");
+		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
 	}
 	
 	@AfterMethod
@@ -62,7 +62,7 @@ public class TestBase {
 	@AfterSuite
 	public void stopDriver()
 	{
-		driver.quit();
+		//driver.quit();
 	}
 
 	//Take ScreenShots when TC fail and add it to Screenshots folder	
