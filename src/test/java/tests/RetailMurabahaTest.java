@@ -1,22 +1,26 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 import Pages.RetailMurabahaPage;
+import TestData.JsonDataReader;
 
 public class RetailMurabahaTest extends TestBase {
 
-	//Objects from RetailMurabahaPage
+
 	RetailMurabahaPage RetailMurabahaObject ;
-	//Global Variables
+
 	WebDriver driver1;
-	//For Login
-	String UserName = "administrator";
-	String UserPass = "admin12";
+
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	//For Retail Murabaha Filling  Data
 	String RequestedDate = "01012018";
@@ -31,15 +35,16 @@ public class RetailMurabahaTest extends TestBase {
 	String Cost="12000";
 	String ParentframeID = "frame_1500900011";
 	String SubFramesID = "parentModuleID1500900011";
-	
 	String RetailMurabahamoduleID= "1500900011";
 
 		
 	@Test (priority = 1)
-	public void CheckLogin() throws InterruptedException
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 

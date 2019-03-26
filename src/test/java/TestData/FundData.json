@@ -1,25 +1,27 @@
 [
 
-	{
-	"tcTitle" : "Login Test Case",
-	"UserName" : "administrator",
-	"UserPass" : "admin12"
-	}	
+{
+	"CheckLogin" : {
+					"UserName" : "administrator",
+					"UserPass" : "admin12"
+					}	
+}
 	,
 		
-	{
-		"tcTitle" : "Fund Test",
-		"FundName" : "bbc-cnn-automated-script33",
-		"CreationDate" : "01/01/2019",
-		"MaturityDat" : "01/01/2020",
-		"CurrencyName" : "EGP",
-		"RequiredDonorCode" : "201",
-		"RequiredContributorAmo" : "100000",
-		"classCodeNumber" : "1000",
-		"classPercentageAmount" : "100",
-		"ParentframeID" : "frame_15002003",
-		"SubFramesID" : "parentModuleID15002003",
-		"SettlementFrame" : "frame_108"	
-	}
+{		
+	"checkAddFund" : {
+						"FundName" : "bbc-cnn-automated-script33",
+						"CreationDate" : "01/01/2019",
+						"MaturityDat" : "01/01/2020",
+						"CurrencyName" : "EGP",
+						"RequiredDonorCode" : "201",
+						"RequiredContributorAmo" : "100000",
+						"classCodeNumber" : "1000",
+						"classPercentageAmount" : "100",
+						"ParentframeID" : "frame_15002003",
+						"SubFramesID" : "parentModuleID15002003",
+						"SettlementFrame" : "frame_108"	
+					}
+}	
 	
 ]

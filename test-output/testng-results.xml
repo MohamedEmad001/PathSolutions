@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1431" started-at="2019-03-20T15:45:48Z" finished-at="2019-03-20T15:45:49Z">
+  <suite name="Default suite" duration-ms="1631" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1431" started-at="2019-03-20T15:45:48Z" finished-at="2019-03-20T15:45:49Z">
+    <test name="Default test" duration-ms="1631" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
       <class name="tests.LoginTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="startDriver" is-config="true" duration-ms="4927" started-at="2019-03-20T15:45:43Z" finished-at="2019-03-20T15:45:48Z">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="startDriver" is-config="true" duration-ms="4872" started-at="2019-03-26T12:49:18Z" finished-at="2019-03-26T12:49:23Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.LoginTest@1bce4f0a]" name="CheckLogin" duration-ms="311" started-at="2019-03-20T15:45:48Z" finished-at="2019-03-20T15:45:48Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.LoginTest@1bce4f0a]" name="CheckLogin" duration-ms="314" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="takeScreenshots" is-config="true" duration-ms="1108" started-at="2019-03-20T15:45:48Z" finished-at="2019-03-20T15:45:49Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="takeScreenshots" is-config="true" duration-ms="1304" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
           <params>
             <param index="0">
               <value>
@@ -33,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@1bce4f0a]" name="stopDriver" is-config="true" duration-ms="600" started-at="2019-03-20T15:45:49Z" finished-at="2019-03-20T15:45:50Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@1bce4f0a]" name="stopDriver" is-config="true" duration-ms="604" started-at="2019-03-26T12:49:24Z" finished-at="2019-03-26T12:49:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
