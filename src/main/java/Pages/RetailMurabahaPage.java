@@ -83,7 +83,7 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(ValueDateTxt, ValueDateValue);
 		setTextElementText(CustomerIDTxt, CustomerIDValue);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);
