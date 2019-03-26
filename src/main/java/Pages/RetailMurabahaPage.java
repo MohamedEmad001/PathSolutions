@@ -39,7 +39,7 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#SaveButton__Button") WebElement SaveAndCloseBtn;
 
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
-	
+
 	@FindBy(css="#FCON_CODE") WebElement ContractCodeTxt;
 	public static  String MurabahaCode;
 
@@ -50,6 +50,10 @@ public class RetailMurabahaPage extends PageBase {
 					throws InterruptedException
 	{
 		//Search on RetailMurabahamoduleID and open it
+		Thread.sleep(7000);
+		driver1.switchTo().defaultContent();
+		waitMethod(5);
+		searchBox.clear();
 		Thread.sleep(7000);
 		searchBox.sendKeys(RetailMurabahamoduleID);
 		waitMethod(7);
@@ -82,6 +86,7 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(ValueDateTxt, ValueDateValue);
 		setTextElementText(CustomerIDTxt, CustomerIDValue);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(2000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);

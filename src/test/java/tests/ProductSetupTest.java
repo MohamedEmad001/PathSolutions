@@ -6,9 +6,8 @@ import org.testng.annotations.Test;
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
 
+@Test (groups = { "ProductSetupTest"})
 public class ProductSetupTest extends TestBase {
-
-
 	
 	ProductSetupPage productSetupObj;
 	
@@ -23,11 +22,11 @@ public class ProductSetupTest extends TestBase {
 	
 	//Repayment Data
 	
-	String repaymentcode="460";
+	String repaymentcode="859";
 	
 	//Business Rules
 	
-	String Rulecode = "27";
+	String Rulecode = "3";
 	String RuleActionValue="APP";
 	String ProductFactor="MAXT";
 	
@@ -38,8 +37,9 @@ public class ProductSetupTest extends TestBase {
 	//Switches between frames
 	String ParentframeID = "frame_150082";
 	String SubFramesID = "parentModuleID150082";
+	public static String ProductCode;
 	
-	@Test (priority = 1)
+	@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException
 	{
 		LoginPage loginPageObj = new LoginPage(driver);
@@ -57,10 +57,21 @@ public class ProductSetupTest extends TestBase {
 		
 	}
 	
-	@Test (priority = 2)
+	@Test (dependsOnMethods = {"FillData"})
 	public void SaveProductSetup() throws InterruptedException {
 		
 		productSetupObj.SaveButton();
+		//Call Product Code
+		ProductCode=ProductSetupPage.ActualProductCode;
+		System.out.println(ProductCode);
+		
+		
 	}
 		
+	@Test (dependsOnMethods = {"SaveProductSetup"})
+	public void PostButton() throws InterruptedException {
+		
+		productSetupObj.PostButton();
+	}
+	
 }

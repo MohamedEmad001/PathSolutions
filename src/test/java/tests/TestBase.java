@@ -65,7 +65,7 @@ public class TestBase {
 	@AfterSuite
 	public void stopDriver()
 	{
-		driver.quit();
+		//driver.quit();
 	}
 
 	//Take ScreenShots when TC fail and add it to Screenshots folder	

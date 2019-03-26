@@ -104,6 +104,16 @@ public class ProductSetupPage extends PageBase {
 	//Save
 	@FindBy (id = "SaveButton__Button")
 	WebElement SaveData;
+	
+	//Post
+	@FindBy (id="POSTButton")
+	WebElement Post;
+	
+	//ProductSetup Code
+	@FindBy (id = "FPROD_CODE")
+	public WebElement ProductCode;
+
+	public static String ActualProductCode;
 
 
 
@@ -199,6 +209,14 @@ public class ProductSetupPage extends PageBase {
 	public void SaveButton() throws InterruptedException {
 		
 		clickButton(SaveData);
+		Thread.sleep(5000);
+		ActualProductCode = StoreData(ProductCode);
+	}
+	
+	public void PostButton() throws InterruptedException {
+		
+		clickButton(Post);
+		ConfirmAlert();
 		Thread.sleep(5000);
 	}
 }

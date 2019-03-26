@@ -3,17 +3,30 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="tests.BusinessRulesCRUD">
+=======
+      <class name="tests.ProductSetupTest">
+>>>>>>> b29afa712cb9269c3bef1d2e97657c1cb2d62bac
         <methods>
           <include name="startDriver"/>
           <include name="OpenBusinessRules"/>
           <include name="stopDriver"/>
+<<<<<<< HEAD
           <include name="SaveBusinessRules"/>
           <include name="DeleteBusinessRule"/>
           <include name="UpdateBusinessRules"/>
+=======
+          <include name="PostButton"/>
+>>>>>>> b29afa712cb9269c3bef1d2e97657c1cb2d62bac
           <include name="takeScreenshots"/>
+          <include name="SaveProductSetup"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- tests.BusinessRulesCRUD -->
+=======
+      </class> <!-- tests.ProductSetupTest -->
+>>>>>>> b29afa712cb9269c3bef1d2e97657c1cb2d62bac
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

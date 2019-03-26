@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [I50QCFramework1 Regression]">
+  <test thread-count="5" name="tests(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="ProductSetupTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tests.ProductSetupTest">
+        <methods>
+          <include name="CheckLogin"/>
+          <include name="PostButton"/>
+          <include name="FillData"/>
+          <include name="SaveProductSetup"/>
+        </methods>
+      </class> <!-- tests.ProductSetupTest -->
+    </classes>
+  </test> <!-- tests(failed) -->
+  <test thread-count="5" name="tests1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="RetailMurabahaTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tests.RetailMurabahaTest">
+        <methods>
+          <include name="CheckLogin"/>
+          <include name="CheckOpenRetailMurabah"/>
+          <include name="CheckSaveRetailMurabaha"/>
+          <include name="CheckInsertAllMandatoryFields"/>
+        </methods>
+      </class> <!-- tests.RetailMurabahaTest -->
+    </classes>
+  </test> <!-- tests1(failed) -->
+</suite> <!-- Failed suite [I50QCFramework1 Regression] -->
