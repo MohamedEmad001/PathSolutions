@@ -1,6 +1,7 @@
 package Pages;
 
 import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,9 +35,19 @@ public class ProductSetupPage extends PageBase {
 
 	@FindBy(id="FPROD_LATIN_NAME")
 	WebElement Nametxt;
+	
+	@FindBy(css = "#CUR_CODE_lovImage")
+	WebElement currencyLOVIcon;
+	
+	@FindBy(id = "advancedFilter")
+	WebElement curQuickSearch;
+	
+	@FindBy(css= "#filtergrid > div.k-grid-content > table > tbody > tr")
+	WebElement curSearchResult;
 
 	@FindBy(id= "FPROD_PRODUCT_START_DATE")
-	WebElement Date;
+	WebElement DateTxt;
+	
 
 	@FindBy (css="#REPT_DESCRIPTION1_lovImage")
 	WebElement RepaymentLov;
@@ -46,15 +57,57 @@ public class ProductSetupPage extends PageBase {
 
 	@FindBy (css = "#filtergrid > div.k-grid-content > table > tbody > tr")
 	WebElement RepaymentSearchResult;
+	
+	//Got ot BusinessRulesTab
+	@FindBy(css= "#V1TC_V6TP_tab > span > span")
+	WebElement BusinessRulesTab;
 
+	@FindBy(id= "V1TC_V6TP_V6AddButton")
+	WebElement AddNewRule;
+	
+	@FindBy(css = "#BR_CODE_lovImage")
+	WebElement RuleLov;
+	
+	@FindBy (css = "#advancedFilter")
+	WebElement RulecodeQuickSearch;
 
-
+	@FindBy (css = "#filtergrid > div.k-grid-content > table > tbody")
+	WebElement RuleSearchResult;
+	
+	@FindBy (id = "V1TC_V6TP_V6LCRepeater_ctl00_BR_WORKFLOW_ACTION")
+	WebElement RuleActionTxt;
+	
+	@FindBy (css = "#V1TC_V6TP_V6TC_V4TP_V4AddButton")
+	WebElement AffectionField;
+	
+	@FindBy (id = "V1TC_V6TP_V6TC_V4TP_V4LCRepeater_ctl00_PRODUCT_FACTOR1")
+	WebElement ProductFactorList;
+	
+	@FindBy(css= "#V1TC_V6TP_V6TC_V4TP_V4LCRepeater_ctl00_PROAF_OVERRIDE_VALUE")
+	WebElement ProductFactorValue;
+	
+	//Goto OverRide
+	
+	@FindBy(id= "__tab_V1TC_V12TP")
+	WebElement OverRide;
+	
+	@FindBy(id="V1TC_V12TP_V12AddButton")
+	WebElement AddNewRide;
+	
+	@FindBy(id="V1TC_V12TP_V12LCRepeater_ctl00_PRODUCT_FACTOR")
+	WebElement ProdFactList;
+	
+	@FindBy (id="V1TC_V12TP_V12LCRepeater_ctl00_OVERRIDE_OPTIONS")
+	WebElement OverRideOptions;
+	
+	
+	//Save
 	@FindBy (id = "SaveButton__Button")
-	WebElement saveData;
+	WebElement SaveData;
 
 
 
-	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue, String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
+	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
 
 	{
 
@@ -72,21 +125,80 @@ public class ProductSetupPage extends PageBase {
 
 		DropListSelect(productsetupType, productsetupTypeValue);
 		setTextElementText(ClassCodetxt, ClassCodevalue);
-		setTextElementText(Nametxt, Namevalue);
-
 		waitMethod(3);
-
+		setTextElementText(Nametxt , Namevalue);
+		
 		waitMethod(3);
+		clickButton(currencyLOVIcon);
+		switchFrame(SubFramesID);
+		waitMethod(3);
+		setTextElementText(curQuickSearch, curCode);
+		Thread.sleep(5000);
+		DoubleClickonElement(curSearchResult);
+
+		switchFrame(ParentframeID);
+		setTextElementText(DateTxt , DateValue);
+		
+		waitMethod(3);
+		
+		//Repayment Lov
+		
 		clickButton(RepaymentLov);
 		Thread.sleep(5000);
 		switchFrame(SubFramesID);
 		Thread.sleep(5000);
 		setTextElementText(repaymentcodeQuickSearch, repaymentcode);
 		Thread.sleep(5000);
-		DoubleClickonElement(RepaymentSearchResult);	
+		DoubleClickonElement(RepaymentSearchResult);
+		Thread.sleep(5000);
 		switchFrame(ParentframeID);
+		Thread.sleep(5000);
+		
 
-		System.out.println("ay kalam");
-
+	}	
+	public void BusinessRules(String SubFramesID, String Rulecode,String RuleActionValue,String ProductFactor, String ParentframeID) throws InterruptedException 
+	
+	{
+		//Rule 1
+		
+		clickButton(BusinessRulesTab);
+		Thread.sleep(5000);
+		clickButton(AddNewRule);
+		Thread.sleep(5000);
+		clickButton(RuleLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+		Thread.sleep(5000);
+		setTextElementText(RulecodeQuickSearch, Rulecode);
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);	
+		switchFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue);
+				
+		//Affection of rule1
+		clickButton(AffectionField);
+		DropListSelect(ProductFactorList, ProductFactor);
+		ProductFactorValue.sendKeys("100");
+				
+	}
+	
+	public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	
+	{
+		
+		//Go to OverRide Tab
+		
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}
+	
+	public void SaveButton() throws InterruptedException {
+		
+		clickButton(SaveData);
+		Thread.sleep(5000);
 	}
 }

@@ -30,7 +30,7 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#FPROD_CODE1")WebElement ProductCodeTxt;
 	@FindBy(css="#NL_VND_NAME")	WebElement NonListedVendorTxt;
 	@FindBy (css="#CUR_CODE2")WebElement CurrencyCodeTxt;
-	@FindBy(id="V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
+	@FindBy(css="#V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
 	@FindBy(css="#V18TC_V8TP_V8LCRepeater_ctl00_AddButton")WebElement ViewItemBtn;
 	@FindBy(css="#ITE_NAME") WebElement ItemNameTxt;
 	@FindBy(id="IC_CODE") WebElement ItemCategoryDropdownSelect;
@@ -39,8 +39,9 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#SaveButton__Button") WebElement SaveAndCloseBtn;
 
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
-	@FindBy(id="FCON_CODE") WebElement ContractCodeTxt;
-	public static String MurabahaCode;
+	
+	@FindBy(css="#FCON_CODE") WebElement ContractCodeTxt;
+	public static  String MurabahaCode;
 
 
 
@@ -95,14 +96,17 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(CostTxt, CostValue);
 		Thread.sleep(1000);
 		clickButton(SaveAndCloseBtn);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		switchFrame(ParentframeID);
 	}
 
-	public void SaveRetailMurabaha()
+	public void SaveRetailMurabaha() throws InterruptedException
 	{
 		clickButton(MasterSaveBtn);
-		MurabahaCode = StoreData(ContractCodeTxt);				
+		Thread.sleep(2000);
+		MurabahaCode = StoreData(ContractCodeTxt);
+		Thread.sleep(2000);
+		System.out.println(MurabahaCode);
 
 	}
 

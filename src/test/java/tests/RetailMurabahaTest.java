@@ -63,11 +63,12 @@ public class RetailMurabahaTest extends TestBase {
 	}
 	
 	@Test (priority=4)
-	public void CheckSaveRetailMurabaha()
+	public void CheckSaveRetailMurabaha() throws InterruptedException
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();
-		RMurabahaCode = RetailMurabahaObject.MurabahaCode;
-		System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
+		//RMurabahaCode = RetailMurabahaObject.MurabahaCode;
+		//System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
+		//RMurabahaCode = RetailMurabahaPage.MurabahaCode;
 
 	}
 	

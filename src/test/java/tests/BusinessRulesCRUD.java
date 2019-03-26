@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import Pages.BusinessRulesPage;
 import Pages.LoginPage;
 
-public class BusinessRulesTest extends TestBase {
+public class BusinessRulesCRUD extends TestBase {
 
 
 	//Global Variables
@@ -23,10 +23,17 @@ public class BusinessRulesTest extends TestBase {
 
 	//Variables for Condition Builder
 	String ModuleIDValue = "15002711";
-	String NameValue="Test Business Rule";
+	String NameValue="Test CRUD Business Rule";
 	String FactorTypeValue="Module Fields";
 	String AmountValue="Ahmed";
 	
+	//Variables for Update Business Rules
+	String BRuleNameValue = "Update Test Business Rule";
+	String BRNoteValue="Add Note";
+
+
+
+
 
 	@Test (priority = 1)
 	public void CheckLogin() throws InterruptedException
@@ -53,8 +60,18 @@ public class BusinessRulesTest extends TestBase {
 		BusinessRulesObject.CheckSaveBusinessRule();
 		Thread.sleep(2000);
 	}
+	@Test(priority=4)
+	public void UpdateBusinessRules() throws InterruptedException
+	{
+		BusinessRulesObject.CheckUpdate(BRuleNameValue, BRNoteValue);
+		BusinessRulesObject.CheckSaveBusinessRule();
+	}
 	
-
+	@Test(dependsOnMethods= {"UpdateBusinessRules"})
+	public void DeleteBusinessRule() throws InterruptedException
+	{
+		BusinessRulesObject.CheckDelete();
+	}
 }
 
 
