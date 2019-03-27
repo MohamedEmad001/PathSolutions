@@ -1,5 +1,7 @@
 package Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -30,7 +32,7 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#FPROD_CODE1")WebElement ProductCodeTxt;
 	@FindBy(css="#NL_VND_NAME")	WebElement NonListedVendorTxt;
 	@FindBy (css="#CUR_CODE2")WebElement CurrencyCodeTxt;
-	@FindBy(id="V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
+	@FindBy(css="#V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
 	@FindBy(css="#V18TC_V8TP_V8LCRepeater_ctl00_AddButton")WebElement ViewItemBtn;
 	@FindBy(css="#ITE_NAME") WebElement ItemNameTxt;
 	@FindBy(id="IC_CODE") WebElement ItemCategoryDropdownSelect;
@@ -40,13 +42,25 @@ public class RetailMurabahaPage extends PageBase {
 
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
 
+	@FindBy(css="#FCON_CODE") WebElement ContractCodeTxt;
+	//Request for approv
+	
+	@FindBy(css= "#V18ApproveButton") WebElement RequestBtn;
+	
+	//Status
+	@FindBy(css= "#APPROVAL_STATUS_NAME") WebElement StatusTxt;
+	
+	
+	public static  String MurabahaCode;
 
 
+	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
+	
 	public void OpenRetailMurabaha(String ParentframeID, 
 			String RetailMurabahamoduleID) 
 					throws InterruptedException
 	{
-		//Search on RetailMurabahamoduleID and open it
+		
 		Thread.sleep(7000);
 		driver1.switchTo().defaultContent();
 		waitMethod(5);
@@ -61,6 +75,22 @@ public class RetailMurabahaPage extends PageBase {
 		Thread.sleep(5000);
 		switchFrame(ParentframeID);
 
+		waitMethod(7);
+	}
+	
+	//Search on RetailMurabahamoduleID and open it for RetailMurabahaCRUD
+	public void OpenRetailMurabahaCrud(String ParentframeID, 
+			String RetailMurabahamoduleID) 
+					throws InterruptedException
+	{
+		searchBox.sendKeys(RetailMurabahamoduleID);
+		waitMethod(7);
+		searchBox.sendKeys(Keys.ENTER);
+		searchBox.sendKeys(Keys.ENTER);
+		waitMethod(7);
+		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
+		Thread.sleep(5000);
+		switchFrame(ParentframeID);
 		waitMethod(7);
 	}
 
@@ -83,29 +113,44 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(ValueDateTxt, ValueDateValue);
 		setTextElementText(CustomerIDTxt, CustomerIDValue);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);
-		Thread.sleep(5000);
+		Thread.sleep(500);
 		clickButton(ViewItemBtn);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
 		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		clickButton(SaveAndCloseBtn);
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		switchFrame(ParentframeID);
 	}
 
-	public void SaveRetailMurabaha()
+	public void SaveRetailMurabaha() throws InterruptedException
 	{
 		clickButton(MasterSaveBtn);
+		Thread.sleep(2000);
+		MurabahaCode = StoreData(ContractCodeTxt);
+		Thread.sleep(2000);
+		System.out.println(MurabahaCode);
 
+	}
+	
+	public void CheckRequestApproval() throws InterruptedException {
+		
+		Thread.sleep(5000);
+		
+		clickButton(RequestBtn);
+		Thread.sleep(5000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Approved");
+		Thread.sleep(3000);
+		
 	}
 
 

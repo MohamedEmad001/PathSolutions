@@ -8,6 +8,7 @@
           <include name="startDriver"/>
           <include name="stopDriver"/>
           <include name="PostButton"/>
+          <include name="FillData"/>
           <include name="takeScreenshots"/>
           <include name="SaveProductSetup"/>
         </methods>

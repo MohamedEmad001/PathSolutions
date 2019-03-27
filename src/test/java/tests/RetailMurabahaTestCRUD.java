@@ -5,12 +5,13 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
 
 
 @Test (groups = { "RetailMurabahaTest"})
-public class RetailMurabahaTest extends TestBase {
+public class RetailMurabahaTestCRUD extends TestBase {
 
 	
 	//object from product setup testcase to call generated product code
@@ -30,8 +31,18 @@ public class RetailMurabahaTest extends TestBase {
 	//For Retail Murabaha Filling  Data
 	String RequestedDate = "01012018";
 	String ValueDate ="01012018";
-	String CustomerID="352425171";
-
+	String CustomerID="194";
+	
+	//String Cust1="M_004_Appr";
+	//String Cust2="F_004_Appr";
+	//String Cust3="M_002_Appr";
+	//String Cust4="F_002_Appr";
+	//String Cust5="M_010_Appr";
+	//String Cust6="F_010_Appr";
+	//String Cust7="M_007_Appr";
+	//String Cust8="F_007_Appr";
+	
+	String ProductCodeID="608";
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
 	String ItemName="Test Item";
@@ -45,28 +56,28 @@ public class RetailMurabahaTest extends TestBase {
 	
 	String RMurabahaCode;
 
-/*			
-	@Test (priority = 1)
+			
+	@Test
 	public void CheckLogin() throws InterruptedException
 	{
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(UserName, UserPass);
 
 	}
-*/
-	@Test(dependsOnGroups = {"ProductSetupTest"})
+
+	@Test(dependsOnMethods = {"CheckLogin"})
 	public void CheckOpenRetailMurabah() throws InterruptedException {
 	
 		RetailMurabahaObject = new RetailMurabahaPage(driver);
-		RetailMurabahaObject.OpenRetailMurabaha(ParentframeID, RetailMurabahamoduleID);
+		RetailMurabahaObject.OpenRetailMurabahaCrud(ParentframeID, RetailMurabahamoduleID);
 	}
 	
 	@Test (dependsOnMethods = {"CheckOpenRetailMurabah"})
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
-		System.out.println("x" + ProductSetupPage.ActualProductCode);
+		//System.out.println("x" + ProductSetupPage.ActualProductCode);
 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
-				CustomerID, ProductSetupPage.ActualProductCode,
+				CustomerID, ProductCodeID,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
@@ -77,6 +88,7 @@ public class RetailMurabahaTest extends TestBase {
 
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
 		//RMurabahaCode = RetailMurabahaObject.MurabahaCode;
 		//System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
 		//RMurabahaCode = RetailMurabahaPage.MurabahaCode;
@@ -84,10 +96,11 @@ public class RetailMurabahaTest extends TestBase {
 	}
 	
 	@Test (dependsOnMethods = {"CheckSaveRetailMurabaha"})
-	public void RequestForApprove() throws InterruptedException {
+	public void CheckRequestApproval() throws InterruptedException {
 		
 		RetailMurabahaObject.CheckRequestApproval();
 	}
+	
 	
 	
 }
