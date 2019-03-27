@@ -30,7 +30,7 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#FPROD_CODE1")WebElement ProductCodeTxt;
 	@FindBy(css="#NL_VND_NAME")	WebElement NonListedVendorTxt;
 	@FindBy (css="#CUR_CODE2")WebElement CurrencyCodeTxt;
-	@FindBy(id="V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
+	@FindBy(css="#V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
 	@FindBy(css="#V18TC_V8TP_V8LCRepeater_ctl00_AddButton")WebElement ViewItemBtn;
 	@FindBy(css="#ITE_NAME") WebElement ItemNameTxt;
 	@FindBy(id="IC_CODE") WebElement ItemCategoryDropdownSelect;
@@ -40,6 +40,9 @@ public class RetailMurabahaPage extends PageBase {
 
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
 
+	@FindBy(css="#FCON_CODE") WebElement ContractCodeTxt;
+	public static  String MurabahaCode;
+
 
 
 	public void OpenRetailMurabaha(String ParentframeID, 
@@ -47,6 +50,10 @@ public class RetailMurabahaPage extends PageBase {
 					throws InterruptedException
 	{
 		//Search on RetailMurabahamoduleID and open it
+		Thread.sleep(7000);
+		driver1.switchTo().defaultContent();
+		waitMethod(5);
+		searchBox.clear();
 		Thread.sleep(7000);
 		searchBox.sendKeys(RetailMurabahamoduleID);
 		waitMethod(7);
@@ -79,27 +86,32 @@ public class RetailMurabahaPage extends PageBase {
 		setTextElementText(ValueDateTxt, ValueDateValue);
 		setTextElementText(CustomerIDTxt, CustomerIDValue);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(2000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 		clickButton(addNewRowbBtn);
-		Thread.sleep(5000);
+		Thread.sleep(500);
 		clickButton(ViewItemBtn);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
 		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		clickButton(SaveAndCloseBtn);
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		switchFrame(ParentframeID);
 	}
 
-	public void SaveRetailMurabaha()
+	public void SaveRetailMurabaha() throws InterruptedException
 	{
 		clickButton(MasterSaveBtn);
+		Thread.sleep(2000);
+		MurabahaCode = StoreData(ContractCodeTxt);
+		Thread.sleep(2000);
+		System.out.println(MurabahaCode);
 
 	}
 

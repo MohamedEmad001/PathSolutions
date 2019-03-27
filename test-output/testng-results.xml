@@ -2,12 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="1631" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
+=======
+  <suite name="Default suite" duration-ms="964" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+>>>>>>> e368696bc8a9f7011d284fdce08f3a12760e258d
     <groups>
+      <group name="RetailMurabahaTest">
+        <method signature="RetailMurabahaTestCRUD.CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckLogin" class="tests.RetailMurabahaTestCRUD"/>
+        <method signature="RetailMurabahaTestCRUD.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckOpenRetailMurabah" class="tests.RetailMurabahaTestCRUD"/>
+        <method signature="RetailMurabahaTestCRUD.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckInsertAllMandatoryFields" class="tests.RetailMurabahaTestCRUD"/>
+        <method signature="RetailMurabahaTestCRUD.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckSaveRetailMurabaha" class="tests.RetailMurabahaTestCRUD"/>
+      </group> <!-- RetailMurabahaTest -->
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="1631" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
       <class name="tests.LoginTest">
         <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="startDriver" is-config="true" duration-ms="4872" started-at="2019-03-26T12:49:18Z" finished-at="2019-03-26T12:49:23Z">
+=======
+    <test name="Default test" duration-ms="964" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+      <class name="tests.RetailMurabahaTestCRUD">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="startDriver" is-config="true" duration-ms="5786" started-at="2019-03-26T10:17:47Z" finished-at="2019-03-26T10:17:53Z">
+>>>>>>> e368696bc8a9f7011d284fdce08f3a12760e258d
           <params>
             <param index="0">
               <value>
@@ -18,26 +34,38 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.LoginTest@1bce4f0a]" name="CheckLogin" duration-ms="314" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
         <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@1bce4f0a]" name="takeScreenshots" is-config="true" duration-ms="1304" started-at="2019-03-26T12:49:23Z" finished-at="2019-03-26T12:49:24Z">
+=======
+        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckLogin" duration-ms="354" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckLogin -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="takeScreenshots" is-config="true" duration-ms="588" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+>>>>>>> e368696bc8a9f7011d284fdce08f3a12760e258d
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=LoginTest.CheckLogin()[pri:1, instance:tests.LoginTest@1bce4f0a] output={null}]]]>
+                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=RetailMurabahaTestCRUD.CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@1bce4f0a]" name="stopDriver" is-config="true" duration-ms="604" started-at="2019-03-26T12:49:24Z" finished-at="2019-03-26T12:49:25Z">
+=======
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-03-26T10:17:54Z" finished-at="2019-03-26T10:17:54Z">
+>>>>>>> e368696bc8a9f7011d284fdce08f3a12760e258d
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.RetailMurabahaTestCRUD -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
