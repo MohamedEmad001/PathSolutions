@@ -29,14 +29,18 @@ public class BusinessRulesTest extends TestBase {
 
 	//Variables for Condition Builder
 	String ModuleIDValue = "15002711";
-	String NameValue="Test Business Rule";
+	String NameValue="Test CompositeRule cycle";
 	String FactorTypeValue="Module Fields";
-	String AmountValue="Ahmed";
+	String AmountValue="Ahmed M G";
 	
+	// Call Rule Code
+	
+	public static String ActualRuleCode;
+	
+
 
 	@Test (priority = 1)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
-	
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
@@ -45,7 +49,7 @@ public class BusinessRulesTest extends TestBase {
 
 	}
 
-	@Test(priority=2)
+	@Test (dependsOnMethods = {"CheckLogin"})
 	public void OpenBusinessRules() throws InterruptedException
 	{
 		BusinessRulesObject = new BusinessRulesPage(driver);
@@ -55,11 +59,14 @@ public class BusinessRulesTest extends TestBase {
 
 	}
 	
-	@Test(priority=3)
+	@Test (dependsOnMethods = {"OpenBusinessRules"})
 	public void SaveBusinessRules() throws InterruptedException {
 		Thread.sleep(2000);
 		BusinessRulesObject.CheckSaveBusinessRule();
 		Thread.sleep(2000);
+		//RuleCode = BusinessRulesPage.ActualRuleCode;
+		System.out.println(ActualRuleCode);
+		
 	}
 	
 

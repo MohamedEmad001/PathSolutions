@@ -6,7 +6,6 @@
       <class name="tests.ProductSetupTest">
         <methods>
           <include name="startDriver"/>
-          <include name="CheckLogin"/>
           <include name="stopDriver"/>
           <include name="PostButton"/>
           <include name="FillData"/>
@@ -21,6 +20,7 @@
           <include name="CheckSaveRetailMurabaha"/>
           <include name="stopDriver"/>
           <include name="CheckInsertAllMandatoryFields"/>
+          <include name="RequestForApprove"/>
           <include name="takeScreenshots"/>
         </methods>
       </class> <!-- tests.RetailMurabahaTest -->

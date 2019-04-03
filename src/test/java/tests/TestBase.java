@@ -31,7 +31,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
 
-		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
+		driver.navigate().to("http://192.168.112.44/I50QC/security/Signin.aspx");
 		//driver.navigate().to("http://192.168.112.33/I50DEV/security/Signin.aspx");
 
 	}

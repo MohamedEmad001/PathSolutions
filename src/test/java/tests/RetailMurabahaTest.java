@@ -26,7 +26,7 @@ public class RetailMurabahaTest extends TestBase {
 	//For Retail Murabaha Filling  Data
 	String RequestedDate = "01012018";
 	String ValueDate ="01012018";
-	String CustomerID="194";
+	String CustomerID="352425171";
 
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
@@ -62,11 +62,12 @@ public class RetailMurabahaTest extends TestBase {
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
-		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
+	/*	RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
 				CustomerID, ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
+				*/
 	}
 	
 	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})
@@ -78,6 +79,12 @@ public class RetailMurabahaTest extends TestBase {
 		//System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
 		//RMurabahaCode = RetailMurabahaPage.MurabahaCode;
 
+	}
+	
+	@Test (dependsOnMethods = {"CheckSaveRetailMurabaha"})
+	public void RequestForApprove() throws InterruptedException {
+		
+		RetailMurabahaObject.CheckRequestApproval();
 	}
 	
 	
