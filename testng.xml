@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite thread-count="2" verbose="10" name="testSuite" parallel="tests">
 <test verbose="3" name="MytestCase" group-by-instances="true">
 		<classes>
@@ -8,4 +9,16 @@
 			<class name="tests.RetailMurabahaTest" />
 		</classes>
 	</test>
+=======
+<suite thread-count="2" verbose="10" name="testSuite"
+	parallel="tests">
+	<test verbose="2" name="MytestCase" group-by-instances="true">
+		<parameter name="browser" value="chrome">
+			<classes>
+				<class name="tests.FundTest" />
+			</classes>
+		</parameter>
+
+	</test> <!-- Test -->
+>>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
 </suite>

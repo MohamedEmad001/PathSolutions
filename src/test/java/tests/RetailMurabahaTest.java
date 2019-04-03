@@ -1,17 +1,22 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
+import TestData.JsonDataReader;
 
 
 @Test (groups = { "RetailMurabahaTest"})
 public class RetailMurabahaTest extends TestBase {
 
+<<<<<<< HEAD
 	
 	//object from product setup testcase to call generated product code
 	//ProductSetupTest productSetupObj = new ProductSetupTest();
@@ -20,12 +25,15 @@ public class RetailMurabahaTest extends TestBase {
 	//Objects from RetailMurabahaPage
 	
 	
+=======
+
+>>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
 	RetailMurabahaPage RetailMurabahaObject ;
-	//Global Variables
+
 	WebDriver driver1;
-	//For Login
-	String UserName = "administrator";
-	String UserPass = "admin12";
+
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	//For Retail Murabaha Filling  Data
 	String RequestedDate = "01012018";
@@ -40,17 +48,18 @@ public class RetailMurabahaTest extends TestBase {
 	String Cost="12000";
 	String ParentframeID = "frame_1500900011";
 	String SubFramesID = "parentModuleID1500900011";
-	
 	String RetailMurabahamoduleID= "1500900011";
 	
 	String RMurabahaCode;
 
 /*			
 	@Test (priority = 1)
-	public void CheckLogin() throws InterruptedException
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 */

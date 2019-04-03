@@ -1,20 +1,32 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
+
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
 import Pages.BusinessRulesPage;
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
+import TestData.JsonDataReader;
 
 @Test (groups = { "ProductSetupTest"})
 public class ProductSetupTest extends TestBase {
+<<<<<<< HEAD
 	
 	ProductSetupPage productSetupObj;
 	
 	//Master Data
 	String UserName = "administrator";
 	String UserPass = "admin12";
+=======
+
+
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
+>>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
 	String productsetupTypeValue = "R";
 	String ClassCodevalue = "1000";
 	String Namevalue = "Testcompositerules";
@@ -38,13 +50,22 @@ public class ProductSetupTest extends TestBase {
 	//Switches between frames
 	String ParentframeID = "frame_150082";
 	String SubFramesID = "parentModuleID150082";
+<<<<<<< HEAD
 	public static String ProductCode;
 	
 	@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException
+=======
+
+
+	@Test (priority = 1)
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
+>>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 
