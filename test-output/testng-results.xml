@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="964" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+  <suite name="Default suite" duration-ms="59284" started-at="2019-03-26T10:48:08Z" finished-at="2019-03-26T10:49:07Z">
     <groups>
-      <group name="RetailMurabahaTest">
-        <method signature="RetailMurabahaTestCRUD.CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckLogin" class="tests.RetailMurabahaTestCRUD"/>
-        <method signature="RetailMurabahaTestCRUD.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckOpenRetailMurabah" class="tests.RetailMurabahaTestCRUD"/>
-        <method signature="RetailMurabahaTestCRUD.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckInsertAllMandatoryFields" class="tests.RetailMurabahaTestCRUD"/>
-        <method signature="RetailMurabahaTestCRUD.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckSaveRetailMurabaha" class="tests.RetailMurabahaTestCRUD"/>
-      </group> <!-- RetailMurabahaTest -->
     </groups>
-    <test name="Default test" duration-ms="964" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
-      <class name="tests.RetailMurabahaTestCRUD">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="startDriver" is-config="true" duration-ms="5786" started-at="2019-03-26T10:17:47Z" finished-at="2019-03-26T10:17:53Z">
+    <test name="Default test" duration-ms="59284" started-at="2019-03-26T10:48:08Z" finished-at="2019-03-26T10:49:07Z">
+      <class name="tests.BusinessRulesTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.BusinessRulesTest@91161c7]" name="startDriver" is-config="true" duration-ms="5989" started-at="2019-03-26T10:48:02Z" finished-at="2019-03-26T10:48:08Z">
           <params>
             <param index="0">
               <value>
@@ -24,26 +18,56 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="CheckLogin" duration-ms="354" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.BusinessRulesTest@91161c7]" name="CheckLogin" duration-ms="3428" started-at="2019-03-26T10:48:08Z" finished-at="2019-03-26T10:48:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="takeScreenshots" is-config="true" duration-ms="588" started-at="2019-03-26T10:17:53Z" finished-at="2019-03-26T10:17:53Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.BusinessRulesTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="348" started-at="2019-03-26T10:48:11Z" finished-at="2019-03-26T10:48:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=RetailMurabahaTestCRUD.CheckLogin()[pri:1, instance:tests.RetailMurabahaTestCRUD@604ed9f0] output={null}]]]>
+                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=BusinessRulesTest.CheckLogin()[pri:1, instance:tests.BusinessRulesTest@91161c7] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.RetailMurabahaTestCRUD@604ed9f0]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-03-26T10:17:54Z" finished-at="2019-03-26T10:17:54Z">
+        <test-method status="PASS" signature="OpenBusinessRules()[pri:2, instance:tests.BusinessRulesTest@91161c7]" name="OpenBusinessRules" duration-ms="48652" started-at="2019-03-26T10:48:11Z" finished-at="2019-03-26T10:49:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBusinessRules -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.BusinessRulesTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="345" started-at="2019-03-26T10:49:00Z" finished-at="2019-03-26T10:49:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OpenBusinessRules status=SUCCESS method=BusinessRulesTest.OpenBusinessRules()[pri:2, instance:tests.BusinessRulesTest@91161c7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshots -->
+        <test-method status="PASS" signature="SaveBusinessRules()[pri:3, instance:tests.BusinessRulesTest@91161c7]" name="SaveBusinessRules" duration-ms="6200" started-at="2019-03-26T10:49:00Z" finished-at="2019-03-26T10:49:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveBusinessRules -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.BusinessRulesTest@91161c7]" name="takeScreenshots" is-config="true" duration-ms="290" started-at="2019-03-26T10:49:07Z" finished-at="2019-03-26T10:49:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SaveBusinessRules status=SUCCESS method=BusinessRulesTest.SaveBusinessRules()[pri:3, instance:tests.BusinessRulesTest@91161c7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshots -->
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.BusinessRulesTest@91161c7]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-03-26T10:49:07Z" finished-at="2019-03-26T10:49:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.RetailMurabahaTestCRUD -->
+      </class> <!-- tests.BusinessRulesTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
