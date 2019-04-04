@@ -1,10 +1,16 @@
 package tests;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Hashtable;
+
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import Pages.BusinessRulesPage;
 import Pages.LoginPage;
+import TestData.JsonDataReader;
 
 public class BusinessRulesTest extends TestBase {
 
@@ -13,8 +19,8 @@ public class BusinessRulesTest extends TestBase {
 	WebDriver driver1;
 	BusinessRulesPage BusinessRulesObject;
 	//For Login
-	String UserName = "administrator";
-	String UserPass = "admin12";
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	//For Business Module Number
 	String BusinessRulesModuleID= "2100000031";
@@ -32,12 +38,14 @@ public class BusinessRulesTest extends TestBase {
 	public static String ActualRuleCode;
 	
 
-	@Test
-	public void CheckLogin() throws InterruptedException
+
+	@Test (priority = 1)
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
-		Thread.sleep(3000);
+		loginPageObj.UserLogin(jData);
 
 	}
 

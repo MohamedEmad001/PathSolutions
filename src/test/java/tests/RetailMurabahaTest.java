@@ -17,6 +17,7 @@ import TestData.JsonDataReader;
 public class RetailMurabahaTest extends TestBase {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	//object from product setup testcase to call generated product code
 	//ProductSetupTest productSetupObj = new ProductSetupTest();
@@ -28,6 +29,8 @@ public class RetailMurabahaTest extends TestBase {
 =======
 
 >>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
+=======
+>>>>>>> 04f762070f4d74240e1b1c69038581cd0a906baa
 	RetailMurabahaPage RetailMurabahaObject ;
 
 	WebDriver driver1;
@@ -74,11 +77,12 @@ public class RetailMurabahaTest extends TestBase {
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
-		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
+	/*	RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
 				CustomerID, ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
+				*/
 	}
 	
 	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})

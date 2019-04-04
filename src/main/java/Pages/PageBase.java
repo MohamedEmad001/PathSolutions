@@ -6,13 +6,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class PageBase {
@@ -100,8 +104,8 @@ public class PageBase {
 		driver.switchTo().frame(frameID);
 
 	}*/
-	
-	
+
+
 	public void TakeScreenShots(WebDriver driver , String ScreenShortname) throws IOException
 	{
 
@@ -118,7 +122,30 @@ public class PageBase {
 	{
 		return textbox.getAttribute("value");
 	}
+	
+
+	public WebElement waitForElement(WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		element = wait.until(ExpectedConditions.elementToBeClickable(element));
 
 
+		return element;
+	}
+	
+	public Boolean waitForCheckResult(WebElement element, String text) {
 
+		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+	}
+	
+	
+	public WebDriver waitForFrame(String FrameID) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(FrameID));
+
+	}
+	
+	
 }

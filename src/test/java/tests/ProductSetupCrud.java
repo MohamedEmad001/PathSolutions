@@ -1,10 +1,15 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
+
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
+import TestData.JsonDataReader;
 
 @Test
 public class ProductSetupCrud extends TestBase {
@@ -12,8 +17,8 @@ public class ProductSetupCrud extends TestBase {
 	ProductSetupPage productSetupObj;
 	
 	//Master Data
-	String UserName = "administrator";
-	String UserPass = "admin12";
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	String productsetupTypeValue = "R";
 	String ClassCodevalue = "1000";
 	String Namevalue = "TestProductSetupCrud";
@@ -40,11 +45,13 @@ public class ProductSetupCrud extends TestBase {
 	
 	public static String ProductCode;
 	
-	@Test (priority = 0)
-	public void CheckLogin() throws InterruptedException
+	@Test (priority = 1)
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 

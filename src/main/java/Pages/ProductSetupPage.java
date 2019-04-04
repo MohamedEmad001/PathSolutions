@@ -1,6 +1,7 @@
 package Pages;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -120,11 +121,13 @@ public class ProductSetupPage extends PageBase {
 	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
 
 	{
-		Thread.sleep(7000);
+		/*Thread.sleep(7000);
 		driver1.switchTo().defaultContent();
 		waitMethod(5);
 		searchBox.clear();
-		Thread.sleep(7000);
+		Thread.sleep(7000);*/
+		driver1.switchTo().defaultContent();
+		searchBox.clear();
 		searchBox.sendKeys(moduleID);
 		waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);
@@ -218,31 +221,37 @@ public class ProductSetupPage extends PageBase {
 		
 
 	}	
-	public void BusinessRules(String SubFramesID, String Rulecode,String RuleActionValue,String ProductFactor, String ParentframeID) throws InterruptedException 
+	public void BusinessRule1(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			String RuleActionValue1,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
 	
 	{
 		//Rule 1
-
 		clickButton(BusinessRulesTab);
 		Thread.sleep(5000);
-		/*clickButton(AddNewRule);
+		clickButton(AddNewRule);
 		Thread.sleep(5000);
 		clickButton(RuleLov);
 		Thread.sleep(5000);
 		switchFrame(SubFramesID);
-		*/
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Employment Salary Approv"));
 		Thread.sleep(5000);
-		setTextElementText(RulecodeQuickSearch, Rulecode);
-		Thread.sleep(5000);
-		DoubleClickonElement(RuleSearchResult);	
+		DoubleClickonElement(RuleSearchResult);
 		switchFrame(ParentframeID);
-		DropListSelect(RuleActionTxt, RuleActionValue);
+		DropListSelect(RuleActionTxt, RuleActionValue1);
 				
 		//Affection of rule1
 		clickButton(AffectionField);
 		DropListSelect(ProductFactorList, ProductFactor);
 		ProductFactorValue.sendKeys("100");
-				
 	}
 	
 	public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException

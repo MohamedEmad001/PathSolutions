@@ -49,11 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-<<<<<<< HEAD
-                    <span>C:\Users\Amr.Baiomy\AppData\Local\Temp\testng-eclipse--213022983\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\Mohamed.Emad\AppData\Local\Temp\testng-eclipse-1306775238\testng-customsuite.xml</span>
->>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
+                    <span>C:\Users\Amr.Baiomy\AppData\Local\Temp\testng-eclipse--2097015351\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -63,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Default_suite">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -95,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,  2 skipped,  1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,  1 skipped,  2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -106,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="FillData">FillData</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="SaveProductSetup">SaveProductSetup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -123,11 +119,6 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="PostButton">PostButton</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="SaveProductSetup">SaveProductSetup</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                   <li>
@@ -140,6 +131,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="CheckLogin">CheckLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ProductSetupTest" hash-for-method="FillData">FillData</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -162,30 +158,41 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="FillData">
-                  </a> <!-- FillData -->
-                  <span class="method-name">FillData</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Cannot locate an element using css selector=#filtergrid &gt; div.k-grid-content &gt; table &gt; tbody &gt; tr
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+                  <a name="SaveProductSetup">
+                  </a> <!-- SaveProductSetup -->
+                  <span class="method-name">SaveProductSetup</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: Element &lt;a onclick=&quot;return validateV1();&quot; id=&quot;...Button__Button&quot; class=&quot;button_link&quot; href=&apos;javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;SaveButton$_Button&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))&apos;&gt;Save&lt;/a&gt; is not clickable at point (32, 474). Other element would receive the click: &lt;div class=&quot;ui-widget-overlay ui-front&quot; style=&quot;z-index: 9999;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;EGDM1-ABAIOMY&apos;, ip: &apos;192.168.113.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy12.getCoordinates(Unknown Source)
-	at org.openqa.selenium.interactions.internal.MouseAction.getActionLocation(MouseAction.java:69)
-	at org.openqa.selenium.interactions.internal.MouseAction.moveToLocation(MouseAction.java:76)
-	at org.openqa.selenium.interactions.DoubleClickAction.perform(DoubleClickAction.java:42)
-	at org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:34)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:642)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at Pages.PageBase.DoubleClickonElement(PageBase.java:66)
-	at Pages.ProductSetupPage.ProductSetupModule(ProductSetupPage.java:165)
-	at tests.ProductSetupTest.FillData(ProductSetupTest.java:56)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:19040}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
+Session ID: c875656fc1ebfc4950940b02ac81fa96
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy12.click(Unknown Source)
+	at Pages.PageBase.clickButton(PageBase.java:54)
+	at Pages.ProductSetupPage.SaveButton(ProductSetupPage.java:273)
+	at tests.ProductSetupTest.SaveProductSetup(ProductSetupTest.java:77)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -228,35 +235,7 @@ Driver info: driver.version: RemoteWebDriver
                   <a name="PostButton">
                   </a> <!-- PostButton -->
                   <span class="method-name">PostButton</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@604ed9f0] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SaveProductSetup">
-                  </a> <!-- SaveProductSetup -->
-                  <span class="method-name">SaveProductSetup</span>
-                  <div class="stack-trace">java.lang.Throwable: Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@604ed9f0] depends on not successfully finished methods
+                  <div class="stack-trace">java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@6093dd95] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -294,16 +273,19 @@ Driver info: driver.version: RemoteWebDriver
                   <span class="method-name">CheckLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="FillData">
+                  </a> <!-- FillData -->
+                  <span class="method-name">FillData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Amr.Baiomy\AppData\Local\Temp\testng-eclipse--213022983\testng-customsuite.xml</span>
-=======
-            <span class="header-content">C:\Users\Mohamed.Emad\AppData\Local\Temp\testng-eclipse-1306775238\testng-customsuite.xml</span>
->>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
+            <span class="header-content">C:\Users\Amr.Baiomy\AppData\Local\Temp\testng-eclipse--2097015351\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -336,26 +318,6 @@ Driver info: driver.version: RemoteWebDriver
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">ProductSetupTest</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">CheckLogin</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">FillData</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">PostButton</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">SaveProductSetup</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -374,36 +336,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
 data.setCell(0, 1, 'FillData')
 data.setCell(0, 2, 'tests.ProductSetupTest')
-data.setCell(0, 3, 63481);
+data.setCell(0, 3, 97248);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'CheckLogin')
 data.setCell(1, 2, 'tests.ProductSetupTest')
-data.setCell(1, 3, 353);
+data.setCell(1, 3, 346);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'PostButton')
+data.setCell(2, 1, 'SaveProductSetup')
 data.setCell(2, 2, 'tests.ProductSetupTest')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 55);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'SaveProductSetup')
+data.setCell(3, 1, 'PostButton')
 data.setCell(3, 2, 'tests.ProductSetupTest')
 data.setCell(3, 3, 0);
-=======
-data.setCell(0, 1, 'CheckLogin')
-data.setCell(0, 2, 'tests.LoginTest')
-data.setCell(0, 3, 314);
->>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 1 minutes</span>
-=======
-              <span class="suite-total-time">Total running time: 314 ms</span>
->>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -436,39 +388,33 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">CheckLogin</span>
-<<<<<<< HEAD
-                <span class="method-start">4738 ms</span>
+                <span class="method-start">7123 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">takeScreenshots([TestResult name=CheckLogin status=SUCCESS method=ProductSetupTest.CheckLogin()[pri:0, instance:test...)</span>
-                <span class="method-start">5093 ms</span>
+                <span class="method-start">7471 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">FillData</span>
+                <span class="method-start">9080 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshots([TestResult name=FillData status=SUCCESS method=ProductSetupTest.FillData()[pri:0, instance:tests.Pr...)</span>
+                <span class="method-start">106329 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">FillData</span>
-                <span class="method-start">30804 ms</span>
+                <span class="method-name">SaveProductSetup</span>
+                <span class="method-start">106685 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">takeScreenshots([TestResult name=FillData status=FAILURE method=ProductSetupTest.FillData()[pri:0, instance:tests.Pr...)</span>
-                <span class="method-start">94288 ms</span>
+                <span class="method-name">takeScreenshots([TestResult name=SaveProductSetup status=FAILURE method=ProductSetupTest.SaveProductSetup()[pri:0, i...)</span>
+                <span class="method-start">106742 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">stopDriver</span>
-                <span class="method-start">94387 ms</span>
-=======
-                <span class="method-start">4882 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">takeScreenshots([TestResult name=CheckLogin status=SUCCESS method=LoginTest.CheckLogin()[pri:1, instance:tests.Login...)</span>
-                <span class="method-start">5198 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">stopDriver</span>
-                <span class="method-start">6558 ms</span>
->>>>>>> ca3db4572fd3e215eab740ad2f9f1fe3391ea11d
+                <span class="method-start">107261 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

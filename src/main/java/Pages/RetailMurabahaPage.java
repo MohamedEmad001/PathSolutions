@@ -3,7 +3,9 @@ package Pages;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,74 +31,105 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#FCON_CONTRACT_DATE") WebElement RequestedDateTxt;
 	@FindBy(css="#FCON_VALUE_DATE")	WebElement ValueDateTxt;
 	@FindBy(css="#CUS_CODE")WebElement CustomerIDTxt;
+	@FindBy(css="#CUS_NAME")WebElement CustomerNameTxt;
 	@FindBy(css="#FPROD_CODE1")WebElement ProductCodeTxt;
+	@FindBy(css = "#FPROD_LATIN_NAME") WebElement ProductNameTxt;
 	@FindBy(css="#NL_VND_NAME")	WebElement NonListedVendorTxt;
 	@FindBy (css="#CUR_CODE2")WebElement CurrencyCodeTxt;
 	@FindBy(css="#V18TC_V8TP_V8AddButton")WebElement addNewRowbBtn;
-	@FindBy(css="#V18TC_V8TP_V8LCRepeater_ctl00_AddButton")WebElement ViewItemBtn;
+	@FindBy(xpath="//*[@id=\"V18TC_V8TP_V8LCRepeater_ctl00_AddButton\"]")WebElement ViewItemBtn;
 	@FindBy(css="#ITE_NAME") WebElement ItemNameTxt;
 	@FindBy(id="IC_CODE") WebElement ItemCategoryDropdownSelect;
 	@FindBy(css="#ITE_PRICE") WebElement PriceTxt;
 	@FindBy(css="#ITE_COST") WebElement CostTxt;
 	@FindBy(css="#SaveButton__Button") WebElement SaveAndCloseBtn;
 
+	@FindBy(css="#V18NewButton") WebElement addNewButton;
+
 	@FindBy(css="#V18SaveButton") WebElement MasterSaveBtn;
 
 	@FindBy(css="#FCON_CODE") WebElement ContractCodeTxt;
 	//Request for approv
-	
+
 	@FindBy(css= "#V18ApproveButton") WebElement RequestBtn;
-	
+
 	//Status
 	@FindBy(css= "#APPROVAL_STATUS_NAME") WebElement StatusTxt;
-	
-	
+
+	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn")
+	WebElement saveConfirmationMsg;
+
+	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
+	WebElement saveConfirmationBtn;
+
+
+	@FindBy(css="#Body1 > div:nth-child(5)")
+	WebElement approvalConfirmationMsg;
+
+
+	@FindBy(css="#Body1 > div:nth-child(5) > div.lobibox-footer.text-center > button")
+	WebElement approvalConfirmationBtn;
+
+
+	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn")
+	WebElement objectReferenceConfirmationMsg;
+
+
+	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
+	WebElement objectReferenceConfirmationBtn;
+
 	public static  String MurabahaCode;
 
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
-	
+
 	public void OpenRetailMurabaha(String ParentframeID, 
 			String RetailMurabahamoduleID) 
 					throws InterruptedException
 	{
-		
-		Thread.sleep(7000);
+
+		//Thread.sleep(7000);
+
 		driver1.switchTo().defaultContent();
-		waitMethod(5);
+		//waitMethod(5);
+		waitForElement(searchBox);
 		searchBox.clear();
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		searchBox.sendKeys(RetailMurabahamoduleID);
-		waitMethod(7);
+		//waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);
 		searchBox.sendKeys(Keys.ENTER);
-		waitMethod(7);
+		//waitMethod(7);
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
+		waitForFrame(ParentframeID);
 		switchFrame(ParentframeID);
 
 		waitMethod(7);
 	}
-	
+
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaCRUD
 	public void OpenRetailMurabahaCrud(String ParentframeID, 
 			String RetailMurabahamoduleID) 
 					throws InterruptedException
 	{
+		//Thread.sleep(7000);
+		waitForElement(searchBox);
 		searchBox.sendKeys(RetailMurabahamoduleID);
-		waitMethod(7);
+		//waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);
 		searchBox.sendKeys(Keys.ENTER);
-		waitMethod(7);
+		//waitMethod(7);
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
 		Thread.sleep(5000);
 		switchFrame(ParentframeID);
+
 		waitMethod(7);
 	}
 
-	public void FillRequiredFields(String RequestedDateValue,
+	public void FillRequiredFieldsByCustomer1(String RequestedDateValue,
 			String ValueDateValue,
-			String CustomerIDValue,
+			Hashtable<String, String> CustomerIDValue,
 			String ProductCodeValue,
 			String NonListedVendorValue,
 			String CurrencyCodeValue,
@@ -111,47 +144,456 @@ public class RetailMurabahaPage extends PageBase {
 
 		setTextElementText(RequestedDateTxt, RequestedDateValue);
 		setTextElementText(ValueDateTxt, ValueDateValue);
-		setTextElementText(CustomerIDTxt, CustomerIDValue);
+		waitForElement(CustomerIDTxt);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("M_004_Appr"));
+		Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
+		if (state)
+		{
+			waitForElement(ProductCodeTxt);
+			setTextElementText(ProductCodeTxt, ProductCodeValue);
+			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
+			if (state)
+			{
+				
+				waitForElement(NonListedVendorTxt);
+				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+				waitForElement(addNewRowbBtn);
+				clickButton(addNewRowbBtn);
+				//Thread.sleep(3000);
+				//waitMethod(3);
+				waitForElement(ViewItemBtn);
+				clickButton(ViewItemBtn);
+				Thread.sleep(7000);
+				switchFrame(SubFrameID);
+				waitForElement(ItemNameTxt);
+				setTextElementText(ItemNameTxt, ItemNameValue);
+				//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+				DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+				setTextElementText(PriceTxt, PriceValue);
+				setTextElementText(CostTxt, CostValue);
+				//Thread.sleep(3000);
+				waitForElement(SaveAndCloseBtn);
+				clickButton(SaveAndCloseBtn);
+				Thread.sleep(8000);
+				switchFrame(ParentframeID);
+			}
+		}
+	}
+
+	public void FillRequiredFieldsByCustomer2(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("F_004_Appr"));
+		Thread.sleep(12000);
 		setTextElementText(ProductCodeTxt, ProductCodeValue);
-		Thread.sleep(7000);
+		Thread.sleep(12000);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
 		clickButton(addNewRowbBtn);
-		Thread.sleep(500);
+		Thread.sleep(3000);
+		waitMethod(3);
 		clickButton(ViewItemBtn);
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
 		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		clickButton(SaveAndCloseBtn);
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		switchFrame(ParentframeID);
 	}
 
+	public void FillRequiredFieldsByCustomer3(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("M_002_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer4(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("F_002_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer5(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("M_010_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer6(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("F_010_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer7(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("M_007_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer8(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("F_007_Appr"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
+	public void FillRequiredFieldsByCustomer9(String RequestedDateValue,
+			String ValueDateValue,
+			Hashtable<String, String> CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		clickButton(addNewButton);
+		Thread.sleep(4000);
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		setTextElementText(CustomerIDTxt, CustomerIDValue.get("BBC_M_003_Reje"));
+		Thread.sleep(12000);
+		setTextElementText(ProductCodeTxt, ProductCodeValue);
+		Thread.sleep(12000);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		Thread.sleep(3000);
+		clickButton(addNewRowbBtn);
+		Thread.sleep(3000);
+		waitMethod(3);
+		clickButton(ViewItemBtn);
+		Thread.sleep(7000);
+		switchFrame(SubFrameID);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		Thread.sleep(3000);
+		clickButton(SaveAndCloseBtn);
+		Thread.sleep(8000);
+		switchFrame(ParentframeID);
+	}
+
+
 	public void SaveRetailMurabaha() throws InterruptedException
 	{
+
 		clickButton(MasterSaveBtn);
-		Thread.sleep(2000);
+		Thread.sleep(7000);
+		waitMethod(3);
+		waitForElement(saveConfirmationMsg);
+		if (saveConfirmationMsg.isDisplayed()) {
+
+			clickButton(saveConfirmationBtn);
+
+		}
 		MurabahaCode = StoreData(ContractCodeTxt);
 		Thread.sleep(2000);
 		System.out.println(MurabahaCode);
 
 	}
-	
+
 	public void CheckRequestApproval() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
-		
+
 		clickButton(RequestBtn);
 		Thread.sleep(5000);
-		assertEquals(StatusTxt.getAttribute("Value"), "Approved");
-		Thread.sleep(3000);
-		
+		waitMethod(3);
+		waitForElement(approvalConfirmationMsg);
+		if (approvalConfirmationMsg.isDisplayed()) {
+
+			clickButton(approvalConfirmationBtn);
+
+		}
+
+		Thread.sleep(5000);
+		waitMethod(3);
+		waitForElement(objectReferenceConfirmationMsg);
+		if(objectReferenceConfirmationMsg.isDisplayed()) {
+
+			clickButton(objectReferenceConfirmationBtn);
+
+		}
+
+		Thread.sleep(5000);
+		waitMethod(3);
+
+		String CustomerCode = CustomerIDTxt.getAttribute("Value");
+
+		if (CustomerCode == "988052")
+		{
+			assertEquals(StatusTxt.getAttribute("Value"), "Rejected");
+
+		}
+		else
+		{
+			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
+		}
+		Thread.sleep(7000);
+
+
+
 	}
+
+
 
 
 }

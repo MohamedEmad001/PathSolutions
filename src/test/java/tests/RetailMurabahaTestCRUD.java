@@ -1,16 +1,20 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
+import TestData.JsonDataReader;
 
 
-@Test (groups = { "RetailMurabahaTest"})
+//@Test (groups = { "RetailMurabahaTest"})
 public class RetailMurabahaTestCRUD extends TestBase {
 
 	
@@ -25,13 +29,13 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	//Global Variables
 	WebDriver driver1;
 	//For Login
-	String UserName = "administrator";
-	String UserPass = "admin12";
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	//For Retail Murabaha Filling  Data
 	String RequestedDate = "01012018";
-	String ValueDate ="01012018";
-	String CustomerID="194";
+	String ValueDate ="01022018";
+	//String CustomerID="194";
 	
 	//String Cust1="M_004_Appr";
 	//String Cust2="F_004_Appr";
@@ -41,8 +45,10 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	//String Cust6="F_010_Appr";
 	//String Cust7="M_007_Appr";
 	//String Cust8="F_007_Appr";
+	//String Cust9="M_003_Reje";
 	
-	String ProductCodeID="608";
+	//ProductCodeID="514">>two rules on the product
+	String ProductCodeID="514";
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
 	String ItemName="Test Item";
@@ -56,12 +62,19 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	
 	String RMurabahaCode;
 
-			
-	@Test
-	public void CheckLogin() throws InterruptedException
+	String [] jCustomerkeys = {"M_004_Appr", "F_004_Appr", "M_002_Appr", "F_002_Appr", "M_010_Appr", "F_010_Appr", "M_007_Appr", "F_007_Appr", "BBC_M_003_Reje" };
+	String [] customerTestCaseInputs = {"M_004_Appr", "F_004_Appr", "M_002_Appr", "F_002_Appr", "M_010_Appr", "F_010_Appr", "M_007_Appr", "F_007_Appr", "BBC_M_003_Reje" };
+	
+	
+	JsonDataReader jsonFileReader = new JsonDataReader();
+
+	@Test (priority = 0)
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 
@@ -73,34 +86,173 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	}
 	
 	@Test (dependsOnMethods = {"CheckOpenRetailMurabah"})
-	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
+	public void CheckInsertAllMandatoryFieldsA() throws InterruptedException, IOException, ParseException
 	{
 		//System.out.println("x" + ProductSetupPage.ActualProductCode);
-		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
-				CustomerID, ProductCodeID,
-				NonListedVendor, CurrencyCode,
-				ItemName, ItemCategory, Price,
-				Cost, ParentframeID,SubFramesID);
-	}
-	
-	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})
-	public void CheckSaveRetailMurabaha() throws InterruptedException
-
-	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer1(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
 		RetailMurabahaObject.SaveRetailMurabaha();
 		RetailMurabahaObject.CheckRequestApproval();
-		//RMurabahaCode = RetailMurabahaObject.MurabahaCode;
-		//System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
-		//RMurabahaCode = RetailMurabahaPage.MurabahaCode;
+	}
 
-	}
+	/*
 	
-	@Test (dependsOnMethods = {"CheckSaveRetailMurabaha"})
-	public void CheckRequestApproval() throws InterruptedException {
-		
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsA"})
+	public void CheckInsertAllMandatoryFieldsB() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer4(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
 		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsB"})
+	public void CheckInsertAllMandatoryFieldsD() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer5(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsD"})
+	public void CheckInsertAllMandatoryFieldsX() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer9(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
 	}
 	
 	
+	/*
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsB"})
+	public void CheckInsertAllMandatoryFieldsC() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer3(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsC"})
+	public void CheckInsertAllMandatoryFieldsD() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer4(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsD"})
+	public void CheckInsertAllMandatoryFieldsE() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer5(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsE"})
+	public void CheckInsertAllMandatoryFieldsF() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer6(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsF"})
+	public void CheckInsertAllMandatoryFieldsG() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer7(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	
+	
+	@Test (dependsOnMethods = {"CheckOpenRetailMurabah", "CheckInsertAllMandatoryFieldsG"})
+	public void CheckInsertAllMandatoryFieldsH() throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		//JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		RetailMurabahaObject.FillRequiredFieldsByCustomer8(RequestedDate, ValueDate, 
+															jCustomerData, ProductCodeID,
+															NonListedVendor, CurrencyCode,
+															ItemName, ItemCategory, Price,
+															Cost, ParentframeID,SubFramesID);
+		RetailMurabahaObject.SaveRetailMurabaha();
+		RetailMurabahaObject.CheckRequestApproval();
+		
+	}
+	*/
+
 	
 }
