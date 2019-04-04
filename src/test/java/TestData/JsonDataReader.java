@@ -19,11 +19,12 @@ public class JsonDataReader
 	private Hashtable<String,String> jData = new Hashtable<String,String>();
 
 	//create method to read the desired object, keys and testcaseinputs then return a hashtable of (key and value)
-	public Hashtable<String,String> JsonReaderData(String jObject, String [] jKeys, String[] testCaseInputs) throws FileNotFoundException, IOException, ParseException {
+	public Hashtable<String,String> JsonReaderData(String jsonFilePath, String jObject, String [] jKeys, String[] testCaseInputs) throws FileNotFoundException, IOException, ParseException {
 
 		//define json file path and read the data from it into a json array
+		// Json file path for Fund testcase --> "/src/test/java/TestData/FundData.json"
 		JSONParser parser = new JSONParser();
-		String filePath = System.getProperty("user.dir") + "/src/test/java/TestData/FundData.json";
+		String filePath = System.getProperty("user.dir") + jsonFilePath;
 		File jFile = new File(filePath);
 		JSONArray jArray = (JSONArray) parser.parse(new FileReader(jFile));
 

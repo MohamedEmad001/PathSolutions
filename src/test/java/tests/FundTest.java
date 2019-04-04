@@ -17,7 +17,7 @@ public class FundTest extends TestBase {
 	FundPage fundPageObj;
 	SettlementPage settlePage;
 
-
+	String jsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeys = {"UserName", "UserPass"};
 	String [] testCaseInputs = {"UserName", "UserPass"};
 
@@ -42,7 +42,7 @@ public class FundTest extends TestBase {
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
 
