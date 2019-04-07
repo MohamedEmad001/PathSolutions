@@ -1,10 +1,16 @@
 package tests;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Hashtable;
+
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import Pages.BusinessRulesPage;
 import Pages.LoginPage;
+import TestData.JsonDataReader;
 
 public class BusinessRulesTest extends TestBase {
 
@@ -13,8 +19,8 @@ public class BusinessRulesTest extends TestBase {
 	WebDriver driver1;
 	BusinessRulesPage BusinessRulesObject;
 	//For Login
-	String UserName = "administrator";
-	String UserPass = "admin12";
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	//For Business Module Number
 	String BusinessRulesModuleID= "2100000031";
@@ -23,21 +29,27 @@ public class BusinessRulesTest extends TestBase {
 
 	//Variables for Condition Builder
 	String ModuleIDValue = "15002711";
-	String NameValue="Test Business Rule";
+	String NameValue="Test CompositeRule cycle";
 	String FactorTypeValue="Module Fields";
-	String AmountValue="Ahmed";
+	String AmountValue="Ahmed M G";
+	
+	// Call Rule Code
+	
+	public static String ActualRuleCode;
 	
 
+
 	@Test (priority = 1)
-	public void CheckLogin() throws InterruptedException
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
-		Thread.sleep(3000);
+		loginPageObj.UserLogin(jData);
 
 	}
 
-	@Test(priority=2)
+	@Test (dependsOnMethods = {"CheckLogin"})
 	public void OpenBusinessRules() throws InterruptedException
 	{
 		BusinessRulesObject = new BusinessRulesPage(driver);
@@ -47,11 +59,14 @@ public class BusinessRulesTest extends TestBase {
 
 	}
 	
-	@Test(priority=3)
+	@Test (dependsOnMethods = {"OpenBusinessRules"})
 	public void SaveBusinessRules() throws InterruptedException {
 		Thread.sleep(2000);
 		BusinessRulesObject.CheckSaveBusinessRule();
 		Thread.sleep(2000);
+		//RuleCode = BusinessRulesPage.ActualRuleCode;
+		System.out.println(ActualRuleCode);
+		
 	}
 	
 

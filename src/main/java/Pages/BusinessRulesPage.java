@@ -59,7 +59,13 @@ public class BusinessRulesPage extends PageBase {
 	WebElement ConfirmationSaveMsg;
 	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
 	WebElement ConfirmationSaveBtn;*/
+	
+	//Rule Code
+	
+	@FindBy (id = "BR_CODE")
+	public WebElement RuleCode;
 
+	public static String ActualRuleCode;
 
 
 	public void OpenBussinessRule(String BusinessRulesModuleID,String ParentFram) 
@@ -76,9 +82,11 @@ public class BusinessRulesPage extends PageBase {
 	}
 
 	public void InsertAllMandatoryFields(String NameText,String FrameID,
-			String SubFrame,String ModuleID, String FactorType, String Amount)
+			String SubFrame,String ModuleID, String FactorType, String NameValue)
 					throws InterruptedException {
 		setTextElementText(RuleNameTxt, NameText);
+		
+		//Open Config Builder
 		clickButton(EditBtn);
 		Thread.sleep(2000);
 		switchFrame(SubFrame);
@@ -90,8 +98,8 @@ public class BusinessRulesPage extends PageBase {
 		DoubleClickonElement(NameFiledBtn);
 		clickButton(EqualBtn);
 		//AmountTxt.sendKeys(Amount);
-		NameTxt.sendKeys(Amount);
-		Thread.sleep(2000);
+		NameTxt.sendKeys(NameValue);
+		Thread.sleep(4000);
 		clickButton(AddBtn);
 		clickButton(ValidateBtn);
 		Thread.sleep(2000);
@@ -112,6 +120,8 @@ public class BusinessRulesPage extends PageBase {
 
 		clickButton(MasterSaveBtn);
 		Thread.sleep(2000);
+		ActualRuleCode=StoreData(RuleCode);
+		
 	}
 
 	public void CheckUpdate(String UpdateNameTxtValue,String NotesTxtValue) throws InterruptedException {

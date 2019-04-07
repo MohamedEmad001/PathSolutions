@@ -106,7 +106,7 @@ public class ProductSetupPage extends PageBase {
 	WebElement SaveData;
 	
 	//Post
-	@FindBy (id="POSTButton")
+	@FindBy (css="#POSTButton")
 	WebElement Post;
 	
 	//ProductSetup Code
@@ -118,6 +118,58 @@ public class ProductSetupPage extends PageBase {
 
 
 	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
+
+	{
+		Thread.sleep(7000);
+		driver1.switchTo().defaultContent();
+		waitMethod(5);
+		searchBox.clear();
+		Thread.sleep(7000);
+		searchBox.sendKeys(moduleID);
+		waitMethod(7);
+		searchBox.sendKeys(Keys.ENTER);
+		searchBox.sendKeys(Keys.ENTER);
+		waitMethod(7);
+		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
+		Thread.sleep(5000);
+		switchFrame(ParentframeID);
+
+		waitMethod(7);
+
+		DropListSelect(productsetupType, productsetupTypeValue);
+		setTextElementText(ClassCodetxt, ClassCodevalue);
+		waitMethod(3);
+		setTextElementText(Nametxt , Namevalue);
+		
+		waitMethod(3);
+		clickButton(currencyLOVIcon);
+		switchFrame(SubFramesID);
+		waitMethod(3);
+		setTextElementText(curQuickSearch, curCode);
+		Thread.sleep(5000);
+		DoubleClickonElement(curSearchResult);
+
+		switchFrame(ParentframeID);
+		setTextElementText(DateTxt , DateValue);
+		
+		waitMethod(3);
+		
+		//Repayment Lov
+		
+		clickButton(RepaymentLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+		Thread.sleep(5000);
+		setTextElementText(repaymentcodeQuickSearch, repaymentcode);
+		Thread.sleep(5000);
+		DoubleClickonElement(RepaymentSearchResult);
+		Thread.sleep(5000);
+		switchFrame(ParentframeID);
+		Thread.sleep(5000);
+		
+
+	}	
+	public void ProductSetupModuleCrud(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
 
 	{
 
@@ -170,14 +222,15 @@ public class ProductSetupPage extends PageBase {
 	
 	{
 		//Rule 1
-		
+
 		clickButton(BusinessRulesTab);
 		Thread.sleep(5000);
-		clickButton(AddNewRule);
+		/*clickButton(AddNewRule);
 		Thread.sleep(5000);
 		clickButton(RuleLov);
 		Thread.sleep(5000);
 		switchFrame(SubFramesID);
+		*/
 		Thread.sleep(5000);
 		setTextElementText(RulecodeQuickSearch, Rulecode);
 		Thread.sleep(5000);

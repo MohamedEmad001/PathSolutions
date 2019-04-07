@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>MytestCase</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/2</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 25 16:51:05 EET 2019</td>
+<td>Started on:</td><td>Tue Mar 26 16:50:30 EET 2019</td>
 </tr>
-<tr><td>Total time:</td><td>32 seconds (32341 ms)</td>
+<tr><td>Total time:</td><td>222 seconds (222997 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.ProductSetupTest.FillData()'><b>FillData</b><br>Test class: tests.ProductSetupTest</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;iframe id=&quot;frame_150082&quot; src=&quot;FIN_FIN_PRO_SETUP_FE_VW/SelectEditFIN_FIN_PRO_SETUP_FE_VW.aspx?ModuleID=150082&quot; class=&quot;cuteFrame&quot; style=&quot;background: #fff ;overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px&quot; height=&quot;100%&quot; width=&quot;100%&quot; cd_frame_id_=&quot;e9a6dfb5f06b5990541ebf91942b0113&quot;&gt;&lt;/iframe&gt; is not clickable at point (497, 275). Other element would receive the click: &lt;div class=&quot;lobibox-backdrop&quot;&gt;&lt;/div&gt;
+<td title='tests.RetailMurabahaTest.CheckInsertAllMandatoryFields()'><b>CheckInsertAllMandatoryFields</b><br>Test class: tests.RetailMurabahaTest</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;input type=&quot;image&quot; name=&quot;V18TC$V8TP$V8AddButton&quot; id=&quot;V18TC_V8TP_V8AddButton&quot; onmouseout=&quot;this.src.replace(&apos;over&apos;,&apos;&apos;)&quot; onmouseover=&quot;this.src.replace(&apos;.gif&apos;,&apos;over.gif&apos;)&quot; src=&quot;../Images/ButtonBarNew.gif&quot; onclick=&quot;return AddItemsClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&amp;quot;V18TC$V8TP$V8AddButton&amp;quot;, &amp;quot;&amp;quot;, true, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, false, false))&quot;&gt; is not clickable at point (41, 523). Other element would receive the click: &lt;div class=&quot;lobibox-backdrop&quot;&gt;&lt;/div&gt;
   (Session info: chrome=73.0.3683.86)
   (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;EGDM1-ABAIOMY&apos;, ip: &apos;192.168.113.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:5263}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: 3fe80311cc505698ba2a62d3645c6582
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:21527}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
+Session ID: 8a8e2f6789aa079b27782d332eca0e51
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -99,15 +99,14 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy12.click(Unknown Source)
 	at Pages.PageBase.clickButton(PageBase.java:50)
-	at Pages.ProductSetupPage.ProductSetupModule(ProductSetupPage.java:142)
-	at tests.ProductSetupTest.FillData(ProductSetupTest.java:54)
+	at Pages.RetailMurabahaPage.FillRequiredFields(RetailMurabahaPage.java:119)
+	at tests.RetailMurabahaTest.CheckInsertAllMandatoryFields(RetailMurabahaTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -128,16 +127,16 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1455982024", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1455982024'><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;iframe id=&quot;frame_150082&quot; src=&quot;FIN_FIN_PRO_SETUP_FE_VW/SelectEditFIN_FIN_PRO_SETUP_FE_VW.aspx?ModuleID=150082&quot; class=&quot;cuteFrame&quot; style=&quot;background: #fff ;overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px&quot; height=&quot;100%&quot; width=&quot;100%&quot; cd_frame_id_=&quot;e9a6dfb5f06b5990541ebf91942b0113&quot;&gt;&lt;/iframe&gt; is not clickable at point (497, 275). Other element would receive the click: &lt;div class=&quot;lobibox-backdrop&quot;&gt;&lt;/div&gt;
+</pre></div><a href='#' onClick='toggleBox("stack-trace1926667628", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1926667628'><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;input type=&quot;image&quot; name=&quot;V18TC$V8TP$V8AddButton&quot; id=&quot;V18TC_V8TP_V8AddButton&quot; onmouseout=&quot;this.src.replace(&apos;over&apos;,&apos;&apos;)&quot; onmouseover=&quot;this.src.replace(&apos;.gif&apos;,&apos;over.gif&apos;)&quot; src=&quot;../Images/ButtonBarNew.gif&quot; onclick=&quot;return AddItemsClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&amp;quot;V18TC$V8TP$V8AddButton&amp;quot;, &amp;quot;&amp;quot;, true, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, false, false))&quot;&gt; is not clickable at point (41, 523). Other element would receive the click: &lt;div class=&quot;lobibox-backdrop&quot;&gt;&lt;/div&gt;
   (Session info: chrome=73.0.3683.86)
   (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;EGDM1-ABAIOMY&apos;, ip: &apos;192.168.113.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:5263}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: 3fe80311cc505698ba2a62d3645c6582
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:21527}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
+Session ID: 8a8e2f6789aa079b27782d332eca0e51
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -152,15 +151,14 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy12.click(Unknown Source)
 	at Pages.PageBase.clickButton(PageBase.java:50)
-	at Pages.ProductSetupPage.ProductSetupModule(ProductSetupPage.java:142)
-	at tests.ProductSetupTest.FillData(ProductSetupTest.java:54)
+	at Pages.RetailMurabahaPage.FillRequiredFields(RetailMurabahaPage.java:119)
+	at tests.RetailMurabahaTest.CheckInsertAllMandatoryFields(RetailMurabahaTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -182,8 +180,8 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 </pre></div></td>
-<td>24</td>
-<td>tests.ProductSetupTest@685cb137</td></tr>
+<td>8</td>
+<td>tests.RetailMurabahaTest@6d4b1c02</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -193,10 +191,40 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.ProductSetupTest.CheckLogin()'><b>CheckLogin</b><br>Test class: tests.ProductSetupTest</td>
+<td title='tests.BusinessRulesTest.CheckLogin()'><b>CheckLogin</b><br>Test class: tests.BusinessRulesTest</td>
 <td></td>
-<td>0</td>
-<td>tests.ProductSetupTest@685cb137</td></tr>
+<td>3</td>
+<td>tests.BusinessRulesTest@6a41eaa2</td></tr>
+<tr>
+<td title='tests.RetailMurabahaTest.CheckOpenRetailMurabah()'><b>CheckOpenRetailMurabah</b><br>Test class: tests.RetailMurabahaTest</td>
+<td></td>
+<td>28</td>
+<td>tests.RetailMurabahaTest@6d4b1c02</td></tr>
+<tr>
+<td title='tests.ProductSetupTest.FillData()'><b>FillData</b><br>Test class: tests.ProductSetupTest</td>
+<td></td>
+<td>113</td>
+<td>tests.ProductSetupTest@7cd62f43</td></tr>
+<tr>
+<td title='tests.BusinessRulesTest.OpenBusinessRules()'><b>OpenBusinessRules</b><br>Test class: tests.BusinessRulesTest</td>
+<td></td>
+<td>49</td>
+<td>tests.BusinessRulesTest@6a41eaa2</td></tr>
+<tr>
+<td title='tests.ProductSetupTest.PostButton()'><b>PostButton</b><br>Test class: tests.ProductSetupTest</td>
+<td></td>
+<td>5</td>
+<td>tests.ProductSetupTest@7cd62f43</td></tr>
+<tr>
+<td title='tests.BusinessRulesTest.SaveBusinessRules()'><b>SaveBusinessRules</b><br>Test class: tests.BusinessRulesTest</td>
+<td></td>
+<td>6</td>
+<td>tests.BusinessRulesTest@6a41eaa2</td></tr>
+<tr>
+<td title='tests.ProductSetupTest.SaveProductSetup()'><b>SaveProductSetup</b><br>Test class: tests.ProductSetupTest</td>
+<td></td>
+<td>5</td>
+<td>tests.ProductSetupTest@7cd62f43</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -206,76 +234,8 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.RetailMurabahaTest.CheckInsertAllMandatoryFields()'><b>CheckInsertAllMandatoryFields</b><br>Test class: tests.RetailMurabahaTest</td>
-<td><div><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1993044841", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1993044841'><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='tests.RetailMurabahaTest.CheckOpenRetailMurabah()'><b>CheckOpenRetailMurabah</b><br>Test class: tests.RetailMurabahaTest</td>
-<td><div><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods in group &quot;ProductSetupTest&quot;
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace871805132", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace871805132'><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods in group &quot;ProductSetupTest&quot;
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
 <td title='tests.RetailMurabahaTest.CheckSaveRetailMurabaha()'><b>CheckSaveRetailMurabaha</b><br>Test class: tests.RetailMurabahaTest</td>
-<td><div><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods
+<td><div><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@6d4b1c02] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -289,42 +249,8 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace769409315", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace769409315'><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@6a41eaa2] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='tests.ProductSetupTest.PostButton()'><b>PostButton</b><br>Test class: tests.ProductSetupTest</td>
-<td><div><pre>java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@685cb137] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1162490557", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1162490557'><pre>java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@685cb137] depends on not successfully finished methods
+</pre></div><a href='#' onClick='toggleBox("stack-trace1224238617", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1224238617'><pre>java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@6d4b1c02] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -342,8 +268,8 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 <td>0</td>
 <td>null</td></tr>
 <tr>
-<td title='tests.ProductSetupTest.SaveProductSetup()'><b>SaveProductSetup</b><br>Test class: tests.ProductSetupTest</td>
-<td><div><pre>java.lang.Throwable: Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@685cb137] depends on not successfully finished methods
+<td title='tests.RetailMurabahaTest.RequestForApprove()'><b>RequestForApprove</b><br>Test class: tests.RetailMurabahaTest</td>
+<td><div><pre>java.lang.Throwable: Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@6d4b1c02] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -357,8 +283,8 @@ Session ID: 3fe80311cc505698ba2a62d3645c6582
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-</pre></div><a href='#' onClick='toggleBox("stack-trace330274205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace330274205'><pre>java.lang.Throwable: Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@685cb137] depends on not successfully finished methods
+</pre></div><a href='#' onClick='toggleBox("stack-trace1158168947", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1158168947'><pre>java.lang.Throwable: Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@6d4b1c02] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)

@@ -3,6 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="tests.BusinessRulesTest">
         <methods>
           <include name="startDriver"/>
@@ -12,6 +13,18 @@
           <include name="OpenBusinessRules"/>
         </methods>
       </class> <!-- tests.BusinessRulesTest -->
+=======
+      <class name="tests.RetailMurabahaTestCRUD">
+        <methods>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="CheckOpenRetailMurabah"/>
+          <include name="CheckLogin"/>
+          <include name="takeScreenshots"/>
+          <include name="CheckInsertAllMandatoryFieldsA"/>
+        </methods>
+      </class> <!-- tests.RetailMurabahaTestCRUD -->
+>>>>>>> 04f762070f4d74240e1b1c69038581cd0a906baa
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

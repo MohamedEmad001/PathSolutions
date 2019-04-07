@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.Hashtable;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,19 +31,15 @@ public class LoginPage extends PageBase {
 	@FindBy (id = "btnLogin")
 	WebElement Loginbtn;
 
-	String moduleID = "15002003";
-
-	String frameID = "frame_15002003";
-
 	@FindBy (id = "txt_PlaceHolder")
 	WebElement searchBox;
 
-	//public static Dimension x ;
 
-	public void UserLogin(String userLoginName , String password) throws InterruptedException
+	public void UserLogin(Hashtable<String,String> loginData) throws InterruptedException
 	{
-		setTextElementText(LoginName, userLoginName);
-		setTextElementText(Loginpassword, password);
+		//use the hashtable to read data from Json file with the exact key defined in json file UserName and UserPass
+		setTextElementText(LoginName, loginData.get("UserName"));
+		setTextElementText(Loginpassword, loginData.get("UserPass"));
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
 

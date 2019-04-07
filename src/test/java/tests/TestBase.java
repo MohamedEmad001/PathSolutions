@@ -31,7 +31,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
 
-		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
+		driver.navigate().to("http://192.168.112.44/I50QC/security/Signin.aspx");
 		//driver.navigate().to("http://192.168.112.33/I50DEV/security/Signin.aspx");
 
 	}
@@ -68,31 +68,5 @@ public class TestBase {
 		//driver.quit();
 	}
 
-	//Take ScreenShots when TC fail and add it to Screenshots folder	
-	
-						
-					/*		@AfterMethod
-											public void takeScreenshots(ITestResult result) throws IOException
-												{
-														if(result.getStatus() == ITestResult.FAILURE)
-														{
-																System.out.println("Failure!...." + "Taking Screenshot");
-																Helper.CaptureScreenshots(driver, result.getTestName());
-																		
-																}
-																
-																	if (result.getStatus() == ITestResult.SUCCESS)
-																	{
-																		System.out.println("Success!...." + "Taking Screenshot");
-																			Helper.CaptureScreenshots(driver, result.getTestName());
-																		}
-																		
-																			else
-																			{
-																				System.out.println("Blocked!...." + "Taking Screenshot");
-																				Helper.CaptureScreenshots(driver, result.getTestName());
-																			}
-																				
-																		}	
-	*/
+
 }

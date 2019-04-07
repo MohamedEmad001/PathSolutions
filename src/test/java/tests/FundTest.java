@@ -1,10 +1,15 @@
 package tests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Hashtable;
+
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 import Pages.FundPage;
 import Pages.LoginPage;
 import Pages.SettlementPage;
+import TestData.JsonDataReader;
 
 public class FundTest extends TestBase {
 
@@ -13,8 +18,8 @@ public class FundTest extends TestBase {
 	SettlementPage settlePage;
 
 
-	String UserName = "administrator";
-	String UserPass = "admin12";
+	String [] jkeys = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};
 
 
 	String FundName = "bbc-cnn-automated-script22";
@@ -34,10 +39,12 @@ public class FundTest extends TestBase {
 
 
 	@Test (priority = 1)
-	public void CheckLogin() throws InterruptedException
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(UserName, UserPass);
+		loginPageObj.UserLogin(jData);
 
 	}
 
