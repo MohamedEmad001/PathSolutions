@@ -1,8 +1,6 @@
 package tests;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
 import org.json.simple.parser.ParseException;
@@ -11,16 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
-import Pages.LoginPage;
-import TestData.JsonDataReader;
-import TestData.JsonDataWriter;
 import utilities.Helper;
 
 
@@ -39,7 +31,7 @@ public class TestBase {
 	//at this before suite will open the browser ans maxmize the window, also wait for miximazation then pass the URL
 	@BeforeSuite
 	@Parameters ({"browser"})
-	public void startDriver(@Optional ("chrome") String browsername)
+	public void startDriver(@Optional ("chrome") String browsername) throws InterruptedException, IOException, ParseException
 	{
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -52,8 +44,8 @@ public class TestBase {
 	}
 	
 	
-	@BeforeClass
-	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
+	
+	/*public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
 		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
@@ -65,7 +57,7 @@ public class TestBase {
 		String [] x = {"adminstartor"};
 		String [] y = {"admin12"};
 		jsonFileWriter.JsonWriteData(JsonWriterFile, "LoginData", x, y);
-	}
+	}*/
 	
 	
 	@AfterMethod

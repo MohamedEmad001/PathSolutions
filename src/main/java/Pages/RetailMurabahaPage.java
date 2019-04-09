@@ -80,6 +80,13 @@ public class RetailMurabahaPage extends PageBase {
 
 	public static  String MurabahaCode;
 
+	
+	@FindBy(css="#CUS_NAME")
+	WebElement customerName;
+	
+
+	@FindBy(css="#FPROD_LATIN_NAME")
+	WebElement productSetupName;
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
 
@@ -142,14 +149,15 @@ public class RetailMurabahaPage extends PageBase {
 
 		setTextElementText(RequestedDateTxt, RequestedDateValue);
 		setTextElementText(ValueDateTxt, ValueDateValue);
-		waitForElement(CustomerIDTxt);
 		setTextElementText(CustomerIDTxt,CustomerIDValue);
+		//Thread.sleep(7000);
 		Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
 		if (state)
 		{
-			waitForElement(ProductCodeTxt);
 			setTextElementText(ProductCodeTxt, ProductCodeValue);
-			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
+			//Thread.sleep(7000);
+			state = waitForGeneratedCode(ProductNameTxt);
+			//state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
 			if (state)
 			{
 				waitForElement(NonListedVendorTxt);
@@ -628,16 +636,16 @@ public class RetailMurabahaPage extends PageBase {
 
 		String CustomerCode = CustomerIDTxt.getAttribute("Value");
 
-		if (CustomerCode == "352425198")
+		if (CustomerCode == IndividualProspectPage.generatedProspectCode)
 		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Rejected");
+			assertEquals(StatusTxt.getAttribute("Value"), "Ready");
 
 		}
-		else
+/*		else
 		{
 			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
 		}
-		
+		*/
 		Thread.sleep(7000);
 	}
 

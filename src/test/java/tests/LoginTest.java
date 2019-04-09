@@ -2,13 +2,11 @@ package tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Hashtable;
 
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-import Pages.IndividualProspectPage;
 import Pages.LoginPage;
 import TestData.JsonDataReader;
 import TestData.JsonDataWriter;
@@ -22,7 +20,7 @@ public class LoginTest extends TestBase {
 	String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	
 
-	@Test (priority = 1)
+	@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();

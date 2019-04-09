@@ -11,6 +11,7 @@ import Pages.IndividualProspectPage;
 import Pages.LoginPage;
 import TestData.JsonDataReader;
 
+@Test (groups = { "IndividualProspectTest"})
 public class IndividualProspectTest extends TestBase {
 	
 	String IndividualProspectModule = "frame_150027331";
@@ -19,8 +20,31 @@ public class IndividualProspectTest extends TestBase {
 	String [] jkeys = {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	String [] testCaseInputs =  {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	
+	String jsonFundFilePath = "/src/test/java/TestData/FundData.json";
+	String [] jkeysLogin = {"UserName", "UserPass"};
+	String [] testCaseInputsLogin = {"UserName", "UserPass"};
 	
-	@Test (priority = 1)
+	//String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
+	
+	
+	@Test(priority = 0)
+	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
+	{
+		JsonDataReader jsonFileReader = new JsonDataReader();
+		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFundFilePath, "CheckLogin" , jkeysLogin, testCaseInputsLogin);
+		LoginPage loginPageObj = new LoginPage(driver);
+		loginPageObj.UserLogin(jData);
+		
+		////////Method to write on JSON////////////////////
+		/*JsonDataWriter jsonFileWriter = new JsonDataWriter();
+		String [] x = {"adminstartor"};
+		String [] y = {"admin12"};
+		jsonFileWriter.JsonWriteData(JsonWriterFile, "LoginData", x, y);*/
+	}
+	
+	
+	@Test(dependsOnMethods = {"CheckLogin"})
 	public void addNewIndividualProspect_Case1() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();

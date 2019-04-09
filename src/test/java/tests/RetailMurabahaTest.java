@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import Pages.IndividualProspectPage;
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
@@ -59,7 +60,6 @@ public class RetailMurabahaTest extends TestBase {
 	}*/
 
 	@Test(dependsOnGroups = {"ProductSetupTest"})
-	//@Test (dependsOnMethods = {"CheckLogin"})
 	public void CheckOpenRetailMurabah() throws InterruptedException {
 	
 		RetailMurabahaObject = new RetailMurabahaPage(driver);
@@ -71,7 +71,7 @@ public class RetailMurabahaTest extends TestBase {
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate,
-				CustomerID, ProductSetupPage.ActualProductCode,
+				IndividualProspectPage.generatedProspectCode, ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);

@@ -30,9 +30,9 @@ public class IndividualProspectPage extends FundPage {
 	String moduleID = "150027331";
 	String IndividualCustomersmoduleID = "15002711";
 	Code CIF = fakeData.code();
-	String customerName = "Omdaxx";
+	public static String customerName = "Omdaxx";
 	String Nationality = "1";
-	public String generatedProspectCode;
+	public static String generatedProspectCode;
 	String subModuleID = "parentModuleID"+IndividualCustomersmoduleID;
 	@FindBy (css = "#contact_01 > div > div.col-lg-11 > div.row > div:nth-child(2) > div > div.VisitedModules > ul")
 	WebElement lastVisitedModules;
@@ -144,7 +144,7 @@ public class IndividualProspectPage extends FundPage {
 
 	public void OpenIndividualProspect(String ProspectParentframeID , String CustomersParentFrameID) throws InterruptedException 
 	{
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		waitForElement(lastVisitedModules);
 		waitForElement(searchBox);
 		setTextElementText(searchBox, moduleID);
@@ -154,7 +154,9 @@ public class IndividualProspectPage extends FundPage {
 		waitForElement(searchResult);
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
 		waitForFrame(ProspectParentframeID);
+		
 		setTextElementText(textCIF, fakeData.code().isbn10());
+		
 		System.out.println("CIF Code Is :" + textCIF.getText().toString());
 		setTextElementText(cusFirstName, customerName);
 		DropListSelect(paymentMethod, "CASH");

@@ -3,15 +3,18 @@
 <suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
   <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
     <classes>
-<<<<<<< HEAD
       <class name="tests.IndividualProspectTest">
-        <methods>
-          <include name="addNewIndividualProspect"/>
-=======
-      <class name="tests.ProductSetupTest">
         <methods>
           <include name="startDriver"/>
           <include name="CheckLogin"/>
+          <include name="stopDriver"/>
+          <include name="takeScreenshots"/>
+          <include name="addNewIndividualProspect_Case1"/>
+        </methods>
+      </class> <!-- tests.IndividualProspectTest -->
+      <class name="tests.ProductSetupTest">
+        <methods>
+          <include name="startDriver"/>
           <include name="stopDriver"/>
           <include name="PostButton"/>
           <include name="FillData"/>
@@ -21,7 +24,6 @@
       </class> <!-- tests.ProductSetupTest -->
       <class name="tests.RetailMurabahaTest">
         <methods>
->>>>>>> e174fa14a183ead6dc390a1e17e06c9acd5215f6
           <include name="startDriver"/>
           <include name="CheckOpenRetailMurabah"/>
           <include name="CheckSaveRetailMurabaha"/>
@@ -29,13 +31,8 @@
           <include name="CheckInsertAllMandatoryFields"/>
           <include name="RequestForApprove"/>
           <include name="takeScreenshots"/>
-          <include name="CheckLogin"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- tests.IndividualProspectTest -->
-=======
       </class> <!-- tests.RetailMurabahaTest -->
->>>>>>> e174fa14a183ead6dc390a1e17e06c9acd5215f6
     </classes>
   </test> <!-- MytestCase(failed) -->
 </suite> <!-- Failed suite [testSuite] -->
