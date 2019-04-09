@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" verbose="10" name="testSuite" parallel="tests">
-<test verbose="3" name="MytestCase" group-by-instances="true">
+<test verbose="2" name="MytestCase" group-by-instances="true">
 		<classes>
-			<class name="tests.BusinessRulesTest" />
 			<class name="tests.ProductSetupTest" />
 			<class name="tests.RetailMurabahaTest" />
 		</classes>
 	</test>
 </suite>
-

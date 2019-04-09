@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
 import TestData.JsonDataReader;
@@ -16,10 +17,17 @@ import TestData.JsonDataReader;
 @Test (groups = { "RetailMurabahaTest"})
 public class RetailMurabahaTest extends TestBase {
 
+	//object from product setup testcase to call generated product code
+	ProductSetupTest productSetupObj = new ProductSetupTest();
+	
+	
+	//Objects from RetailMurabahaPage
+	
 	RetailMurabahaPage RetailMurabahaObject ;
 
 	WebDriver driver1;
-
+	
+	String jsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeys = {"UserName", "UserPass"};
 	String [] testCaseInputs = {"UserName", "UserPass"};
 	
@@ -40,18 +48,18 @@ public class RetailMurabahaTest extends TestBase {
 	
 	String RMurabahaCode;
 
-/*			
-	@Test (priority = 1)
+		
+	/*@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath,"CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
+	}*/
 
-	}
-*/
 	@Test(dependsOnGroups = {"ProductSetupTest"})
+	//@Test (dependsOnMethods = {"CheckLogin"})
 	public void CheckOpenRetailMurabah() throws InterruptedException {
 	
 		RetailMurabahaObject = new RetailMurabahaPage(driver);
@@ -62,12 +70,11 @@ public class RetailMurabahaTest extends TestBase {
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
-	/*	RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, 
+		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate,
 				CustomerID, ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
-				*/
 	}
 	
 	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})
@@ -75,9 +82,9 @@ public class RetailMurabahaTest extends TestBase {
 
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();
-		//RMurabahaCode = RetailMurabahaObject.MurabahaCode;
-		//System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
-		//RMurabahaCode = RetailMurabahaPage.MurabahaCode;
+		RMurabahaCode = RetailMurabahaObject.MurabahaCode;
+		System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
+		RMurabahaCode = RetailMurabahaPage.MurabahaCode;
 
 	}
 	

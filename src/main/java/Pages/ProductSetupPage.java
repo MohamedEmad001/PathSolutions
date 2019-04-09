@@ -1,6 +1,7 @@
 package Pages;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -83,6 +84,11 @@ public class ProductSetupPage extends PageBase {
 	@FindBy (id = "V1TC_V6TP_V6TC_V4TP_V4LCRepeater_ctl00_PRODUCT_FACTOR1")
 	WebElement ProductFactorList;
 	
+	@FindBy (css = "#V1TC_V6TP_V6TC_V4TP_V4LCRepeater_ctl00_PROAF_VALUE_TYPE")
+	WebElement ValueTypeTxt;
+	
+	
+	
 	@FindBy(css= "#V1TC_V6TP_V6TC_V4TP_V4LCRepeater_ctl00_PROAF_OVERRIDE_VALUE")
 	WebElement ProductFactorValue;
 	
@@ -112,7 +118,7 @@ public class ProductSetupPage extends PageBase {
 	//ProductSetup Code
 	@FindBy (id = "FPROD_CODE")
 	public WebElement ProductCode;
-
+	
 	public static String ActualProductCode;
 
 
@@ -120,11 +126,13 @@ public class ProductSetupPage extends PageBase {
 	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
 
 	{
-		Thread.sleep(7000);
+		/*Thread.sleep(7000);
 		driver1.switchTo().defaultContent();
 		waitMethod(5);
 		searchBox.clear();
-		Thread.sleep(7000);
+		Thread.sleep(7000);*/
+		driver1.switchTo().defaultContent();
+		searchBox.clear();
 		searchBox.sendKeys(moduleID);
 		waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);
@@ -218,34 +226,40 @@ public class ProductSetupPage extends PageBase {
 		
 
 	}	
-	public void BusinessRules(String SubFramesID, String Rulecode,String RuleActionValue,String ProductFactor, String ParentframeID) throws InterruptedException 
+	public void BusinessRule1(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			Hashtable<String, String> RuleActionValue1,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
 	
 	{
 		//Rule 1
-
 		clickButton(BusinessRulesTab);
 		Thread.sleep(5000);
-		/*clickButton(AddNewRule);
+		clickButton(AddNewRule);
 		Thread.sleep(5000);
 		clickButton(RuleLov);
 		Thread.sleep(5000);
 		switchFrame(SubFramesID);
-		*/
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Employment Salary Approv"));
 		Thread.sleep(5000);
-		setTextElementText(RulecodeQuickSearch, Rulecode);
-		Thread.sleep(5000);
-		DoubleClickonElement(RuleSearchResult);	
+		DoubleClickonElement(RuleSearchResult);
 		switchFrame(ParentframeID);
-		DropListSelect(RuleActionTxt, RuleActionValue);
-				
+		DropListSelect(RuleActionTxt, RuleActionValue1.get("Salary Approv"));
+		
 		//Affection of rule1
-		clickButton(AffectionField);
+		/*clickButton(AffectionField);
 		DropListSelect(ProductFactorList, ProductFactor);
-		ProductFactorValue.sendKeys("100");
-				
+		ProductFactorValue.sendKeys("100");*/
 	}
 	
-	public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
 	
 	{
 		
@@ -257,7 +271,192 @@ public class ProductSetupPage extends PageBase {
 		DropListSelect(ProdFactList, ProdFactValue);
 		Thread.sleep(3000);
 		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}*/
+	
+	public void BusinessRule2(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			Hashtable<String, String> RuleActionValue1,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
+	
+	{
+		//Rule 1
+		clickButton(BusinessRulesTab);
+		Thread.sleep(5000);
+		clickButton(AddNewRule);
+		Thread.sleep(5000);
+		clickButton(RuleLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Employment Salary Reje"));
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);
+		switchFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue1.get("Salary Reje"));
+		
+		//Affection of rule1
+		/*clickButton(AffectionField);
+		DropListSelect(ProductFactorList, ProductFactor);
+		ProductFactorValue.sendKeys("100");*/
 	}
+	
+	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	
+	{
+		
+		//Go to OverRide Tab
+		
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}*/
+	
+	public void BusinessRule3(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			Hashtable<String, String> RuleActionValue1,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
+	
+	{
+		//Rule 1
+		clickButton(BusinessRulesTab);
+		Thread.sleep(5000);
+		clickButton(AddNewRule);
+		Thread.sleep(5000);
+		clickButton(RuleLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Table B_Approve"));
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);
+		switchFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue1.get("B_Approve"));
+		
+		//Affection of rule1
+		/*clickButton(AffectionField);
+		DropListSelect(ProductFactorList, ProductFactor);
+		ProductFactorValue.sendKeys("100");*/
+	}
+	
+	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	
+	{
+		
+		//Go to OverRide Tab
+		
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}*/
+	
+	public void BusinessRule4(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			Hashtable<String, String> RuleActionValue1,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
+	
+	{
+		//Rule 1
+		clickButton(BusinessRulesTab);
+		Thread.sleep(5000);
+		clickButton(AddNewRule);
+		Thread.sleep(5000);
+		clickButton(RuleLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Table B_Reje"));
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);
+		switchFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue1.get("B_Reje"));
+		}
+	
+	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	
+	{
+		
+		//Go to OverRide Tab
+		
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}*/
+	
+	public void BusinessRuleD(
+			String SubFramesID,
+			Hashtable<String, String> Rulecode,
+			Hashtable<String, String> RuleActionValue1,
+			String ProductFactor,
+			String ValueTypeValue,
+			String ParentframeID) throws InterruptedException 
+	
+	{
+		//Rule 1
+		clickButton(BusinessRulesTab);
+		Thread.sleep(5000);
+		clickButton(AddNewRule);
+		Thread.sleep(5000);
+		clickButton(RuleLov);
+		Thread.sleep(5000);
+		switchFrame(SubFramesID);
+	
+		//Thread.sleep(5000);
+		//setTextElementText(RulecodeQuickSearch, Rulecode);
+		
+		//waitForElement(RulecodeQuickSearch);
+		setTextElementText(RulecodeQuickSearch, Rulecode.get("Fin Amount Up To 3000"));
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);
+		switchFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue1.get("Up To 3000"));
+		
+		//Affection of rule1
+		clickButton(AffectionField);
+		DropListSelect(ProductFactorList,ProductFactor);
+		DropListSelect(ValueTypeTxt,ValueTypeValue);
+		ProductFactorValue.sendKeys("100");
+	}
+	
+	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	
+	{
+		
+		//Go to OverRide Tab
+		
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}*/
 	
 	public void SaveButton() throws InterruptedException {
 		
@@ -268,6 +467,7 @@ public class ProductSetupPage extends PageBase {
 	
 	public void PostButton() throws InterruptedException {
 		
+		waitForElement(Post);
 		clickButton(Post);
 		ConfirmAlert();
 		Thread.sleep(5000);

@@ -89,7 +89,6 @@ public class RetailMurabahaPage extends PageBase {
 	{
 
 		//Thread.sleep(7000);
-
 		driver1.switchTo().defaultContent();
 		//waitMethod(5);
 		waitForElement(searchBox);
@@ -103,7 +102,7 @@ public class RetailMurabahaPage extends PageBase {
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
 		//Thread.sleep(5000);
 		waitForFrame(ParentframeID);
-		switchFrame(ParentframeID);
+	    //switchFrame(ParentframeID);
 
 		waitMethod(7);
 	}
@@ -125,6 +124,58 @@ public class RetailMurabahaPage extends PageBase {
 		switchFrame(ParentframeID);
 
 		waitMethod(7);
+	}
+	public void FillRequiredFields(String RequestedDateValue,
+			String ValueDateValue,
+			String CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID)
+					throws InterruptedException, IOException
+	{
+
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+		waitForElement(CustomerIDTxt);
+		setTextElementText(CustomerIDTxt,CustomerIDValue);
+		Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
+		if (state)
+		{
+			waitForElement(ProductCodeTxt);
+			setTextElementText(ProductCodeTxt, ProductCodeValue);
+			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
+			if (state)
+			{
+				waitForElement(NonListedVendorTxt);
+				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+				waitForElement(addNewRowbBtn);
+				clickButton(addNewRowbBtn);
+				//Thread.sleep(3000);
+				//waitMethod(3);
+				waitForElement(ViewItemBtn);
+				clickButton(ViewItemBtn);
+				Thread.sleep(7000);
+				switchFrame(SubFrameID);
+				waitForElement(ItemNameTxt);
+				setTextElementText(ItemNameTxt, ItemNameValue);
+				//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+				DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+				setTextElementText(PriceTxt, PriceValue);
+				setTextElementText(CostTxt, CostValue);
+				//Thread.sleep(3000);
+				waitForElement(SaveAndCloseBtn);
+				clickButton(SaveAndCloseBtn);
+				Thread.sleep(8000);
+				switchFrame(ParentframeID);
+			}
+		}
 	}
 
 	public void FillRequiredFieldsByCustomer1(String RequestedDateValue,
@@ -570,7 +621,6 @@ public class RetailMurabahaPage extends PageBase {
 		if(objectReferenceConfirmationMsg.isDisplayed()) {
 
 			clickButton(objectReferenceConfirmationBtn);
-
 		}
 
 		Thread.sleep(5000);
@@ -578,7 +628,7 @@ public class RetailMurabahaPage extends PageBase {
 
 		String CustomerCode = CustomerIDTxt.getAttribute("Value");
 
-		if (CustomerCode == "988052")
+		if (CustomerCode == "352425198")
 		{
 			assertEquals(StatusTxt.getAttribute("Value"), "Rejected");
 
@@ -587,13 +637,8 @@ public class RetailMurabahaPage extends PageBase {
 		{
 			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
 		}
+		
 		Thread.sleep(7000);
-
-
-
 	}
-
-
-
 
 }

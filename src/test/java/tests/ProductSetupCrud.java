@@ -61,8 +61,8 @@ public class ProductSetupCrud extends TestBase {
 	{
 		productSetupObj = new ProductSetupPage(driver);
 		productSetupObj.ProductSetupModuleCrud(productsetupTypeValue, ClassCodevalue ,curCode, DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
-		productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
-		productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
+		//productSetupObj.BusinessRule1(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
+		//productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
 		
 	}
 	
