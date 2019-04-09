@@ -6,6 +6,7 @@
       <class name="tests.ProductSetupTest">
         <methods>
           <include name="startDriver"/>
+          <include name="CheckLogin"/>
           <include name="stopDriver"/>
           <include name="PostButton"/>
           <include name="FillData"/>

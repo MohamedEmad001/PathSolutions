@@ -19,6 +19,7 @@ public class BusinessRulesCRUD extends TestBase {
 	WebDriver driver1;
 	BusinessRulesPage BusinessRulesObject;
 	//For Login
+	String jsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeys = {"UserName", "UserPass"};
 	String [] testCaseInputs = {"UserName", "UserPass"};
 	
@@ -46,7 +47,7 @@ public class BusinessRulesCRUD extends TestBase {
 	
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
 

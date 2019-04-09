@@ -29,6 +29,7 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	//Global Variables
 	WebDriver driver1;
 	//For Login
+	String jsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeys = {"UserName", "UserPass"};
 	String [] testCaseInputs = {"UserName", "UserPass"};
 	
@@ -72,7 +73,7 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData("CheckLogin" , jkeys, testCaseInputs);
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
 
@@ -91,7 +92,7 @@ public class RetailMurabahaTestCRUD extends TestBase {
 		//System.out.println("x" + ProductSetupPage.ActualProductCode);
 		//JsonDataReader jsonFileReader = new JsonDataReader();
 		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
-		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData("Customer" , jCustomerkeys, customerTestCaseInputs);
+		Hashtable<String,String> jCustomerData = jsonFileReader.JsonReaderData(jsonFilePath, "Customer" , jCustomerkeys, customerTestCaseInputs);
 		RetailMurabahaObject.FillRequiredFieldsByCustomer1(RequestedDate, ValueDate, 
 															jCustomerData, ProductCodeID,
 															NonListedVendor, CurrencyCode,

@@ -28,6 +28,15 @@
 		}
 	},
 	{
+		"RulesActions": {
+			"Salary Approv": "APP",
+			"Salary Reje": "REQAPP",
+			"B_Approve": "APP",
+			"B_Reje": "REQAPP",
+			"Up To 3000": "APP"
+		}
+	},
+	{
 		"checkAddFund": {
 			"FundName": "bbc-cnn-automated-script33",
 			"CreationDate": "01/01/2019",
