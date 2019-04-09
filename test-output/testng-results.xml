@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1472" started-at="2019-04-03T16:11:55Z" finished-at="2019-04-03T16:11:57Z">
+  <suite name="Default suite" duration-ms="57696" started-at="2019-04-09T10:08:10Z" finished-at="2019-04-09T10:09:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1472" started-at="2019-04-03T16:11:55Z" finished-at="2019-04-03T16:11:57Z">
-      <class name="tests.LoginTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@42d80b78]" name="startDriver" is-config="true" duration-ms="5217" started-at="2019-04-03T16:11:50Z" finished-at="2019-04-03T16:11:55Z">
+    <test name="Default test" duration-ms="57696" started-at="2019-04-09T10:08:10Z" finished-at="2019-04-09T10:09:07Z">
+      <class name="tests.IndividualProspectTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.IndividualProspectTest@6a41eaa2]" name="startDriver" is-config="true" duration-ms="8827" started-at="2019-04-09T10:08:01Z" finished-at="2019-04-09T10:08:10Z">
           <params>
             <param index="0">
               <value>
@@ -18,26 +18,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:1, instance:tests.LoginTest@42d80b78]" name="CheckLogin" duration-ms="309" started-at="2019-04-03T16:11:55Z" finished-at="2019-04-03T16:11:56Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.IndividualProspectTest@6a41eaa2]" name="CheckLogin" is-config="true" duration-ms="310" started-at="2019-04-09T10:08:10Z" finished-at="2019-04-09T10:08:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@42d80b78]" name="takeScreenshots" is-config="true" duration-ms="1149" started-at="2019-04-03T16:11:56Z" finished-at="2019-04-03T16:11:57Z">
+        <test-method status="PASS" signature="addNewIndividualProspect()[pri:1, instance:tests.IndividualProspectTest@6a41eaa2]" name="addNewIndividualProspect" duration-ms="57062" started-at="2019-04-09T10:08:10Z" finished-at="2019-04-09T10:09:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewIndividualProspect -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.IndividualProspectTest@6a41eaa2]" name="takeScreenshots" is-config="true" duration-ms="312" started-at="2019-04-09T10:09:07Z" finished-at="2019-04-09T10:09:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=LoginTest.CheckLogin()[pri:1, instance:tests.LoginTest@42d80b78] output={null}]]]>
+                <![CDATA[[TestResult name=addNewIndividualProspect status=SUCCESS method=IndividualProspectTest.addNewIndividualProspect()[pri:1, instance:tests.IndividualProspectTest@6a41eaa2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@42d80b78]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-04-03T16:11:57Z" finished-at="2019-04-03T16:11:57Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.IndividualProspectTest@6a41eaa2]" name="stopDriver" is-config="true" duration-ms="1" started-at="2019-04-09T10:09:08Z" finished-at="2019-04-09T10:09:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.IndividualProspectTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -43,10 +44,10 @@ public class PageBase {
 	//create generic method to click function
 	//create generic method to send keys function with passing the key words string
 
-	protected static void DropListSelect (WebElement dropList, String text)
+	protected static void DropListSelect (WebElement dropList, String Value)
 	{
 		Select dropMenuSelect = new Select(dropList);
-		dropMenuSelect.selectByValue(text);
+		dropMenuSelect.selectByValue(Value);
 	}
 
 	protected void clickButton(WebElement button)
@@ -68,7 +69,14 @@ public class PageBase {
 	{
 		Action = new Actions(driver1);
 		Action.doubleClick(button).perform();
-
+		
+	}
+	
+	protected void SingleClickonElement(WebElement button)
+	{
+		Action = new Actions(driver1);
+		Action.doubleClick(button).perform();
+		
 	}
 
 	protected void switchFrame (String frameID)
@@ -133,11 +141,23 @@ public class PageBase {
 		return element;
 	}
 	
+	
+
+	
+	
 	public Boolean waitForCheckResult(WebElement element, String text) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);		
 		return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 	}
+	
+	public Boolean waitForGeneratedCode(WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);	
+		String GeneratedValue = element.getAttribute("Value");
+		return wait.until(ExpectedConditions.attributeToBe(element, "Value", GeneratedValue));
+	}
+	
 	
 	
 	public WebDriver waitForFrame(String FrameID) {
@@ -146,6 +166,21 @@ public class PageBase {
 		return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(FrameID));
 
 	}
+	
+	
+	public Alert waitForConfirmationMsg() {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		return wait.until(ExpectedConditions.alertIsPresent());
+
+	}
+	
+	/*public Boolean waitForLoading(WebElement element , Boolean selected) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		return wait.until(ExpectedConditions.elementSelectionStateToBe(element, selected));
+
+	}*/
 	
 	
 }

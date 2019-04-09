@@ -1,6 +1,7 @@
 package TestData;
 
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -40,13 +41,15 @@ public class JsonDataWriter {
 			
 		}
 		//hashObj = (JSONObject) jWriteData;
-		obj.put(jObject, jWriteData+",");
+		obj.put(jObject,jWriteData);
 		
-		jArray.add(obj+",");
+		jArray.add(obj);
 
 		FileWriter file = new FileWriter(jsonFilePath);
-		file.write(jArray.toJSONString());
-		file.flush();
+		BufferedWriter bufferWriter = new BufferedWriter(file);
+		bufferWriter.write(jArray.toJSONString());
+		bufferWriter.newLine();
+		bufferWriter.flush();
 
 
 	}
