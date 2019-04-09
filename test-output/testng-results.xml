@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="2" total="10" passed="7">
+<testng-results skipped="7" failed="1" ignored="2" total="10" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="testSuite" duration-ms="308822" started-at="2019-04-09T09:43:05Z" finished-at="2019-04-09T09:48:14Z">
+  <suite name="testSuite" duration-ms="714" started-at="2019-04-09T13:41:35Z" finished-at="2019-04-09T13:41:35Z">
     <groups>
       <group name="RetailMurabahaTest">
         <method signature="RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckOpenRetailMurabah" class="tests.RetailMurabahaTest"/>
@@ -17,9 +17,9 @@
         <method signature="ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="PostButton" class="tests.ProductSetupTest"/>
       </group> <!-- ProductSetupTest -->
     </groups>
-    <test name="MytestCase" duration-ms="308822" started-at="2019-04-09T09:43:05Z" finished-at="2019-04-09T09:48:14Z">
+    <test name="MytestCase" duration-ms="714" started-at="2019-04-09T13:41:35Z" finished-at="2019-04-09T13:41:35Z">
       <class name="tests.ProductSetupTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="startDriver" is-config="true" duration-ms="6212" started-at="2019-04-09T09:42:59Z" finished-at="2019-04-09T09:43:05Z">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="startDriver" is-config="true" duration-ms="5907" started-at="2019-04-09T13:41:29Z" finished-at="2019-04-09T13:41:35Z">
           <params>
             <param index="0">
               <value>
@@ -30,129 +30,55 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="CheckLogin" duration-ms="327" started-at="2019-04-09T09:43:05Z" finished-at="2019-04-09T09:43:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="takeScreenshots" is-config="true" duration-ms="666" started-at="2019-04-09T09:43:06Z" finished-at="2019-04-09T09:43:06Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=ProductSetupTest.CheckLogin()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="FillData" duration-ms="200588" started-at="2019-04-09T09:43:06Z" depends-on-methods="tests.ProductSetupTest.CheckLogin" finished-at="2019-04-09T09:46:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FillData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="takeScreenshots" is-config="true" duration-ms="358" started-at="2019-04-09T09:46:27Z" finished-at="2019-04-09T09:46:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=FillData status=SUCCESS method=ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="SaveProductSetup" duration-ms="5106" started-at="2019-04-09T09:46:27Z" depends-on-methods="tests.ProductSetupTest.FillData, tests.ProductSetupTest.CheckLogin" finished-at="2019-04-09T09:46:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SaveProductSetup -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="takeScreenshots" is-config="true" duration-ms="318" started-at="2019-04-09T09:46:32Z" finished-at="2019-04-09T09:46:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=SaveProductSetup status=SUCCESS method=ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="PostButton" duration-ms="5196" started-at="2019-04-09T09:46:33Z" depends-on-methods="tests.ProductSetupTest.SaveProductSetup" finished-at="2019-04-09T09:46:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PostButton -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="takeScreenshots" is-config="true" duration-ms="321" started-at="2019-04-09T09:46:38Z" finished-at="2019-04-09T09:46:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=PostButton status=SUCCESS method=ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-04-09T09:48:14Z" finished-at="2019-04-09T09:48:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopDriver -->
-      </class> <!-- tests.ProductSetupTest -->
-      <class name="tests.RetailMurabahaTest">
-        <test-method status="PASS" signature="CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckOpenRetailMurabah" duration-ms="6434" depends-on-groups="ProductSetupTest" started-at="2019-04-09T09:46:38Z" finished-at="2019-04-09T09:46:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckOpenRetailMurabah -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="takeScreenshots" is-config="true" duration-ms="344" started-at="2019-04-09T09:46:45Z" finished-at="2019-04-09T09:46:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckOpenRetailMurabah status=SUCCESS method=RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckInsertAllMandatoryFields" duration-ms="34407" started-at="2019-04-09T09:46:45Z" depends-on-methods="tests.RetailMurabahaTest.CheckOpenRetailMurabah" finished-at="2019-04-09T09:47:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckInsertAllMandatoryFields -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="takeScreenshots" is-config="true" duration-ms="348" started-at="2019-04-09T09:47:19Z" finished-at="2019-04-09T09:47:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckInsertAllMandatoryFields status=SUCCESS method=RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckSaveRetailMurabaha" duration-ms="9242" started-at="2019-04-09T09:47:20Z" depends-on-methods="tests.RetailMurabahaTest.CheckInsertAllMandatoryFields" finished-at="2019-04-09T09:47:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckSaveRetailMurabaha -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="takeScreenshots" is-config="true" duration-ms="325" started-at="2019-04-09T09:47:29Z" finished-at="2019-04-09T09:47:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckSaveRetailMurabaha status=SUCCESS method=RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="FAIL" signature="RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="RequestForApprove" duration-ms="44474" started-at="2019-04-09T09:47:29Z" depends-on-methods="tests.RetailMurabahaTest.CheckSaveRetailMurabaha" finished-at="2019-04-09T09:48:14Z">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method status="FAIL" signature="CheckLogin()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="CheckLogin" duration-ms="306" started-at="2019-04-09T13:41:35Z" finished-at="2019-04-09T13:41:35Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #Body1 > div:nth-child(5)' (tried for 30 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"txtUserName"}
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EGDM1-ABAIOMY', ip: '192.168.113.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:31255}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
+Session ID: dbe9ca634b9e547695bc489bea077452
+*** Element info: {Using=id, value=txtUserName}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: #Body1 > div:nth-child(5)' (tried for 30 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at Pages.PageBase.waitForElement(PageBase.java:130)
-at Pages.RetailMurabahaPage.CheckRequestApproval(RetailMurabahaPage.java:612)
-at tests.RetailMurabahaTest.RequestForApprove(RetailMurabahaTest.java:94)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"txtUserName"}
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EGDM1-ABAIOMY', ip: '192.168.113.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:31255}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
+Session ID: dbe9ca634b9e547695bc489bea077452
+*** Element info: {Using=id, value=txtUserName}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
+at Pages.PageBase.setTextElementText(PageBase.java:59)
+at Pages.LoginPage.UserLogin(LoginPage.java:41)
+at tests.ProductSetupTest.CheckLogin(ProductSetupTest.java:65)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -173,61 +99,211 @@ at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 at java.lang.Thread.run(Thread.java:748)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#Body1 > div:nth-child(5)"}
-  (Session info: chrome=73.0.3683.86)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EGDM1-ABAIOMY', ip: '192.168.113.60', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\AMR~1.BAI\AppData\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:10487}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: 294a4ee560b7ab241f1b2b860e042903
-*** Element info: {Using=css selector, value=#Body1 > div:nth-child(5)}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy12.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 23 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RequestForApprove -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="takeScreenshots" is-config="true" duration-ms="328" started-at="2019-04-09T09:48:14Z" finished-at="2019-04-09T09:48:14Z">
+        </test-method> <!-- CheckLogin -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="takeScreenshots" is-config="true" duration-ms="373" started-at="2019-04-09T13:41:35Z" finished-at="2019-04-09T13:41:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=RequestForApprove status=FAILURE method=RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] output={null}]]]>
+                <![CDATA[[TestResult name=CheckLogin status=FAILURE method=ProductSetupTest.CheckLogin()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
+        <test-method status="SKIP" signature="FillData()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="FillData" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.ProductSetupTest.CheckLogin" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FillData -->
+        <test-method status="SKIP" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="SaveProductSetup" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.ProductSetupTest.FillData, tests.ProductSetupTest.CheckLogin" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveProductSetup -->
+        <test-method status="SKIP" signature="PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="PostButton" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.ProductSetupTest.SaveProductSetup" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@7d9d1a19] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostButton -->
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.ProductSetupTest@7d9d1a19]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-04-09T13:41:36Z" finished-at="2019-04-09T13:41:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopDriver -->
+      </class> <!-- tests.ProductSetupTest -->
+      <class name="tests.RetailMurabahaTest">
+        <test-method status="SKIP" signature="CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckOpenRetailMurabah" duration-ms="0" depends-on-groups="ProductSetupTest" started-at="2019-04-09T13:41:35Z" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods in group "ProductSetupTest"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods in group "ProductSetupTest"
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckOpenRetailMurabah -->
+        <test-method status="SKIP" signature="CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckInsertAllMandatoryFields" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.RetailMurabahaTest.CheckOpenRetailMurabah" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckInsertAllMandatoryFields -->
+        <test-method status="SKIP" signature="CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="CheckSaveRetailMurabaha" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.RetailMurabahaTest.CheckInsertAllMandatoryFields" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSaveRetailMurabaha -->
+        <test-method status="SKIP" signature="RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a]" name="RequestForApprove" duration-ms="0" started-at="2019-04-09T13:41:35Z" depends-on-methods="tests.RetailMurabahaTest.CheckSaveRetailMurabaha" finished-at="2019-04-09T13:41:35Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@39c0f4a] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RequestForApprove -->
       </class> <!-- tests.RetailMurabahaTest -->
     </test> <!-- MytestCase -->
   </suite> <!-- testSuite -->
