@@ -3,17 +3,15 @@
 <suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
   <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
     <classes>
-      <class name="tests.ProductSetupTest">
+      <class name="tests.IndividualProspectTest">
         <methods>
           <include name="startDriver"/>
           <include name="CheckLogin"/>
           <include name="stopDriver"/>
-          <include name="PostButton"/>
-          <include name="FillData"/>
           <include name="takeScreenshots"/>
-          <include name="SaveProductSetup"/>
+          <include name="addNewIndividualProspect_Case1"/>
         </methods>
-      </class> <!-- tests.ProductSetupTest -->
+      </class> <!-- tests.IndividualProspectTest -->
       <class name="tests.RetailMurabahaTest">
         <methods>
           <include name="startDriver"/>
@@ -25,6 +23,16 @@
           <include name="takeScreenshots"/>
         </methods>
       </class> <!-- tests.RetailMurabahaTest -->
+      <class name="tests.ProductSetupTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="PostButton"/>
+          <include name="FillData"/>
+          <include name="takeScreenshots"/>
+          <include name="SaveProductSetup"/>
+        </methods>
+      </class> <!-- tests.ProductSetupTest -->
     </classes>
   </test> <!-- MytestCase(failed) -->
 </suite> <!-- Failed suite [testSuite] -->

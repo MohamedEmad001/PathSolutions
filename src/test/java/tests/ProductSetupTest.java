@@ -55,7 +55,7 @@ public class ProductSetupTest extends TestBase {
 	String [] ActionsTestCaseInputs = {"Salary Approv", "Salary Reje", "B_Approve","B_Reje","Up To 3000"};
 
 	JsonDataReader jsonFileReader = new JsonDataReader();
-
+/*
 	@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
@@ -63,9 +63,9 @@ public class ProductSetupTest extends TestBase {
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath,"CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
-	}
+	}*/
 
-	@Test (dependsOnMethods = {"CheckLogin"})
+	@Test (dependsOnGroups = {"IndividualProspectTest"})
 	public void FillData() throws InterruptedException, IOException, ParseException
 	{
 		productSetupObj = new ProductSetupPage(driver);
@@ -86,7 +86,7 @@ public class ProductSetupTest extends TestBase {
 		//productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
 	}
 
-	@Test (dependsOnMethods = {"CheckLogin","FillData"})
+	@Test (dependsOnMethods = {"FillData"})
 	public void SaveProductSetup() throws InterruptedException {
 
 		productSetupObj.SaveButton();

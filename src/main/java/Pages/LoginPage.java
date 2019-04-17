@@ -34,6 +34,9 @@ public class LoginPage extends PageBase {
 	@FindBy (id = "txt_PlaceHolder")
 	WebElement searchBox;
 
+	@FindBy (css = "#todayTasks")
+	WebElement todayTasksPart;
+
 
 	public void UserLogin(Hashtable<String,String> loginData) throws InterruptedException
 	{
@@ -42,6 +45,7 @@ public class LoginPage extends PageBase {
 		setTextElementText(Loginpassword, loginData.get("UserPass"));
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
+		waitForElement(todayTasksPart);
 
 	}
 	

@@ -80,6 +80,13 @@ public class RetailMurabahaPage extends PageBase {
 
 	public static  String MurabahaCode;
 
+	
+	@FindBy(css="#CUS_NAME")
+	WebElement customerName;
+	
+
+	@FindBy(css="#FPROD_LATIN_NAME")
+	WebElement productSetupName;
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
 
@@ -142,17 +149,19 @@ public class RetailMurabahaPage extends PageBase {
 
 		setTextElementText(RequestedDateTxt, RequestedDateValue);
 		setTextElementText(ValueDateTxt, ValueDateValue);
-		waitForElement(CustomerIDTxt);
 		setTextElementText(CustomerIDTxt,CustomerIDValue);
-		Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
-		if (state)
-		{
-			waitForElement(ProductCodeTxt);
+		//Thread.sleep(7000);
+		//Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
+		//if (state)
+		//{
 			setTextElementText(ProductCodeTxt, ProductCodeValue);
-			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
-			if (state)
-			{
+			Thread.sleep(9000);
+			//state = waitForGeneratedCode(ProductNameTxt);
+			//state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
+			//if (state)
+			//{
 				waitForElement(NonListedVendorTxt);
+				Thread.sleep(5000);
 				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
 				waitForElement(addNewRowbBtn);
@@ -174,8 +183,8 @@ public class RetailMurabahaPage extends PageBase {
 				clickButton(SaveAndCloseBtn);
 				Thread.sleep(8000);
 				switchFrame(ParentframeID);
-			}
-		}
+		//	}
+	//	}
 	}
 
 	public void FillRequiredFieldsByCustomer1(String RequestedDateValue,
@@ -588,13 +597,13 @@ public class RetailMurabahaPage extends PageBase {
 
 		clickButton(MasterSaveBtn);
 		Thread.sleep(7000);
-		waitMethod(3);
-		waitForElement(saveConfirmationMsg);
-		if (saveConfirmationMsg.isDisplayed()) {
+		//waitMethod(3);
+		//waitForElement(saveConfirmationMsg);
+		/*if (saveConfirmationMsg.isDisplayed()) {
 
 			clickButton(saveConfirmationBtn);
 
-		}
+		}*/
 		MurabahaCode = StoreData(ContractCodeTxt);
 		Thread.sleep(2000);
 		System.out.println(MurabahaCode);
@@ -616,7 +625,7 @@ public class RetailMurabahaPage extends PageBase {
 		}
 
 		Thread.sleep(5000);
-		waitMethod(3);
+		/*waitMethod(3);
 		waitForElement(objectReferenceConfirmationMsg);
 		if(objectReferenceConfirmationMsg.isDisplayed()) {
 
@@ -624,20 +633,20 @@ public class RetailMurabahaPage extends PageBase {
 		}
 
 		Thread.sleep(5000);
-		waitMethod(3);
+		waitMethod(3);*/
 
-		String CustomerCode = CustomerIDTxt.getAttribute("Value");
+		//String CustomerCode = CustomerIDTxt.getAttribute("Value");
 
-		if (CustomerCode == "352425198")
-		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Rejected");
+		//if (CustomerCode == IndividualProspectPage.generatedProspectCode)
+		//{
+			assertEquals(StatusTxt.getAttribute("Value"), "Ready");
 
-		}
-		else
+		//}
+/*		else
 		{
 			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
 		}
-		
+		*/
 		Thread.sleep(7000);
 	}
 
