@@ -5,15 +5,10 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.util.Hashtable;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RetailMurabahaPage extends PageBase {
 
@@ -80,13 +75,27 @@ public class RetailMurabahaPage extends PageBase {
 
 	public static  String MurabahaCode;
 
-	
+
 	@FindBy(css="#CUS_NAME")
 	WebElement customerName;
-	
 
 	@FindBy(css="#FPROD_LATIN_NAME")
 	WebElement productSetupName;
+
+	@FindBy(id="CUS_CODE_lovImage")
+	WebElement customerLOVIcon;
+
+	@FindBy(id="advancedFilter")
+	WebElement LOVQuickSearchField;
+
+	String SubLovFrame = "parentModuleID1500900011";
+
+	@FindBy(css="#filtergrid > div.k-grid-content > table > tbody > tr")
+	WebElement LOVSearchResult;
+
+	@FindBy(id="FPROD_CODE1_lovImage")
+	WebElement productLOVIcon;
+
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
 
@@ -109,7 +118,7 @@ public class RetailMurabahaPage extends PageBase {
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
 		//Thread.sleep(5000);
 		waitForFrame(ParentframeID);
-	    //switchFrame(ParentframeID);
+		//switchFrame(ParentframeID);
 
 		waitMethod(7);
 	}
@@ -149,42 +158,38 @@ public class RetailMurabahaPage extends PageBase {
 
 		setTextElementText(RequestedDateTxt, RequestedDateValue);
 		setTextElementText(ValueDateTxt, ValueDateValue);
-		setTextElementText(CustomerIDTxt,CustomerIDValue);
+		
+		openLOVAndSearch(customerLOVIcon, SubLovFrame, LOVQuickSearchField, CustomerIDValue, LOVSearchResult, ParentframeID);
+		//waitForFrame(ParentframeID);
+		
+		openLOVAndSearch(productLOVIcon, SubLovFrame, LOVQuickSearchField, ProductCodeValue, LOVSearchResult, ParentframeID);
+		//waitForFrame(ParentframeID);
+		
+		waitForElement(NonListedVendorTxt);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		waitForElement(addNewRowbBtn);
+		clickButton(addNewRowbBtn);
+		//Thread.sleep(3000);
+		//waitMethod(3);
+		waitForElement(ViewItemBtn);
+		clickButton(ViewItemBtn);
 		//Thread.sleep(7000);
-		Boolean state = waitForCheckResult(CustomerNameTxt, StoreData(CustomerNameTxt));
-		if (state)
-		{
-			setTextElementText(ProductCodeTxt, ProductCodeValue);
-			//Thread.sleep(7000);
-			state = waitForGeneratedCode(ProductNameTxt);
-			//state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
-			if (state)
-			{
-				waitForElement(NonListedVendorTxt);
-				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
-				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
-				waitForElement(addNewRowbBtn);
-				clickButton(addNewRowbBtn);
-				//Thread.sleep(3000);
-				//waitMethod(3);
-				waitForElement(ViewItemBtn);
-				clickButton(ViewItemBtn);
-				Thread.sleep(7000);
-				switchFrame(SubFrameID);
-				waitForElement(ItemNameTxt);
-				setTextElementText(ItemNameTxt, ItemNameValue);
-				//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
-				DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
-				setTextElementText(PriceTxt, PriceValue);
-				setTextElementText(CostTxt, CostValue);
-				//Thread.sleep(3000);
-				waitForElement(SaveAndCloseBtn);
-				clickButton(SaveAndCloseBtn);
-				Thread.sleep(8000);
-				switchFrame(ParentframeID);
-			}
-		}
+		//switchFrame(SubFrameID);
+		waitForFrame(SubFrameID);
+		waitForElement(ItemNameTxt);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		//Thread.sleep(3000);
+		waitForElement(SaveAndCloseBtn);
+		clickButton(SaveAndCloseBtn);
+		//Thread.sleep(8000);
+		waitForFrame(ParentframeID);
 	}
+
 
 	public void FillRequiredFieldsByCustomer1(String RequestedDateValue,
 			String ValueDateValue,
@@ -213,7 +218,7 @@ public class RetailMurabahaPage extends PageBase {
 			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
 			if (state)
 			{
-				
+
 				waitForElement(NonListedVendorTxt);
 				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
@@ -580,7 +585,6 @@ public class RetailMurabahaPage extends PageBase {
 		Thread.sleep(7000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
-		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
@@ -593,60 +597,26 @@ public class RetailMurabahaPage extends PageBase {
 
 	public void SaveRetailMurabaha() throws InterruptedException
 	{
-
+		waitForElement(MasterSaveBtn);
 		clickButton(MasterSaveBtn);
-		Thread.sleep(7000);
-		waitMethod(3);
-		waitForElement(saveConfirmationMsg);
-		if (saveConfirmationMsg.isDisplayed()) {
 
-			clickButton(saveConfirmationBtn);
-
-		}
+		waitForGeneratedValue(ContractCodeTxt);
 		MurabahaCode = StoreData(ContractCodeTxt);
-		Thread.sleep(2000);
 		System.out.println(MurabahaCode);
 
 	}
 
 	public void CheckRequestApproval() throws InterruptedException {
 
-		Thread.sleep(5000);
 
+		waitForElement(RequestBtn);
 		clickButton(RequestBtn);
-		Thread.sleep(5000);
-		waitMethod(3);
-		waitForElement(approvalConfirmationMsg);
-		if (approvalConfirmationMsg.isDisplayed()) {
+		
+		waitForGeneratedValue(StatusTxt);
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Request");
 
-			clickButton(approvalConfirmationBtn);
 
-		}
-
-		Thread.sleep(5000);
-		waitMethod(3);
-		waitForElement(objectReferenceConfirmationMsg);
-		if(objectReferenceConfirmationMsg.isDisplayed()) {
-
-			clickButton(objectReferenceConfirmationBtn);
-		}
-
-		Thread.sleep(5000);
-		waitMethod(3);
-
-		String CustomerCode = CustomerIDTxt.getAttribute("Value");
-
-		if (CustomerCode == IndividualProspectPage.generatedProspectCode)
-		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Ready");
-
-		}
-/*		else
-		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
-		}
-		*/
-		Thread.sleep(7000);
 	}
 
 }

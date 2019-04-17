@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -69,14 +70,14 @@ public class PageBase {
 	{
 		Action = new Actions(driver1);
 		Action.doubleClick(button).perform();
-		
+
 	}
-	
+
 	protected void SingleClickonElement(WebElement button)
 	{
 		Action = new Actions(driver1);
 		Action.doubleClick(button).perform();
-		
+
 	}
 
 	protected void switchFrame (String frameID)
@@ -130,7 +131,7 @@ public class PageBase {
 	{
 		return textbox.getAttribute("value");
 	}
-	
+
 
 	public WebElement waitForElement(WebElement element) {
 
@@ -140,34 +141,52 @@ public class PageBase {
 
 		return element;
 	}
-	
-	
 
-	
-	
+
+
+
+
 	public Boolean waitForCheckResult(WebElement element, String text) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);		
 		return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 	}
 	
+	/*public Boolean waitForExpectedGeneratedAttribute(WebElement element,String GeneratedValue ) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);	
+		return wait.until(ExpectedConditions.attributeToBeNotEmpty(element, GeneratedValue));
+		/*GeneratedValue = element.getAttribute("Value");
+		return wait.until(ExpectedConditions.attributeToBe(element, "Value", GeneratedValue));*/
+	
+
 	public Boolean waitForGeneratedCode(WebElement element) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);	
 		String GeneratedValue = element.getAttribute("Value");
 		return wait.until(ExpectedConditions.attributeToBe(element, "Value", GeneratedValue));
 	}
+
+	public Boolean waitForGeneratedValue(WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);	
+		return wait.until(ExpectedConditions.attributeToBeNotEmpty(element, "Value"));
+	}
 	
-	
-	
+	public Boolean waitForExpectedGeneratedValue(WebElement element, String Value) {
+
+		WebDriverWait wait = new WebDriverWait(driver1,30);	
+		return wait.until(ExpectedConditions.attributeToBeNotEmpty(element, Value));
+	}
+
 	public WebDriver waitForFrame(String FrameID) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);		
 		return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(FrameID));
 
 	}
-	
-	
+
+
 	public Alert waitForConfirmationMsg() {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);		
@@ -175,12 +194,23 @@ public class PageBase {
 
 	}
 	
-	/*public Boolean waitForLoading(WebElement element , Boolean selected) {
 
-		WebDriverWait wait = new WebDriverWait(driver1,30);		
-		return wait.until(ExpectedConditions.elementSelectionStateToBe(element, selected));
+	
+	//////////Method to open LOV and Saerch on item then select it from the results////////////
+	public void openLOVAndSearch(WebElement lovIcon, String subFrameId, WebElement quickSearchField, String searchItem, WebElement searchResult, String parentFrameId ) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver1,30);	
+		wait.until(ExpectedConditions.elementToBeClickable(lovIcon));
+		clickButton(lovIcon);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(subFrameId));
+		wait.until(ExpectedConditions.elementToBeClickable(quickSearchField));
+		setTextElementText(quickSearchField, searchItem);
+		wait.until(ExpectedConditions.elementToBeClickable(searchResult));
+		Thread.sleep(2000);
+		DoubleClickonElement(searchResult);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(parentFrameId));
+	}
+	
 
-	}*/
-	
-	
+
 }

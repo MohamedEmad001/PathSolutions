@@ -60,5 +60,14 @@ public class JsonDataReader
 		return jData;
 	}
 
+	public static JSONArray ReadFromJson(String module) throws FileNotFoundException, IOException, ParseException, InterruptedException
+	{
+		JSONParser parser = new JSONParser();
+		String property = "java.io.tmpdir";
+		String tempDir = System.getProperty(property);
+		JSONArray moduleObjects = (JSONArray) parser.parse(new FileReader(tempDir + "Modules\\" + module + ".txt"));
+		return moduleObjects;
+	}
+
 }
 
