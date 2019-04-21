@@ -33,6 +33,8 @@ public class IndividualProspectPage extends FundPage {
 	public static String customerName = "Omdaxx";
 	String Nationality = "1";
 	public static String generatedProspectCode;
+	
+	
 	String subModuleID = "parentModuleID"+IndividualCustomersmoduleID;
 	@FindBy (css = "#contact_01 > div > div.col-lg-11 > div.row > div:nth-child(2) > div > div.VisitedModules > ul")
 	WebElement lastVisitedModules;
@@ -141,6 +143,11 @@ public class IndividualProspectPage extends FundPage {
 	
 	@FindBy(css = "#V33SaveButton")
 	WebElement saveIndividualCustomer;
+	
+	@FindBy (css = "#LE_CODE")
+	WebElement CustomerCode;
+	public static String generatedCustomerCode;
+	
 
 	public void OpenIndividualProspect(String ProspectParentframeID , String CustomersParentFrameID) throws InterruptedException 
 	{
@@ -197,6 +204,7 @@ public class IndividualProspectPage extends FundPage {
 		System.out.println("Actual Prospect Code Is :" + StoreData(filteredProspectCode));
 		//waitForLoading(cusFirstName);
 		assertEquals(StoreData(filteredProspectCode), generatedProspectCode);
+		generatedCustomerCode = StoreData(CustomerCode);
 
 
 	}

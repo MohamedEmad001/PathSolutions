@@ -51,7 +51,7 @@ public class RetailMurabahaTest extends TestBase {
 
 		
 	/*@Test (priority = 0)
-	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
+	public void CheckLogin() throws InterruptedException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath,"CheckLogin" , jkeys, testCaseInputs);
@@ -59,7 +59,8 @@ public class RetailMurabahaTest extends TestBase {
 		loginPageObj.UserLogin(jData);
 	}*/
 
-	@Test(dependsOnGroups = {"ProductSetupTest"})
+	 @Test (dependsOnGroups = {"ProductSetupTest"})
+	//@Test(dependsOnMethods = {"CheckLogin"})
 	public void CheckOpenRetailMurabah() throws InterruptedException {
 	
 		RetailMurabahaObject = new RetailMurabahaPage(driver);
@@ -71,7 +72,8 @@ public class RetailMurabahaTest extends TestBase {
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate,
-				IndividualProspectPage.generatedProspectCode, ProductSetupPage.ActualProductCode,
+				IndividualProspectPage.generatedCustomerCode,
+				ProductSetupPage.ActualProductCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
 				Cost, ParentframeID,SubFramesID);
@@ -82,9 +84,10 @@ public class RetailMurabahaTest extends TestBase {
 
 	{
 		RetailMurabahaObject.SaveRetailMurabaha();
-		/*RMurabahaCode = RetailMurabahaObject.MurabahaCode;
+
+		RMurabahaCode = RetailMurabahaPage.MurabahaCode;
 		System.out.println("Retail Murabaha Code=: "+ RMurabahaCode);
-		RMurabahaCode = RetailMurabahaPage.MurabahaCode;*/
+		RMurabahaCode = RetailMurabahaPage.MurabahaCode;
 
 	}
 	

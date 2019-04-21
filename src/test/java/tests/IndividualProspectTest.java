@@ -23,6 +23,7 @@ public class IndividualProspectTest extends TestBase {
 	String jsonFundFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeysLogin = {"UserName", "UserPass"};
 	String [] testCaseInputsLogin = {"UserName", "UserPass"};
+	public static String CustomerCode;
 	
 	//String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	
@@ -53,6 +54,8 @@ public class IndividualProspectTest extends TestBase {
 		IndividualProspectPage individualProdspectObj = new IndividualProspectPage(driver);
 		individualProdspectObj.OpenIndividualProspect(IndividualProspectModule, IndividualcustomersModule);
 		individualProdspectObj.EditIndividualCustomerData(jData);
+		//call customer code
+		CustomerCode = IndividualProspectPage.generatedCustomerCode;
 	}
 
 }
