@@ -55,8 +55,8 @@ public class ProductSetupTest extends TestBase {
 	String [] ActionsTestCaseInputs = {"Salary Approv", "Salary Reje", "B_Approve","B_Reje","Up To 3000"};
 
 	JsonDataReader jsonFileReader = new JsonDataReader();
-/*
-	@Test (priority = 0)
+
+	/*@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();

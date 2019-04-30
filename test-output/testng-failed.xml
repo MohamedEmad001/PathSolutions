@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
+  <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
     <classes>
+      <class name="tests.IndividualProspectTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="CheckLogin"/>
+          <include name="stopDriver"/>
+          <include name="takeScreenshots"/>
+          <include name="addNewIndividualProspect_Case1"/>
+        </methods>
+      </class> <!-- tests.IndividualProspectTest -->
+      <class name="tests.ProductSetupTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="PostButton"/>
+          <include name="FillData"/>
+          <include name="takeScreenshots"/>
+          <include name="SaveProductSetup"/>
+        </methods>
+      </class> <!-- tests.ProductSetupTest -->
       <class name="tests.RetailMurabahaTest">
         <methods>
-          <include name="CheckLogin"/>
           <include name="startDriver"/>
           <include name="CheckOpenRetailMurabah"/>
           <include name="CheckSaveRetailMurabaha"/>
@@ -16,5 +34,5 @@
         </methods>
       </class> <!-- tests.RetailMurabahaTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- MytestCase(failed) -->
+</suite> <!-- Failed suite [testSuite] -->

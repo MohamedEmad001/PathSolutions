@@ -20,9 +20,9 @@ public class IndividualProspectTest extends TestBase {
 	String [] jkeys = {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	String [] testCaseInputs =  {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	
-	String jsonFundFilePath = "/src/test/java/TestData/FundData.json";
-	String [] jkeysLogin = {"UserName", "UserPass"};
-	String [] testCaseInputsLogin = {"UserName", "UserPass"};
+	String loginJsonFilePath = "/src/test/java/TestData/FundData.json";
+	String [] loginJkeys = {"UserName", "UserPass"};
+	String [] loginTestCaseInputs = {"UserName", "UserPass"};
 	
 	//String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	
@@ -32,7 +32,7 @@ public class IndividualProspectTest extends TestBase {
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
 		//define hashtable object to recieve the return value of jsonreaderdata method based on the prefix, keys and TC inputs
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFundFilePath, "CheckLogin" , jkeysLogin, testCaseInputsLogin);
+		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(loginJsonFilePath,"CheckLogin" , loginJkeys, loginTestCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
 		
