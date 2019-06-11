@@ -21,9 +21,10 @@ import org.testng.util.Strings;
 
 import TestData.JsonDataReader;
 
-public class ModuleHandler extends PageBase {
+
+public class CashTransferModuleHandler extends PageBase {
 	
-	public ModuleHandler(WebDriver driver1) {
+	public CashTransferModuleHandler(WebDriver driver1) {
 		super(driver1);
 		driver11 = driver1;
 	}
@@ -31,7 +32,7 @@ public class ModuleHandler extends PageBase {
 	WebDriver driver11;
 	//static List<String> webElements = new ArrayList<String>();
 	
-	@FindBy(id= "V1SaveButton")
+	@FindBy(id= "V0SaveButton")
 	public static WebElement master_SaveButton;
 
 	@FindBy(xpath = "//*[@id=\"V1CopyButton\"]")
@@ -42,6 +43,16 @@ public class ModuleHandler extends PageBase {
 	
 	@FindBy (id = "txt_PlaceHolder")
 	WebElement searchBox;
+	
+	@FindBy (css = "#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
+	WebElement confirmSaveMsg;
+	
+	@FindBy (id = "V0POSTButton")
+	WebElement postButton;
+	
+	@FindBy (css = "#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
+	WebElement confirmPostMsg;
+	
 	public void FillModuleFields(String moduleID) throws InterruptedException, FileNotFoundException, IOException, ParseException 
 	
 	{
@@ -66,7 +77,14 @@ public class ModuleHandler extends PageBase {
 			Thread.sleep(2000);
 			// Approve FacilityRequest
 			master_SaveButton.click();
+			Thread.sleep(5000);
+			confirmSaveMsg.click();
 			Thread.sleep(2000);
+			postButton.click();
+			waitForConfirmationMsg();
+			ConfirmAlert();
+			Thread.sleep(5000);
+			confirmPostMsg.click();
 			//ApproveButton.click();
 			//Thread.sleep(2000);
 			//Alert alert = driver1.switchTo().alert();
@@ -82,7 +100,7 @@ public class ModuleHandler extends PageBase {
 		//driver1.switchTo().frame("RAD_SPLITTER_PANE_EXT_CONTENT_RightRadPane");
 		///WebDriverWait wait = new WebDriverWait(driver11, 10);
 		///wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txt_PlaceHolder")));
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		waitForElement(lastVisitedModules);
 		waitForElement(searchBox);
 		driver1.findElement(By.id("txt_PlaceHolder")).sendKeys(moduleID);

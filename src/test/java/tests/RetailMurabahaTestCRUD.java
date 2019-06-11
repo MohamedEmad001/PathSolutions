@@ -49,12 +49,12 @@ public class RetailMurabahaTestCRUD extends TestBase {
 	//String Cust9="M_003_Reje";
 	
 	//ProductCodeID="514">>two rules on the product
-	String ProductCodeID="514";
+	String ProductCodeID="Medo#1234514";
 	String NonListedVendor="Non Listed Item";
 	String CurrencyCode="EGP";
 	String ItemName="Test Item";
 	String ItemCategory="47";
-	String Price ="12000";
+	String Price ="10000";
 	String Cost="12000";
 	String ParentframeID = "frame_1500900011";
 	String SubFramesID = "parentModuleID1500900011";

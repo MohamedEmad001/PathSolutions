@@ -41,6 +41,7 @@ public class FundTest extends TestBase {
 	@Test (priority = 1)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
+
 		JsonDataReader jsonFileReader = new JsonDataReader();
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);

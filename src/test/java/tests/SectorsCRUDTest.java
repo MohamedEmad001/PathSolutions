@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
-import Pages.ModuleHandler;
+import Pages.CashTransferModuleHandler;
 import TestData.JsonDataReader;
 import tests.TestBase;
 
@@ -42,7 +42,7 @@ public class SectorsCRUDTest extends TestBase {
 	@Test (dependsOnMethods = {"CheckLogin"})	
 	public void CheckSaveTestCase () throws FileNotFoundException, InterruptedException, IOException, ParseException
 	{
-		ModuleHandler moduleHandlerObj = new ModuleHandler(driver);
+		CashTransferModuleHandler moduleHandlerObj = new CashTransferModuleHandler(driver);
 		moduleHandlerObj.FillModuleFields(moduleID);
 		ActualSectorCode = sectorCode.getAttribute("Value");
 		

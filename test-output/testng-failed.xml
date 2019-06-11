@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
-  <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.IndividualProspectTest">
-        <methods>
-          <include name="startDriver"/>
-          <include name="CheckLogin"/>
-          <include name="stopDriver"/>
-          <include name="takeScreenshots"/>
-          <include name="addNewIndividualProspect_Case1"/>
-        </methods>
-      </class> <!-- tests.IndividualProspectTest -->
-      <class name="tests.ProductSetupTest">
-        <methods>
-          <include name="startDriver"/>
-          <include name="stopDriver"/>
-          <include name="PostButton"/>
-          <include name="FillData"/>
-          <include name="takeScreenshots"/>
-          <include name="SaveProductSetup"/>
-        </methods>
-      </class> <!-- tests.ProductSetupTest -->
-      <class name="tests.RetailMurabahaTest">
+      <class name="tests.StraightCalculationMethodsTest">
         <methods>
           <include name="startDriver"/>
           <include name="CheckOpenRetailMurabah"/>
-          <include name="CheckSaveRetailMurabaha"/>
           <include name="stopDriver"/>
-          <include name="CheckInsertAllMandatoryFields"/>
-          <include name="RequestForApprove"/>
+          <include name="CheckLogin"/>
+          <include name="CheckInsertAllMandatoryFieldsA"/>
           <include name="takeScreenshots"/>
         </methods>
-      </class> <!-- tests.RetailMurabahaTest -->
+      </class> <!-- tests.StraightCalculationMethodsTest -->
     </classes>
-  </test> <!-- MytestCase(failed) -->
-</suite> <!-- Failed suite [testSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

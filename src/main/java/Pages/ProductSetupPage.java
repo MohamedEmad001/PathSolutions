@@ -117,6 +117,11 @@ public class ProductSetupPage extends PageBase {
 	//Post
 	@FindBy (css="#POSTButton")
 	WebElement Post;
+	
+	//Delete
+	
+	@FindBy(css ="#V0DeleteButton")
+	WebElement DeleteBtn;
 
 	//ProductSetup Code
 	@FindBy (id = "FPROD_CODE")
@@ -224,6 +229,58 @@ public class ProductSetupPage extends PageBase {
 
 
 	}	
+	public void BusinessRuleCrud(
+			String SubFramesID,
+			String Rulecode,
+			String RuleActionValue,
+			String ProductFactor,
+			String ParentframeID) throws InterruptedException 
+
+	{
+		//Rule 1
+		clickButton(BusinessRulesTab);
+		waitForElement(AddNewRule);
+		clickButton(AddNewRule);
+		waitForElement(RuleLov);
+		clickButton(RuleLov);
+		waitForFrame(SubFramesID);
+
+		Thread.sleep(5000);
+		setTextElementText(RulecodeQuickSearch, Rulecode);
+
+		//waitForElement(RulecodeQuickSearch);
+		//setTextElementText(RulecodeQuickSearch, Rulecode.get("Employment Salary Approv"));
+		Thread.sleep(5000);
+		DoubleClickonElement(RuleSearchResult);
+		waitForFrame(ParentframeID);
+		DropListSelect(RuleActionTxt, RuleActionValue);
+
+		//Affection of rule1
+		clickButton(AffectionField);
+		DropListSelect(ProductFactorList, ProductFactor);
+		ProductFactorValue.sendKeys("100");
+	}
+
+	public void OverRideTabCrud(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+
+	{
+
+		//Go to OverRide Tab
+		clickButton(OverRide);
+		clickButton(AddNewRide);
+		Thread.sleep(3000);
+		DropListSelect(ProdFactList, ProdFactValue);
+		Thread.sleep(3000);
+		DropListSelect(OverRideOptions, OverRideOptionsValue);
+	}
+	
+	public void CheckDelete() throws InterruptedException {
+		clickButton(DeleteBtn);
+		ConfirmAlert();
+		Thread.sleep(1000);
+		
+	}
+	
 	public void BusinessRule1(
 			String SubFramesID,
 			Hashtable<String, String> Rulecode,
@@ -309,7 +366,7 @@ public class ProductSetupPage extends PageBase {
 		ProductFactorValue.sendKeys("100");*/
 	}
 
-	/*public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
+	public void OverRideTab(String ProdFactValue, String OverRideOptionsValue) throws InterruptedException
 
 	{
 
@@ -321,7 +378,7 @@ public class ProductSetupPage extends PageBase {
 		DropListSelect(ProdFactList, ProdFactValue);
 		Thread.sleep(3000);
 		DropListSelect(OverRideOptions, OverRideOptionsValue);
-	}*/
+	}
 
 	public void BusinessRule3(
 			String SubFramesID,

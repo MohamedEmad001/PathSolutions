@@ -2,7 +2,6 @@ package tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +11,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import utilities.Helper;
 
 
@@ -22,11 +20,11 @@ public class TestBase {
 	//define public object from webdriver 
 	public static WebDriver driver;
 	
-	String jsonFilePath = "/src/test/java/TestData/FundData.json";
+	/*String jsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] jkeys = {"UserName", "UserPass"};
-	String [] testCaseInputs = {"UserName", "UserPass"};
+	String [] testCaseInputs = {"UserName", "UserPass"};*/
 	
-	String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
+	//String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	//before suite will run before any @Test annotation
 	//at this before suite will open the browser ans maxmize the window, also wait for miximazation then pass the URL
 	@BeforeSuite
@@ -38,7 +36,8 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
 
-		driver.navigate().to("http://192.168.112.44/I50QC/security/Signin.aspx");
+		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
+		//driver.navigate().to("http://192.168.112.44/I50GulfQC/security/Signin.aspx");
 		//driver.navigate().to("http://192.168.112.33/I50DEV/security/Signin.aspx");
 
 	}

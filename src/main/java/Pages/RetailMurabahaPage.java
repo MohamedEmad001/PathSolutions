@@ -85,7 +85,7 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(id="CUS_CODE_lovImage")
 	WebElement customerLOVIcon;
 
-	@FindBy(id="advancedFilter")
+	@FindBy(xpath ="//*[@id=\"advancedFilter\"]")
 	WebElement LOVQuickSearchField;
 
 	String SubLovFrame = "parentModuleID1500900011";
@@ -96,6 +96,8 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(id="FPROD_CODE1_lovImage")
 	WebElement productLOVIcon;
 
+	@FindBy (id = "V18PostButton")
+	WebElement postButton;
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
 
@@ -161,9 +163,11 @@ public class RetailMurabahaPage extends PageBase {
 		
 		openLOVAndSearch(customerLOVIcon, SubLovFrame, LOVQuickSearchField, CustomerIDValue, LOVSearchResult, ParentframeID);
 		//waitForFrame(ParentframeID);
+		Thread.sleep(5000);
 		
 		openLOVAndSearch(productLOVIcon, SubLovFrame, LOVQuickSearchField, ProductCodeValue, LOVSearchResult, ParentframeID);
 		//waitForFrame(ParentframeID);
+		Thread.sleep(5000);
 		
 		waitForElement(NonListedVendorTxt);
 		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
@@ -599,23 +603,30 @@ public class RetailMurabahaPage extends PageBase {
 	{
 		waitForElement(MasterSaveBtn);
 		clickButton(MasterSaveBtn);
-
-		waitForGeneratedValue(ContractCodeTxt);
 		MurabahaCode = StoreData(ContractCodeTxt);
 		System.out.println(MurabahaCode);
-
 	}
 
 	public void CheckRequestApproval() throws InterruptedException {
 
-
-		waitForElement(RequestBtn);
-		clickButton(RequestBtn);
-		
-		waitForGeneratedValue(StatusTxt);
 		Thread.sleep(3000);
-		assertEquals(StatusTxt.getAttribute("Value"), "Request");
+		//waitForElement(RequestBtn);
+		clickButton(RequestBtn);		
+		//waitForGeneratedValue(StatusTxt);
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Ready");
+		System.out.println(StatusTxt);
 
+	}
+	public void CheckPosting() throws InterruptedException {
+
+		waitForElement(postButton);
+		//waitForElement(RequestBtn);
+		clickButton(postButton);		
+		//waitForGeneratedValue(StatusTxt);
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Active");
+		System.out.println(StatusTxt);
 
 	}
 

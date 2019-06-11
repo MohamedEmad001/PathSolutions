@@ -1,108 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="7" failed="1" ignored="4" total="13" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="testSuite" duration-ms="25837" started-at="2019-04-17T10:50:31Z" finished-at="2019-04-17T10:50:57Z">
+  <suite name="Default suite" duration-ms="2217" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
     <groups>
-      <group name="IndividualProspectTest">
-        <method signature="IndividualProspectTest.CheckLogin()[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="CheckLogin" class="tests.IndividualProspectTest"/>
-        <method signature="IndividualProspectTest.addNewIndividualProspect_Case1()[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="addNewIndividualProspect_Case1" class="tests.IndividualProspectTest"/>
-      </group> <!-- IndividualProspectTest -->
-      <group name="RetailMurabahaTest">
-        <method signature="RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckOpenRetailMurabah" class="tests.RetailMurabahaTest"/>
-        <method signature="RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckInsertAllMandatoryFields" class="tests.RetailMurabahaTest"/>
-        <method signature="RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckSaveRetailMurabaha" class="tests.RetailMurabahaTest"/>
-        <method signature="RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="RequestForApprove" class="tests.RetailMurabahaTest"/>
-      </group> <!-- RetailMurabahaTest -->
-      <group name="ProductSetupTest">
-        <method signature="ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="FillData" class="tests.ProductSetupTest"/>
-        <method signature="ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="SaveProductSetup" class="tests.ProductSetupTest"/>
-        <method signature="ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="PostButton" class="tests.ProductSetupTest"/>
-      </group> <!-- ProductSetupTest -->
     </groups>
-    <test name="MytestCase" duration-ms="25837" started-at="2019-04-17T10:50:31Z" finished-at="2019-04-17T10:50:57Z">
-      <class name="tests.ProductSetupTest">
-        <test-method status="SKIP" signature="FillData()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="FillData" duration-ms="0" depends-on-groups="IndividualProspectTest" started-at="2019-04-17T10:50:57Z" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods in group "IndividualProspectTest"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ProductSetupTest.FillData()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods in group "IndividualProspectTest"
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FillData -->
-        <test-method status="SKIP" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="SaveProductSetup" duration-ms="0" started-at="2019-04-17T10:50:57Z" depends-on-methods="tests.ProductSetupTest.FillData" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ProductSetupTest.SaveProductSetup()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SaveProductSetup -->
-        <test-method status="SKIP" signature="PostButton()[pri:0, instance:tests.ProductSetupTest@5622fdf]" name="PostButton" duration-ms="0" started-at="2019-04-17T10:50:57Z" depends-on-methods="tests.ProductSetupTest.SaveProductSetup" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ProductSetupTest.PostButton()[pri:0, instance:tests.ProductSetupTest@5622fdf] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PostButton -->
-      </class> <!-- tests.ProductSetupTest -->
-      <class name="tests.IndividualProspectTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="startDriver" is-config="true" duration-ms="5079" started-at="2019-04-17T10:50:26Z" finished-at="2019-04-17T10:50:31Z">
+    <test name="Default test" duration-ms="2217" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@685cb137]" name="startDriver" is-config="true" duration-ms="7474" started-at="2019-06-10T09:07:03Z" finished-at="2019-06-10T09:07:11Z">
           <params>
             <param index="0">
               <value>
@@ -113,285 +18,26 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="CheckLogin" duration-ms="1779" started-at="2019-04-17T10:50:31Z" finished-at="2019-04-17T10:50:33Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.LoginTest@685cb137]" name="CheckLogin" duration-ms="534" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="takeScreenshots" is-config="true" duration-ms="544" started-at="2019-04-17T10:50:33Z" finished-at="2019-04-17T10:50:34Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@685cb137]" name="takeScreenshots" is-config="true" duration-ms="1645" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=IndividualProspectTest.CheckLogin()[pri:0, instance:tests.IndividualProspectTest@6093dd95] output={null}]]]>
+                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=LoginTest.CheckLogin()[pri:0, instance:tests.LoginTest@685cb137] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="FAIL" signature="addNewIndividualProspect_Case1()[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="addNewIndividualProspect_Case1" duration-ms="23481" started-at="2019-04-17T10:50:34Z" depends-on-methods="tests.IndividualProspectTest.CheckLogin" finished-at="2019-04-17T10:50:57Z">
-          <exception class="org.openqa.selenium.UnhandledAlertException">
-            <message>
-              <![CDATA[unexpected alert open: {Alert text : "Error : 639540
-package body "INFRA50_DEV_O11.PENDING_CHANGES_UTIL" has errors,Please call system support."}
-  (Session info: chrome=73.0.3683.86)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds: null
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EGDM1-MEMAD', ip: '192.168.113.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\MOHAME~1.EMA\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:39627}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: daea6630c0dd3d4b00d8eb82b0806cc5
-*** Element info: {Using=css selector, value=frame[name='frame_15002711'],iframe[name='frame_15002711']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : "Error : 639540
-package body "INFRA50_DEV_O11.PENDING_CHANGES_UTIL" has errors,Please call system support."}
-  (Session info: chrome=73.0.3683.86)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds: null
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EGDM1-MEMAD', ip: '192.168.113.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\MOHAME~1.EMA\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:39627}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: daea6630c0dd3d4b00d8eb82b0806cc5
-*** Element info: {Using=css selector, value=frame[name='frame_15002711'],iframe[name='frame_15002711']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:172)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementsByCssSelector(RemoteWebDriver.java:424)
-at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441)
-at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:878)
-at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:476)
-at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:472)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-at Pages.PageBase.waitForFrame(PageBase.java:185)
-at Pages.IndividualProspectPage.OpenIndividualProspect(IndividualProspectPage.java:194)
-at tests.IndividualProspectTest.addNewIndividualProspect_Case1(IndividualProspectTest.java:54)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewIndividualProspect_Case1 -->
-        <test-method status="FAIL" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="takeScreenshots" is-config="true" duration-ms="3" started-at="2019-04-17T10:50:57Z" finished-at="2019-04-17T10:50:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=addNewIndividualProspect_Case1 status=FAILURE method=IndividualProspectTest.addNewIndividualProspect_Case1()[pri:0, instance:tests.IndividualProspectTest@6093dd95] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.UnhandledAlertException">
-            <message>
-              <![CDATA[unexpected alert open: {Alert text : "Error : 639540
-package body "INFRA50_DEV_O11.PENDING_CHANGES_UTIL" has errors,Please call system support."}
-  (Session info: chrome=73.0.3683.86)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds: null
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EGDM1-MEMAD', ip: '192.168.113.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\MOHAME~1.EMA\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:39627}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: daea6630c0dd3d4b00d8eb82b0806cc5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : "Error : 639540
-package body "INFRA50_DEV_O11.PENDING_CHANGES_UTIL" has errors,Please call system support."}
-  (Session info: chrome=73.0.3683.86)
-  (Driver info: chromedriver=71.0.3578.33 (269aa0e3f0db08097f0fe231c7e6be200b6939f7),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds: null
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'EGDM1-MEMAD', ip: '192.168.113.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.33 (269aa0e3f0db0..., userDataDir: C:\Users\MOHAME~1.EMA\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:39627}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 73.0.3683.86, webStorageEnabled: true}
-Session ID: daea6630c0dd3d4b00d8eb82b0806cc5
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:172)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-at utilities.Helper.CaptureScreenshots(Helper.java:22)
-at tests.TestBase.takeScreenshots(TestBase.java:69)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.IndividualProspectTest@6093dd95]" name="stopDriver" is-config="true" duration-ms="1" started-at="2019-04-17T10:50:57Z" finished-at="2019-04-17T10:50:57Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@685cb137]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-06-10T09:07:13Z" finished-at="2019-06-10T09:07:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.IndividualProspectTest -->
-      <class name="tests.RetailMurabahaTest">
-        <test-method status="SKIP" signature="CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckOpenRetailMurabah" duration-ms="0" depends-on-groups="ProductSetupTest" started-at="2019-04-17T10:50:57Z" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods in group "ProductSetupTest"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckOpenRetailMurabah()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods in group "ProductSetupTest"
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckOpenRetailMurabah -->
-        <test-method status="SKIP" signature="CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckInsertAllMandatoryFields" duration-ms="0" started-at="2019-04-17T10:50:57Z" depends-on-methods="tests.RetailMurabahaTest.CheckOpenRetailMurabah" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckInsertAllMandatoryFields()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckInsertAllMandatoryFields -->
-        <test-method status="SKIP" signature="CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="CheckSaveRetailMurabaha" duration-ms="0" started-at="2019-04-17T10:50:57Z" depends-on-methods="tests.RetailMurabahaTest.CheckInsertAllMandatoryFields" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.CheckSaveRetailMurabaha()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckSaveRetailMurabaha -->
-        <test-method status="SKIP" signature="RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@4883b407]" name="RequestForApprove" duration-ms="0" started-at="2019-04-17T10:50:57Z" depends-on-methods="tests.RetailMurabahaTest.CheckSaveRetailMurabaha" finished-at="2019-04-17T10:50:57Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method RetailMurabahaTest.RequestForApprove()[pri:0, instance:tests.RetailMurabahaTest@4883b407] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RequestForApprove -->
-      </class> <!-- tests.RetailMurabahaTest -->
-    </test> <!-- MytestCase -->
-  </suite> <!-- testSuite -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

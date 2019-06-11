@@ -1,11 +1,16 @@
 package Pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -17,7 +22,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -151,14 +158,14 @@ public class PageBase {
 		WebDriverWait wait = new WebDriverWait(driver1,30);		
 		return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 	}
-	
+
 	/*public Boolean waitForExpectedGeneratedAttribute(WebElement element,String GeneratedValue ) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);	
 		return wait.until(ExpectedConditions.attributeToBeNotEmpty(element, GeneratedValue));
 		/*GeneratedValue = element.getAttribute("Value");
 		return wait.until(ExpectedConditions.attributeToBe(element, "Value", GeneratedValue));*/
-	
+
 
 	public Boolean waitForGeneratedCode(WebElement element) {
 
@@ -172,7 +179,7 @@ public class PageBase {
 		WebDriverWait wait = new WebDriverWait(driver1,30);	
 		return wait.until(ExpectedConditions.attributeToBeNotEmpty(element, "Value"));
 	}
-	
+
 	public Boolean waitForExpectedGeneratedValue(WebElement element, String Value) {
 
 		WebDriverWait wait = new WebDriverWait(driver1,30);	
@@ -193,9 +200,7 @@ public class PageBase {
 		return wait.until(ExpectedConditions.alertIsPresent());
 
 	}
-	
 
-	
 	//////////Method to open LOV and Saerch on item then select it from the results////////////
 	public void openLOVAndSearch(WebElement lovIcon, String subFrameId, WebElement quickSearchField, String searchItem, WebElement searchResult, String parentFrameId ) throws InterruptedException
 	{
@@ -206,11 +211,33 @@ public class PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(quickSearchField));
 		setTextElementText(quickSearchField, searchItem);
 		wait.until(ExpectedConditions.elementToBeClickable(searchResult));
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		DoubleClickonElement(searchResult);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(parentFrameId));
 	}
-	
+
+
+	//FluentWait Method for polling a wait time for a specific locator
+	public void fluentWaitMethod(String elementLocator)
+	{
+		
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver1)
+				.withTimeout(Duration.ofSeconds(100))
+		        .pollingEvery(Duration.ofMillis(600))
+				.ignoring(NoSuchElementException.class);
+		
+		wait.until(new Function<WebDriver, WebElement>()
+		{
+			
+			public WebElement apply(WebDriver d) {
+				d = driver1;
+				return d.findElement(By.id(elementLocator));
+			}
+		});
+
+	}
+
+
 
 
 }

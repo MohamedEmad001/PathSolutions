@@ -45,7 +45,7 @@ public class LoginPage extends PageBase {
 		setTextElementText(Loginpassword, loginData.get("UserPass"));
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
-		waitForElement(todayTasksPart);
+		
 
 	}
 	

@@ -16,13 +16,18 @@ public class IndividualProspectTest extends TestBase {
 	
 	String IndividualProspectModule = "frame_150027331";
 	String IndividualcustomersModule = "frame_15002711";
+	
 	String jsonFilePath = "/src/test/java/TestData/CustomerData.json";
 	String [] jkeys = {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	String [] testCaseInputs =  {"Gender", "Employement","Birth Date","Salary","Finance Amount"};
 	
+
 	String loginJsonFilePath = "/src/test/java/TestData/FundData.json";
 	String [] loginJkeys = {"UserName", "UserPass"};
 	String [] loginTestCaseInputs = {"UserName", "UserPass"};
+	
+	public static String CustomerCode;
+
 	
 	//String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	
@@ -53,6 +58,8 @@ public class IndividualProspectTest extends TestBase {
 		IndividualProspectPage individualProdspectObj = new IndividualProspectPage(driver);
 		individualProdspectObj.OpenIndividualProspect(IndividualProspectModule, IndividualcustomersModule);
 		individualProdspectObj.EditIndividualCustomerData(jData);
+		//call customer code
+		CustomerCode = IndividualProspectPage.generatedCustomerCode;
 	}
 
 }
