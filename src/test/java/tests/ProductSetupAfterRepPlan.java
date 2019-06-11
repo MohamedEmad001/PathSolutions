@@ -1,19 +1,14 @@
 package tests;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Hashtable;
 
-import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RepaymentPlanTemplatesPage;
-import TestData.JsonDataReader;
 
-@Test
-public class ProductSetupCrud extends TestBase {
+@Test(groups = {"ProductSetupAfterRepPlan"})
+public class ProductSetupAfterRepPlan extends TestBase {
 	
 	ProductSetupPage productSetupObj;
 	
@@ -29,9 +24,10 @@ public class ProductSetupCrud extends TestBase {
 	
 	//Repayment Data
 	RepaymentPlanTemplatesPage repaymentPlanObj = new RepaymentPlanTemplatesPage(driver);
+	//MonthlyDependOnTransaction MonthlyDependOnTransactionobj = new MonthlyDependOnTransaction();
 	
-	String repaymentcode=RepaymentPlanTemplatesPage.repaymentCode;
 	
+	//String repaymentcode="1060";
 	//Business Rules
 	
 	String Rulecode = "3";
@@ -48,23 +44,16 @@ public class ProductSetupCrud extends TestBase {
 	
 	public static String ProductCode;
 	
-	@Test (priority = 1)
-	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
-	{
-		JsonDataReader jsonFileReader = new JsonDataReader();
-		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath,"CheckLogin" , jkeys, testCaseInputs);
-		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.UserLogin(jData);
 
-	}
-
-	@Test (dependsOnMethods = {"CheckLogin"})
+	@Test(dependsOnGroups = {"MonthlyDependOnTransaction"}) 
 	public void FillData() throws InterruptedException, IOException
 	{
 		productSetupObj = new ProductSetupPage(driver);
+		String repaymentcode = MonthlyDependOnTransaction.repaymentPlanCode;
+		System.out.println("the repayment plan code is " + repaymentcode );
 		productSetupObj.ProductSetupModuleCrud(productsetupTypeValue, ClassCodevalue ,curCode, DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
-		productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
-		productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
+		//productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
+		//productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
 		
 	}
 	

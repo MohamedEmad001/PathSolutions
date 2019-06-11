@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -142,7 +141,7 @@ public class PageBase {
 	
 	public WebDriver waitForFrame(String FrameID) {
 
-		WebDriverWait wait = new WebDriverWait(driver1,30);		
+		WebDriverWait wait = new WebDriverWait(driver1,50);		
 		return wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(FrameID));
 
 	}
