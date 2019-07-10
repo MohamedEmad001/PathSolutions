@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="11" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2217" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
+  <suite name="testSuite" duration-ms="138120" started-at="2019-07-01T12:17:01Z" finished-at="2019-07-01T12:19:19Z">
     <groups>
+      <group name="MonthlyDependOnTransaction">
+        <method signature="MonthlyDependOnTransaction.CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="CheckLogin" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransaction.OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="OpenRepaymentPlanModule" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransaction.fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillRepaymentPlanMasterData" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransaction.fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillRepaymentsOptionsData" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransaction.fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillProfitRateData" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransaction.fillIntervalsDataWithLastDay()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillIntervalsDataWithLastDay" class="tests.MonthlyDependOnTransaction"/>
+      </group> <!-- MonthlyDependOnTransaction -->
+      <group name="ProductSetupAfterRepPlan">
+        <method signature="ProductSetupAfterRepPlan.FillData()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="FillData" class="tests.ProductSetupAfterRepPlan"/>
+        <method signature="ProductSetupAfterRepPlan.SaveProductSetup()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="SaveProductSetup" class="tests.ProductSetupAfterRepPlan"/>
+        <method signature="ProductSetupAfterRepPlan.PostButton()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="PostButton" class="tests.ProductSetupAfterRepPlan"/>
+      </group> <!-- ProductSetupAfterRepPlan -->
     </groups>
-    <test name="Default test" duration-ms="2217" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
-      <class name="tests.LoginTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.LoginTest@685cb137]" name="startDriver" is-config="true" duration-ms="7474" started-at="2019-06-10T09:07:03Z" finished-at="2019-06-10T09:07:11Z">
+    <test name="MytestCase" duration-ms="138120" started-at="2019-07-01T12:17:01Z" finished-at="2019-07-01T12:19:19Z">
+      <class name="tests.MonthlyDependOnTransaction">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="startDriver" is-config="true" duration-ms="11585" started-at="2019-07-01T12:16:49Z" finished-at="2019-07-01T12:17:01Z">
           <params>
             <param index="0">
               <value>
@@ -18,26 +31,49 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.LoginTest@685cb137]" name="CheckLogin" duration-ms="534" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:11Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="CheckLogin" duration-ms="398" started-at="2019-07-01T12:17:01Z" finished-at="2019-07-01T12:17:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.LoginTest@685cb137]" name="takeScreenshots" is-config="true" duration-ms="1645" started-at="2019-06-10T09:07:11Z" finished-at="2019-06-10T09:07:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=LoginTest.CheckLogin()[pri:0, instance:tests.LoginTest@685cb137] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="OpenRepaymentPlanModule" duration-ms="4181" started-at="2019-07-01T12:17:01Z" depends-on-methods="tests.MonthlyDependOnTransaction.CheckLogin" finished-at="2019-07-01T12:17:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.LoginTest@685cb137]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-06-10T09:07:13Z" finished-at="2019-06-10T09:07:13Z">
+        </test-method> <!-- OpenRepaymentPlanModule -->
+        <test-method status="PASS" signature="fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillRepaymentPlanMasterData" duration-ms="19126" started-at="2019-07-01T12:17:05Z" depends-on-methods="tests.MonthlyDependOnTransaction.OpenRepaymentPlanModule" finished-at="2019-07-01T12:17:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillRepaymentPlanMasterData -->
+        <test-method status="PASS" signature="fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillRepaymentsOptionsData" duration-ms="353" started-at="2019-07-01T12:17:24Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillRepaymentPlanMasterData" finished-at="2019-07-01T12:17:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillRepaymentsOptionsData -->
+        <test-method status="PASS" signature="fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillProfitRateData" duration-ms="257" started-at="2019-07-01T12:17:25Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillRepaymentsOptionsData" finished-at="2019-07-01T12:17:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillProfitRateData -->
+        <test-method status="PASS" signature="fillIntervalsDataWithLastDay()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="fillIntervalsDataWithLastDay" duration-ms="42890" started-at="2019-07-01T12:17:25Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillProfitRateData" finished-at="2019-07-01T12:18:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillIntervalsDataWithLastDay -->
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.MonthlyDependOnTransaction@eec5a4a]" name="stopDriver" is-config="true" duration-ms="1" started-at="2019-07-01T12:19:19Z" finished-at="2019-07-01T12:19:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- tests.MonthlyDependOnTransaction -->
+      <class name="tests.ProductSetupAfterRepPlan">
+        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="FillData" duration-ms="65576" depends-on-groups="MonthlyDependOnTransaction" started-at="2019-07-01T12:18:08Z" finished-at="2019-07-01T12:19:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FillData -->
+        <test-method status="PASS" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="SaveProductSetup" duration-ms="5146" started-at="2019-07-01T12:19:14Z" depends-on-methods="tests.ProductSetupAfterRepPlan.FillData" finished-at="2019-07-01T12:19:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaveProductSetup -->
+        <test-method status="PASS" signature="PostButton()[pri:0, instance:tests.ProductSetupAfterRepPlan@2b2948e2]" name="PostButton" duration-ms="152" started-at="2019-07-01T12:19:19Z" depends-on-methods="tests.ProductSetupAfterRepPlan.SaveProductSetup" finished-at="2019-07-01T12:19:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostButton -->
+      </class> <!-- tests.ProductSetupAfterRepPlan -->
+    </test> <!-- MytestCase -->
+  </suite> <!-- testSuite -->
 </testng-results>

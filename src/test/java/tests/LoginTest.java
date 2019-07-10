@@ -1,5 +1,7 @@
 package tests;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -28,7 +30,7 @@ public class LoginTest extends TestBase {
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
-		
+
 		JsonDataWriter jsonFileWriter = new JsonDataWriter();
 		String [] x = {"adminstartor"};
 		String [] y = {"admin12"};

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
+import Pages.RepaymentPlanTemplatesPage;
 import TestData.JsonDataReader;
 
 @Test
@@ -27,8 +28,9 @@ public class ProductSetupCrud extends TestBase {
 	String DateValue = "01/01/2018";
 	
 	//Repayment Data
+	RepaymentPlanTemplatesPage repaymentPlanObj = new RepaymentPlanTemplatesPage(driver);
 	
-	String repaymentcode="859";
+	String repaymentcode=RepaymentPlanTemplatesPage.repaymentCode;
 	
 	//Business Rules
 	

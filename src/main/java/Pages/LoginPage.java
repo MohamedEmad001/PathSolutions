@@ -1,5 +1,7 @@
 package Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Hashtable;
 
 import org.openqa.selenium.WebDriver;

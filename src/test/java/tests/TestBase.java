@@ -11,7 +11,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import utilities.Helper;
+
 
 
 
@@ -36,7 +36,10 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
 
-		driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
+		
+		//driver.navigate().to("http://192.168.112.33/I50FINDemo/Default.aspx");	
+		driver.navigate().to("http://192.168.113.4/i50qc/Default.aspx");	
+		//driver.navigate().to("http://192.168.112.44/I50QC/Security/SignIn.aspx");
 		//driver.navigate().to("http://192.168.112.44/I50GulfQC/security/Signin.aspx");
 		//driver.navigate().to("http://192.168.112.33/I50DEV/security/Signin.aspx");
 
@@ -58,7 +61,7 @@ public class TestBase {
 		jsonFileWriter.JsonWriteData(JsonWriterFile, "LoginData", x, y);
 	}*/
 	
-	
+	/*
 	@AfterMethod
 	public void takeScreenshots(ITestResult result) throws IOException
 	{
@@ -82,7 +85,7 @@ public class TestBase {
 		}
 			
 	}
-	
+	*/
 	//after suite annotation will execute code after any @Test annotation
 	//here after @Test code finished will close the driver
 	@AfterSuite

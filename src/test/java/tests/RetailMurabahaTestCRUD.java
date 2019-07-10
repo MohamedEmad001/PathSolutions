@@ -101,6 +101,7 @@ public class RetailMurabahaTestCRUD extends TestBase {
 		RetailMurabahaObject.SaveRetailMurabaha();
 		RetailMurabahaObject.CheckRequestApproval();
 	}
+	
 
 	/*
 	

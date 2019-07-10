@@ -58,6 +58,10 @@ public class StraightCalculationMethodsTest extends TestBase {
 	
 	String RetailMurabahamoduleID= "1500900011";
 	
+	String TenuresCount = "12";
+	String FirstInstallmentDate = "06/01/2018";
+	
+	
 	String RMurabahaCode;
 
 	String [] jCustomerkeys = {"M_004_Appr", "F_004_Appr", "M_002_Appr", "F_002_Appr", "M_010_Appr", "F_010_Appr", "M_007_Appr", "F_007_Appr", "BBC_M_003_Reje" };
@@ -89,7 +93,7 @@ public class StraightCalculationMethodsTest extends TestBase {
 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate, CustomerID,ProductCodeID,
 															NonListedVendor, CurrencyCode,
 															ItemName, ItemCategory, Price,
-															Cost, ParentframeID,SubFramesID);
+															Cost, ParentframeID,SubFramesID,TenuresCount,FirstInstallmentDate);
 		RetailMurabahaObject.SaveRetailMurabaha();
 		RetailMurabahaObject.CheckRequestApproval();
 		RetailMurabahaObject.CheckPosting();

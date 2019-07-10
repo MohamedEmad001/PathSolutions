@@ -129,6 +129,7 @@ public class ProductSetupPage extends PageBase {
 
 	public static String ActualProductCode;
 
+	
 
 
 	public void ProductSetupModule(	String productsetupTypeValue, String ClassCodevalue,String curCode,String DateValue,String Namevalue, String ParentframeID, String SubFramesID, String repaymentcode) throws InterruptedException, IOException
@@ -185,6 +186,8 @@ public class ProductSetupPage extends PageBase {
 	{
 
 		Thread.sleep(7000);
+		driver1.switchTo().defaultContent();
+		searchBox.clear();
 		searchBox.sendKeys(moduleID);
 		waitMethod(7);
 		searchBox.sendKeys(Keys.ENTER);

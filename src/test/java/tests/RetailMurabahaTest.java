@@ -1,14 +1,12 @@
 package tests;
 
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.util.Hashtable;
 
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
-import Pages.IndividualProspectPage;
 import Pages.LoginPage;
 import Pages.ProductSetupPage;
 import Pages.RetailMurabahaPage;
@@ -46,6 +44,8 @@ public class RetailMurabahaTest extends TestBase {
 	String ParentframeID = "frame_1500900011";
 	String SubFramesID = "parentModuleID1500900011";
 	String RetailMurabahamoduleID= "1500900011";
+	String TenuresCount = "12";
+	String FirstInstallmentDate = "06012018";
 	
 	String RMurabahaCode;
 
@@ -72,15 +72,18 @@ public class RetailMurabahaTest extends TestBase {
 	public void CheckInsertAllMandatoryFields() throws InterruptedException, IOException
 	{
 		System.out.println("x" + ProductSetupPage.ActualProductCode);
-		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate,
+ 		RetailMurabahaObject.FillRequiredFields(RequestedDate, ValueDate,
 				//IndividualProspectPage.generatedProspectCode,
 				"352425264", 
 				//ProductSetupPage.ActualProductCode,
-				"772",
+				"869",
 			//IndividualProspectPage.generatedCustomerCode,
 				NonListedVendor, CurrencyCode,
 				ItemName, ItemCategory, Price,
-				Cost, ParentframeID,SubFramesID);
+				Cost, ParentframeID,SubFramesID,TenuresCount,FirstInstallmentDate);
+ 		
+ 		//RetailMurabahaObject.SaveRetailMurabaha();
+		//RetailMurabahaObject.CheckRequestApproval();
 	}
 	
 	@Test (dependsOnMethods = {"CheckInsertAllMandatoryFields"})
@@ -95,9 +98,11 @@ public class RetailMurabahaTest extends TestBase {
 
 	}
 	
+	//@Test (dependsOnMethods = {"CheckSaveRetailMurabaha"}, enabled = false)
 	@Test (dependsOnMethods = {"CheckSaveRetailMurabaha"})
 	public void RequestForApprove() throws InterruptedException {
 		
 		RetailMurabahaObject.CheckRequestApproval();
 	}
+	
 }
