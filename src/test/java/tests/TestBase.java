@@ -2,6 +2,7 @@ package tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -20,6 +21,13 @@ public class TestBase {
 	//define public object from webdriver 
 	public static WebDriver driver;
 	
+	String Demo ="http://192.168.112.33/I50FINDemo/Default.aspx";
+	String Demo2="http://192.168.113.4/i50qc/Default.aspx";
+	String Client2 ="http://192.168.112.44/ITFCQC/Default.aspx";
+	String i50QC = "http://192.168.112.44/I50QC/Security/SignIn.aspx";
+	String i50Dev = "http://192.168.112.33/I50DEV/security/Signin.aspx";
+	String ITFCQC="http://192.168.112.44/ITFCQC/Default.aspx";
+	
 	//before suite will run before any @Test annotation
 	//at this before suite will open the browser ans maxmize the window, also wait for miximazation then pass the URL
 	@BeforeSuite
@@ -31,8 +39,12 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.MILLISECONDS);
 
-		driver.navigate().to("http://192.168.112.44/I50QC/security/Signin.aspx");
-		//driver.navigate().to("http://192.168.112.33/I50DEV/security/Signin.aspx");
+		//driver.navigate().to(Demo);
+		driver.navigate().to(Demo2);
+		//driver.navigate().to(Client2);
+		//driver.navigate().to(i50QC);
+		//driver.navigate().to(i50Dev);
+		//driver.navigate().to(ITFCQC);
 
 	}
 	

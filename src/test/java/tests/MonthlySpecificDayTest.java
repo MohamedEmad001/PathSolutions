@@ -12,7 +12,7 @@ import Pages.LoginPage;
 import Pages.RepaymentPlanTemplatesPage;
 import TestData.JsonDataReader;
 @Test(groups = {"MonthlyDependOnTransaction"})
-public class MonthlyDependOnTransaction extends TestBase {
+public class MonthlySpecificDayTest extends TestBase {
 
 	//String parentFrame= "frame_150017";
 
@@ -27,7 +27,7 @@ public class MonthlyDependOnTransaction extends TestBase {
 
 	String DateValue="01012018";
 	String PeriodBase="M";
-	String ReptDescriptionString= "Monthly+PresentValue+Fixed+DependOnTransaction";
+	String ReptDescriptionString= "Monthly+PresentValue+Fixed+SpecificDay";
 	String RoundToNeares="2";
 	String parentFrameValue="frame_150017";
 	String subFrameValue="parentModuleID150017";
@@ -53,10 +53,10 @@ public class MonthlyDependOnTransaction extends TestBase {
 	//AT Parameters
 	String LastDay="T";	
 	String SpecificDay="F";
+	String DependOnTransaction="R";
 	String MonthOnValue="5";
 	String WeekOnValue="3";
 	String OnDayValue="1";	
-	String DependOnTransaction="R";
 	String IgnorWeekEnd="I";
 	String IgnorVacation="I";
 	String PrincipalAndProfit="PNP";
@@ -70,7 +70,7 @@ public class MonthlyDependOnTransaction extends TestBase {
 	String SubFrame="parentModuleID150017";
 	String SubFrame2="parentModuleID1500172";
 	
-	public String repaymentPlanCode;
+	public static String repaymentPlanCode;
 	
 	JsonDataReader jsonFileReader = new JsonDataReader();
 
@@ -110,19 +110,16 @@ public class MonthlyDependOnTransaction extends TestBase {
 		RepaymentPlanTemplatesObj.InsertProfitRateData(PresentValue, profitPeriodNo);
 	}
 	
-	@Test(dependsOnMethods = {"fillProfitRateData"})
-	public void fillIntervalsDataWithSpecificDay() throws InterruptedException 
-	/*{
-		RepaymentPlanTemplatesObj.InsertIntervalsDataWithSpecificDay(UpTo, subFrameValue,
-				SubFrame2, SpecificDay, MonthOnValue,OnDayValue, IgnorWeekEnd,PrincipalAndProfit, 
-				Fixed, percentage, Ratio, ParentFrame);
-	}*/
-	{
-		RepaymentPlanTemplatesObj.InsertIntervalsData(UpTo, SubFrame, SubFrame2, DependOnTransaction,
-				IgnorWeekEnd, IgnorVacation, PrincipalAndProfit, Fixed, percentage, Ratio, ParentFrame);
-		repaymentPlanCode = RepaymentPlanTemplatesPage.repaymentCode;
-			
-	}
 	
+	@Test(dependsOnMethods = {"fillProfitRateData"})
+	
+	public void fillIntervalsDataWithLastDay() throws InterruptedException 
+	{
+		RepaymentPlanTemplatesObj.InsertIntervalsDataWithSpecificDay(UpTo, subFrameValue, SubFrame2,
+				                                     DependOnTransaction,MonthOnValue, IgnorWeekEnd, 
+				                                     IgnorVacation, PrincipalAndProfit, Fixed,
+				                                     percentage, Ratio, ParentFrame);
+		repaymentPlanCode = RepaymentPlanTemplatesPage.repaymentCode;
+	}
 	
 }

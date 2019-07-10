@@ -3,19 +3,19 @@
 <suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
   <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
     <classes>
-      <class name="tests.MonthlyDependOnTransaction">
+      <class name="tests.MonthlyDependOnTransactionTest">
         <methods>
+          <include name="fillProfitRateData"/>
           <include name="startDriver"/>
           <include name="fillRepaymentsOptionsData"/>
+          <include name="fillIntervalsDataWithDependOnTransaction"/>
           <include name="OpenRepaymentPlanModule"/>
-          <include name="fillProfitRateData"/>
           <include name="stopDriver"/>
-          <include name="fillIntervalsDataWithLastDay"/>
-          <include name="CheckLogin"/>
           <include name="fillRepaymentPlanMasterData"/>
+          <include name="CheckLogin"/>
           <include name="takeScreenshots"/>
         </methods>
-      </class> <!-- tests.MonthlyDependOnTransaction -->
+      </class> <!-- tests.MonthlyDependOnTransactionTest -->
       <class name="tests.ProductSetupAfterRepPlan">
         <methods>
           <include name="startDriver"/>

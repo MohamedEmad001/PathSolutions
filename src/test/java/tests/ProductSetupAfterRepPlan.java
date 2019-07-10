@@ -41,17 +41,21 @@ public class ProductSetupAfterRepPlan extends TestBase {
 	//Switches between frames
 	String ParentframeID = "frame_150082";
 	String SubFramesID = "parentModuleID150082";
-	
+
+	public String repaymentcode;
 	public static String ProductCode;
 	
 
 	@Test(dependsOnGroups = {"MonthlyDependOnTransaction"}) 
 	public void FillData() throws InterruptedException, IOException
 	{
+		repaymentcode = MonthlyDependOnTransactionTest.repaymentPlanCode;
+		System.out.println(repaymentcode);
 		productSetupObj = new ProductSetupPage(driver);
-		String repaymentcode = MonthlyDependOnTransaction.repaymentPlanCode;
 		System.out.println("the repayment plan code is " + repaymentcode );
-		productSetupObj.ProductSetupModuleCrud(productsetupTypeValue, ClassCodevalue ,curCode, DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
+		//productSetupObj.ProductSetupModuleCrud(productsetupTypeValue, ClassCodevalue ,curCode,DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
+		productSetupObj.ProductSetupModule(productsetupTypeValue, ClassCodevalue, curCode,
+				DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
 		//productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
 		//productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
 		

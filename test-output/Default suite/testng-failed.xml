@@ -3,14 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.ProductSetupAfterRepPlan">
+      <class name="tests.MonthlyDependOnTransaction">
         <methods>
           <include name="startDriver"/>
-          <include name="FillData"/>
+          <include name="fillRepaymentsOptionsData"/>
+          <include name="OpenRepaymentPlanModule"/>
+          <include name="fillProfitRateData"/>
           <include name="stopDriver"/>
+          <include name="CheckLogin"/>
+          <include name="fillRepaymentPlanMasterData"/>
           <include name="takeScreenshots"/>
+          <include name="fillIntervalsDataWithSpecificDay"/>
         </methods>
-      </class> <!-- tests.ProductSetupAfterRepPlan -->
+      </class> <!-- tests.MonthlyDependOnTransaction -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

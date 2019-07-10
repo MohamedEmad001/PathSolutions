@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" ignored="2" total="11" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="testSuite" duration-ms="161554" started-at="2019-06-11T07:13:55Z" finished-at="2019-06-11T07:16:37Z">
+  <suite name="testSuite" duration-ms="195985" started-at="2019-07-09T12:08:05Z" finished-at="2019-07-09T12:11:21Z">
     <groups>
       <group name="MonthlyDependOnTransaction">
-        <method signature="MonthlyDependOnTransaction.CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="CheckLogin" class="tests.MonthlyDependOnTransaction"/>
-        <method signature="MonthlyDependOnTransaction.OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="OpenRepaymentPlanModule" class="tests.MonthlyDependOnTransaction"/>
-        <method signature="MonthlyDependOnTransaction.fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillRepaymentPlanMasterData" class="tests.MonthlyDependOnTransaction"/>
-        <method signature="MonthlyDependOnTransaction.fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillRepaymentsOptionsData" class="tests.MonthlyDependOnTransaction"/>
-        <method signature="MonthlyDependOnTransaction.fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillProfitRateData" class="tests.MonthlyDependOnTransaction"/>
-        <method signature="MonthlyDependOnTransaction.fillIntervalsDataWithLastDay()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillIntervalsDataWithLastDay" class="tests.MonthlyDependOnTransaction"/>
+        <method signature="MonthlyDependOnTransactionTest.CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="CheckLogin" class="tests.MonthlyDependOnTransactionTest"/>
+        <method signature="MonthlyDependOnTransactionTest.OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="OpenRepaymentPlanModule" class="tests.MonthlyDependOnTransactionTest"/>
+        <method signature="MonthlyDependOnTransactionTest.fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillRepaymentPlanMasterData" class="tests.MonthlyDependOnTransactionTest"/>
+        <method signature="MonthlyDependOnTransactionTest.fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillRepaymentsOptionsData" class="tests.MonthlyDependOnTransactionTest"/>
+        <method signature="MonthlyDependOnTransactionTest.fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillProfitRateData" class="tests.MonthlyDependOnTransactionTest"/>
+        <method signature="MonthlyDependOnTransactionTest.fillIntervalsDataWithDependOnTransaction()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillIntervalsDataWithDependOnTransaction" class="tests.MonthlyDependOnTransactionTest"/>
       </group> <!-- MonthlyDependOnTransaction -->
       <group name="ProductSetupAfterRepPlan">
         <method signature="ProductSetupAfterRepPlan.FillData()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="FillData" class="tests.ProductSetupAfterRepPlan"/>
@@ -18,9 +18,9 @@
         <method signature="ProductSetupAfterRepPlan.PostButton()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="PostButton" class="tests.ProductSetupAfterRepPlan"/>
       </group> <!-- ProductSetupAfterRepPlan -->
     </groups>
-    <test name="MytestCase" duration-ms="161554" started-at="2019-06-11T07:13:55Z" finished-at="2019-06-11T07:16:37Z">
-      <class name="tests.MonthlyDependOnTransaction">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="startDriver" is-config="true" duration-ms="8270" started-at="2019-06-11T07:13:47Z" finished-at="2019-06-11T07:13:55Z">
+    <test name="MytestCase" duration-ms="195985" started-at="2019-07-09T12:08:05Z" finished-at="2019-07-09T12:11:21Z">
+      <class name="tests.MonthlyDependOnTransactionTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="startDriver" is-config="true" duration-ms="11002" started-at="2019-07-09T12:07:54Z" finished-at="2019-07-09T12:08:05Z">
           <params>
             <param index="0">
               <value>
@@ -31,107 +31,107 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="CheckLogin" duration-ms="350" started-at="2019-06-11T07:13:55Z" finished-at="2019-06-11T07:13:56Z">
+        <test-method status="PASS" signature="CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="CheckLogin" duration-ms="317" started-at="2019-07-09T12:08:05Z" finished-at="2019-07-09T12:08:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLogin -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="538" started-at="2019-06-11T07:13:56Z" finished-at="2019-06-11T07:13:56Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="1637" started-at="2019-07-09T12:08:05Z" finished-at="2019-07-09T12:08:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=MonthlyDependOnTransaction.CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=CheckLogin status=SUCCESS method=MonthlyDependOnTransactionTest.CheckLogin()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="OpenRepaymentPlanModule" duration-ms="10611" started-at="2019-06-11T07:13:56Z" depends-on-methods="tests.MonthlyDependOnTransaction.CheckLogin" finished-at="2019-06-11T07:14:07Z">
+        <test-method status="PASS" signature="OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="OpenRepaymentPlanModule" duration-ms="3630" started-at="2019-07-09T12:08:07Z" depends-on-methods="tests.MonthlyDependOnTransactionTest.CheckLogin" finished-at="2019-07-09T12:08:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenRepaymentPlanModule -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="308" started-at="2019-06-11T07:14:07Z" finished-at="2019-06-11T07:14:07Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="296" started-at="2019-07-09T12:08:11Z" finished-at="2019-07-09T12:08:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=OpenRepaymentPlanModule status=SUCCESS method=MonthlyDependOnTransaction.OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=OpenRepaymentPlanModule status=SUCCESS method=MonthlyDependOnTransactionTest.OpenRepaymentPlanModule()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillRepaymentPlanMasterData" duration-ms="20040" started-at="2019-06-11T07:14:07Z" depends-on-methods="tests.MonthlyDependOnTransaction.OpenRepaymentPlanModule" finished-at="2019-06-11T07:14:27Z">
+        <test-method status="PASS" signature="fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillRepaymentPlanMasterData" duration-ms="34700" started-at="2019-07-09T12:08:11Z" depends-on-methods="tests.MonthlyDependOnTransactionTest.OpenRepaymentPlanModule" finished-at="2019-07-09T12:08:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillRepaymentPlanMasterData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="368" started-at="2019-06-11T07:14:27Z" finished-at="2019-06-11T07:14:27Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="477" started-at="2019-07-09T12:08:46Z" finished-at="2019-07-09T12:08:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=fillRepaymentPlanMasterData status=SUCCESS method=MonthlyDependOnTransaction.fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=fillRepaymentPlanMasterData status=SUCCESS method=MonthlyDependOnTransactionTest.fillRepaymentPlanMasterData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillRepaymentsOptionsData" duration-ms="338" started-at="2019-06-11T07:14:27Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillRepaymentPlanMasterData" finished-at="2019-06-11T07:14:28Z">
+        <test-method status="PASS" signature="fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillRepaymentsOptionsData" duration-ms="327" started-at="2019-07-09T12:08:46Z" depends-on-methods="tests.MonthlyDependOnTransactionTest.fillRepaymentPlanMasterData" finished-at="2019-07-09T12:08:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillRepaymentsOptionsData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="315" started-at="2019-06-11T07:14:28Z" finished-at="2019-06-11T07:14:28Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="330" started-at="2019-07-09T12:08:46Z" finished-at="2019-07-09T12:08:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=fillRepaymentsOptionsData status=SUCCESS method=MonthlyDependOnTransaction.fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=fillRepaymentsOptionsData status=SUCCESS method=MonthlyDependOnTransactionTest.fillRepaymentsOptionsData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillProfitRateData" duration-ms="283" started-at="2019-06-11T07:14:28Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillRepaymentsOptionsData" finished-at="2019-06-11T07:14:28Z">
+        <test-method status="PASS" signature="fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillProfitRateData" duration-ms="275" started-at="2019-07-09T12:08:47Z" depends-on-methods="tests.MonthlyDependOnTransactionTest.fillRepaymentsOptionsData" finished-at="2019-07-09T12:08:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillProfitRateData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="298" started-at="2019-06-11T07:14:28Z" finished-at="2019-06-11T07:14:29Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="342" started-at="2019-07-09T12:08:47Z" finished-at="2019-07-09T12:08:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=fillProfitRateData status=SUCCESS method=MonthlyDependOnTransaction.fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=fillProfitRateData status=SUCCESS method=MonthlyDependOnTransactionTest.fillProfitRateData()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="fillIntervalsDataWithLastDay()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="fillIntervalsDataWithLastDay" duration-ms="46843" started-at="2019-06-11T07:14:29Z" depends-on-methods="tests.MonthlyDependOnTransaction.fillProfitRateData" finished-at="2019-06-11T07:15:15Z">
+        <test-method status="PASS" signature="fillIntervalsDataWithDependOnTransaction()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="fillIntervalsDataWithDependOnTransaction" duration-ms="68846" started-at="2019-07-09T12:08:47Z" depends-on-methods="tests.MonthlyDependOnTransactionTest.fillProfitRateData" finished-at="2019-07-09T12:09:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fillIntervalsDataWithLastDay -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="382" started-at="2019-06-11T07:15:15Z" finished-at="2019-06-11T07:15:16Z">
+        </test-method> <!-- fillIntervalsDataWithDependOnTransaction -->
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="takeScreenshots" is-config="true" duration-ms="368" started-at="2019-07-09T12:09:56Z" finished-at="2019-07-09T12:09:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=fillIntervalsDataWithLastDay status=SUCCESS method=MonthlyDependOnTransaction.fillIntervalsDataWithLastDay()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209] output={null}]]]>
+                <![CDATA[[TestResult name=fillIntervalsDataWithDependOnTransaction status=SUCCESS method=MonthlyDependOnTransactionTest.fillIntervalsDataWithDependOnTransaction()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.MonthlyDependOnTransaction@5a8e6209]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-06-11T07:16:37Z" finished-at="2019-06-11T07:16:37Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:tests.MonthlyDependOnTransactionTest@5a8e6209]" name="stopDriver" is-config="true" duration-ms="0" started-at="2019-07-09T12:11:21Z" finished-at="2019-07-09T12:11:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- tests.MonthlyDependOnTransaction -->
+      </class> <!-- tests.MonthlyDependOnTransactionTest -->
       <class name="tests.ProductSetupAfterRepPlan">
-        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="FillData" duration-ms="69259" depends-on-groups="MonthlyDependOnTransaction" started-at="2019-06-11T07:15:16Z" finished-at="2019-06-11T07:16:25Z">
+        <test-method status="PASS" signature="FillData()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="FillData" duration-ms="73121" depends-on-groups="MonthlyDependOnTransaction" started-at="2019-07-09T12:09:57Z" finished-at="2019-07-09T12:11:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FillData -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="331" started-at="2019-06-11T07:16:25Z" finished-at="2019-06-11T07:16:25Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="354" started-at="2019-07-09T12:11:10Z" finished-at="2019-07-09T12:11:10Z">
           <params>
             <param index="0">
               <value>
@@ -142,11 +142,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="SaveProductSetup" duration-ms="5190" started-at="2019-06-11T07:16:25Z" depends-on-methods="tests.ProductSetupAfterRepPlan.FillData" finished-at="2019-06-11T07:16:31Z">
+        <test-method status="PASS" signature="SaveProductSetup()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="SaveProductSetup" duration-ms="5163" started-at="2019-07-09T12:11:10Z" depends-on-methods="tests.ProductSetupAfterRepPlan.FillData" finished-at="2019-07-09T12:11:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SaveProductSetup -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="566" started-at="2019-06-11T07:16:31Z" finished-at="2019-06-11T07:16:31Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="330" started-at="2019-07-09T12:11:15Z" finished-at="2019-07-09T12:11:15Z">
           <params>
             <param index="0">
               <value>
@@ -157,11 +157,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshots -->
-        <test-method status="PASS" signature="PostButton()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="PostButton" duration-ms="5155" started-at="2019-06-11T07:16:31Z" depends-on-methods="tests.ProductSetupAfterRepPlan.SaveProductSetup" finished-at="2019-06-11T07:16:36Z">
+        <test-method status="PASS" signature="PostButton()[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="PostButton" duration-ms="5106" started-at="2019-07-09T12:11:15Z" depends-on-methods="tests.ProductSetupAfterRepPlan.SaveProductSetup" finished-at="2019-07-09T12:11:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PostButton -->
-        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="342" started-at="2019-06-11T07:16:36Z" finished-at="2019-06-11T07:16:37Z">
+        <test-method status="PASS" signature="takeScreenshots(org.testng.ITestResult)[pri:0, instance:tests.ProductSetupAfterRepPlan@4b4523f8]" name="takeScreenshots" is-config="true" duration-ms="326" started-at="2019-07-09T12:11:21Z" finished-at="2019-07-09T12:11:21Z">
           <params>
             <param index="0">
               <value>

@@ -77,6 +77,8 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 	@FindBy(id="PER_CODE_5") WebElement YearlyBtn;
 	@FindBy(id="PI_LAST_DAY") WebElement AtDropList;
 	@FindBy(id="PI_MONTH_DAY_MONTHLY")WebElement MonthOnTxt;
+	@FindBy (id="PI_WEEK_NO") WebElement WeekNoOnTxt;
+	@FindBy (id="PI_WEEK_DAY_MONTHLY") WebElement OnDayDropList;
 	@FindBy(id="PI_WEEKEND_OPTION")WebElement WeekEndDropList;
 	@FindBy(id="PI_VACATION_OPTION") WebElement VacationDropList;
 	@FindBy(id="RPTI_MAX_INS") WebElement MaxInstallmentCheckBox;
@@ -87,7 +89,7 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 	@FindBy(id="RPTI_RATIO_OF_TOTAL_AMOUNT") WebElement RatioTxt;
 	@FindBy (xpath = "//*[@id=\"REPT_CODE2\"]") WebElement actualRepaymentCode;            
 	
-	public static String repaymentCode;
+	 public static String repaymentCode;
 	
 
 	public void OpenRepaymentPlanTemplates(String ParentframeID, 
@@ -167,9 +169,9 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 		waitMethod(3);
 		setTextElementText(UpToTxt, UpToValue);
 		clickButton(SaveBtn);
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		clickButton(DetailsBtn);
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		driver1.switchTo().defaultContent();
 		switchFrame(SubFrameValue);
 		clickButton(FirstInstallmentBtn);
@@ -196,7 +198,8 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 		clickButton(SaveBtn);
 		Thread.sleep(6000);
 		repaymentCode = StoreData(actualRepaymentCode);
-		Thread.sleep(6000);
+		System.out.println("InsertIntervalsData" + repaymentCode);
+		Thread.sleep(7000);
 		clickButton(PostBtn);
 		waitMethod(200);
 		ConfirmAlert();
@@ -207,9 +210,10 @@ public class RepaymentPlanTemplatesPage extends PageBase{
  
 		public void InsertIntervalsDataWithSpecificDay(String UpToValue,String SubFrameValue,
 				                         String SubFrame2Value, String AtValue,String MonthOnValue,
-				                          String WeekEndValue,String VacationValue,
-				                          String InstallmentTypeDropValue,String ProfitRateTypeDropValue,
-				                          String PercentageValue,String RatioValue,String ParentFrameValue) throws InterruptedException
+				                         String WeekEndValue,String VacationValue,String InstallmentTypeDropValue,
+				                         String ProfitRateTypeDropValue,String PercentageValue,
+				                         String RatioValue,String ParentFrameValue)
+				                         throws InterruptedException
 		{
 			clickButton(IntervalsBtn);
 			waitMethod(10);
@@ -217,7 +221,7 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 			waitMethod(3);
 			setTextElementText(UpToTxt, UpToValue);
 			clickButton(SaveBtn);
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			clickButton(DetailsBtn);
 			Thread.sleep(5000);
 			driver1.switchTo().defaultContent();
@@ -228,9 +232,10 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 			Thread.sleep(3000);
 			driver1.switchTo().defaultContent();
 			switchFrame(SubFrame2Value);
-			clickButton(MonthlyBtn);
-			setTextElementText(MonthOnTxt, MonthOnValue);
+			clickButton(MonthlyBtn);			
+			//setTextElementText(OnDayDropList, OnDayValue);
 			DropListSelect(AtDropList, AtValue);
+			setTextElementText(MonthOnTxt, MonthOnValue);
 			DropListSelect(WeekEndDropList, WeekEndValue);
 			DropListSelect(VacationDropList, VacationValue);
 			clickButton(SaveBtn);
@@ -246,11 +251,14 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 			driver1.switchTo().defaultContent();
 			switchFrame(ParentFrameValue);
 			clickButton(SaveBtn);
-			waitMethod(70);
-			repaymentCode = StoreData(actualRepaymentCode);
-			waitMethod(70);
+			Thread.sleep(6000);
+			//repaymentCode = StoreData(actualRepaymentCode);
+			System.out.println("InsertIntervalsDataWithSpecificDay" + repaymentCode);
+			Thread.sleep(6000);
 			clickButton(PostBtn);
 			waitMethod(70);
+			ConfirmAlert();
+		    waitMethod(200);
 			
 		}
 }
