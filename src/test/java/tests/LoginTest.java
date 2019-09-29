@@ -2,7 +2,6 @@ package tests;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Hashtable;
 
 import org.json.simple.parser.ParseException;
@@ -14,14 +13,14 @@ import TestData.JsonDataWriter;
 
 public class LoginTest extends TestBase {
 
-	String jsonFilePath = "/src/test/java/TestData/FundData.json";
+	String jsonFilePath = "/src/test/java/TestData/Login.json";
 	String [] jkeys = {"UserName", "UserPass"};
 	String [] testCaseInputs = {"UserName", "UserPass"};
 	
 	String JsonWriterFile = System.getProperty("user.dir") + "/src/test/java/TestData/WriteData.json";
 	
 
-	@Test (priority = 1)
+	@Test (priority = 0)
 	public void CheckLogin() throws InterruptedException, FileNotFoundException, IOException, ParseException
 	{
 		JsonDataReader jsonFileReader = new JsonDataReader();
@@ -29,11 +28,13 @@ public class LoginTest extends TestBase {
 		Hashtable<String,String> jData = jsonFileReader.JsonReaderData(jsonFilePath, "CheckLogin" , jkeys, testCaseInputs);
 		LoginPage loginPageObj = new LoginPage(driver);
 		loginPageObj.UserLogin(jData);
-		
+
 		JsonDataWriter jsonFileWriter = new JsonDataWriter();
 		String [] x = {"adminstartor"};
 		String [] y = {"admin12"};
 		jsonFileWriter.JsonWriteData(JsonWriterFile, "LoginData", x, y);
+	
 	}
+	
 
 }

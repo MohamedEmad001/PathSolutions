@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
-  <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.MonthlyDependOnTransactionTest">
+      <class name="tests.CRUDTest.QardHassanCRUDTest">
         <methods>
-          <include name="fillProfitRateData"/>
           <include name="startDriver"/>
-          <include name="fillRepaymentsOptionsData"/>
-          <include name="fillIntervalsDataWithDependOnTransaction"/>
-          <include name="OpenRepaymentPlanModule"/>
+          <include name="checkFilterArea"/>
+          <include name="checkRetrieveAllAndPaging"/>
           <include name="stopDriver"/>
-          <include name="fillRepaymentPlanMasterData"/>
           <include name="CheckLogin"/>
-          <include name="takeScreenshots"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkDeleteTestCase"/>
+          <include name="CheckSaveTestCase"/>
         </methods>
-      </class> <!-- tests.MonthlyDependOnTransactionTest -->
-      <class name="tests.ProductSetupAfterRepPlan">
-        <methods>
-          <include name="startDriver"/>
-          <include name="SaveProductSetup"/>
-          <include name="FillData"/>
-          <include name="stopDriver"/>
-          <include name="PostButton"/>
-          <include name="takeScreenshots"/>
-        </methods>
-      </class> <!-- tests.ProductSetupAfterRepPlan -->
+      </class> <!-- tests.CRUDTest.QardHassanCRUDTest -->
     </classes>
-  </test> <!-- MytestCase(failed) -->
-</suite> <!-- Failed suite [testSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

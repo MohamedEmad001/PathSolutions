@@ -58,31 +58,30 @@ public class ProductSetupCrud extends TestBase {
 
 	}
 
-	@Test (dependsOnMethods = {"CheckLogin"})
+	@Test (priority = 2)
 	public void FillData() throws InterruptedException, IOException
 	{
 		productSetupObj = new ProductSetupPage(driver);
 		productSetupObj.ProductSetupModuleCrud(productsetupTypeValue, ClassCodevalue ,curCode, DateValue, Namevalue, ParentframeID, SubFramesID, repaymentcode);
-		productSetupObj.BusinessRules(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
-		productSetupObj.OverRideTab(ProdFactValue, OverRideOptionsValue);
-		
+		//productSetupObj.BusinessRuleCrud(SubFramesID, Rulecode, RuleActionValue, ProductFactor, ParentframeID);
+		//productSetupObj.OverRideTabCrud(ProdFactValue, OverRideOptionsValue);	
 	}
 	
-	@Test (dependsOnMethods = {"FillData"})
+	@Test (priority = 3)
 	public void SaveProductSetup() throws InterruptedException {
 		
 		productSetupObj.SaveButton();
 		//Call Product Code
 		ProductCode=ProductSetupPage.ActualProductCode;
-		System.out.println(ProductCode);
-		
-		
+		System.out.println(ProductCode);	
 	}
+	
+	@Test (priority = 4)
+	
+	public void Deletecheck() throws InterruptedException {
 		
-	@Test (dependsOnMethods = {"SaveProductSetup"})
-	public void PostButton() throws InterruptedException {
-		
-		productSetupObj.PostButton();
+		productSetupObj.CheckDelete();
 	}
+	
 	
 }

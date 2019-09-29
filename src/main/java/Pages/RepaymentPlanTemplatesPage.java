@@ -21,7 +21,9 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 	@FindBy(id="REPT_DATE1") WebElement ReptDateTxt;
 	@FindBy(id="PER_CODE_TENURE_UNIT") WebElement PeriodBaseDropDown;
 	@FindBy(id="REPT_DESCRIPTION1") WebElement ReptDescTxt;
-	@FindBy(id="PDY_CODE_lovImage") WebElement DayCountConvLOVBtn;
+	@FindBy(id="V0NewButton") WebElement NewButton;
+	//@FindBy(id="PDY_CODE_lovImage") WebElement DayCountConvLOVBtn;
+	@FindBy(xpath="//*[@id=\"PDY_CODE_lovImage\"]") WebElement DayCountConvLOVBtn;
 	@FindBy(id="REPT_ROUND_TO_NEAREST1") WebElement RoundToNearestTxt;
 	@FindBy (css="#filtergrid > div.k-grid-content > table > tbody > tr:nth-child(2)")
 	WebElement SelectDayCountDC;
@@ -92,8 +94,7 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 	 public static String repaymentCode;
 	
 
-	public void OpenRepaymentPlanTemplates(String ParentframeID, 
-			String RepaymentPlanModuleID) 
+	public void OpenRepaymentPlanTemplates(String ParentframeID,String RepaymentPlanModuleID) 
 					throws InterruptedException
 	{
 
@@ -123,14 +124,18 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 			String SettlmentTypeValue,String ProfitRecognitionValue,
 			String RemainingValueLocationValue, String parentFrameValue) throws InterruptedException
 	{
+		
 		setTextElementText(ReptDateTxt, ReptDateValue);
-		setTextElementText(PeriodBaseDropDown, PeriodBaseDropDownValue);
+		DropListSelect(PeriodBaseDropDown, PeriodBaseDropDownValue);
+		//setTextElementText(PeriodBaseDropDown, PeriodBaseDropDownValue);
 		setTextElementText(ReptDescTxt, ReptDescValue);
+		//Thread.sleep(4000);
 		clickButton(DayCountConvLOVBtn);
-		Thread.sleep(3000);
-		switchFrame(SubFrame);		
+		Thread.sleep(5000);
+		switchFrame(SubFrame);	
+		Thread.sleep(4000);
 		DoubleClickonElement(SelectDayCountDC);
-		Thread.sleep(300);
+		Thread.sleep(3000);
 		switchFrame(parentFrameValue);		
 		setTextElementText(RoundToNearestTxt, RoundToNearestValue);
 		DropListSelect(SettTypeDropList, SettlmentTypeValue);
@@ -260,5 +265,10 @@ public class RepaymentPlanTemplatesPage extends PageBase{
 			ConfirmAlert();
 		    waitMethod(200);
 			
+		}
+		
+		public void clickNewButton() throws InterruptedException {
+			Thread.sleep(4000);
+			clickButton(NewButton);
 		}
 }

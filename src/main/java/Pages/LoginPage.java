@@ -1,5 +1,7 @@
 package Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Hashtable;
 
 import org.openqa.selenium.WebDriver;
@@ -34,6 +36,9 @@ public class LoginPage extends PageBase {
 	@FindBy (id = "txt_PlaceHolder")
 	WebElement searchBox;
 
+	@FindBy (css = "#todayTasks")
+	WebElement todayTasksPart;
+
 
 	public void UserLogin(Hashtable<String,String> loginData) throws InterruptedException
 	{
@@ -42,6 +47,7 @@ public class LoginPage extends PageBase {
 		setTextElementText(Loginpassword, loginData.get("UserPass"));
 		Checkingcheckbox(Rememberme);
 		clickButton(Loginbtn);
+		
 
 	}
 	

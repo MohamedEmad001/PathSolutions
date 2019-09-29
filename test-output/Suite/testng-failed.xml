@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="tests.CRUDTest.CustomerScoringAttributesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="CheckLogin"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.CustomerScoringAttributesCRUDTest -->
+      <class name="tests.CRUDTest.AnnualIncomeCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="CheckLogin"/>
+          <include name="stopDriver"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.AnnualIncomeCRUDTest -->
+      <class name="tests.CRUDTest.CompaniesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="CheckLogin"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.CompaniesCRUDTest -->
+      <class name="tests.CRUDTest.IDTypesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="CheckLogin"/>
+          <include name="stopDriver"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.IDTypesCRUDTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="10" name="testSuite"
+	parallel="tests">
+	<test name="test">
+
+		<classes>
+			<class name="tests.CRUDTest.SectorsCRUDTest" />
+			<class name="tests.CRUDTest.DocumentTypesCRUDTest" />
+			<class name="tests.CRUDTest.RegionsCRUDTest" />
+			<class name="tests.CRUDTest.CountriesCRUDTest" />
+			<class name="tests.CRUDTest.IDTypesCRUDTest" />
+			<class name="tests.CRUDTest.AnnualIncomeCRUDTest" />
+			<class name="tests.CRUDTest.CompaniesCRUDTest" />
+			<class name="tests.CRUDTest.CustomerScoringAttributesCRUDTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

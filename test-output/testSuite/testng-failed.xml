@@ -1,31 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [testSuite]" parallel="tests">
-  <test thread-count="2" verbose="10" name="MytestCase(failed)" parallel="tests">
+  <test thread-count="2" verbose="10" name="test(failed)" parallel="tests">
     <classes>
-      <class name="tests.MonthlyDependOnTransactionTest">
+      <class name="tests.CRUDTest.DocumentTypesCRUDTest">
         <methods>
-          <include name="fillProfitRateData"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkRetrieveAllAndPaging"/>
           <include name="startDriver"/>
-          <include name="fillRepaymentsOptionsData"/>
-          <include name="fillIntervalsDataWithDependOnTransaction"/>
-          <include name="OpenRepaymentPlanModule"/>
+          <include name="checkDeleteTestCase"/>
           <include name="stopDriver"/>
-          <include name="fillRepaymentPlanMasterData"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkFilterArea"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.DocumentTypesCRUDTest -->
+      <class name="tests.CRUDTest.RegionsCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkFilterArea"/>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="stopDriver"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkDeleteTestCase"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.RegionsCRUDTest -->
+      <class name="tests.CRUDTest.CustomerScoringAttributesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="checkFilterArea"/>
+          <include name="stopDriver"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="checkDeleteTestCase"/>
+          <include name="CheckSaveTestCase"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.CustomerScoringAttributesCRUDTest -->
+      <class name="tests.CRUDTest.AnnualIncomeCRUDTest">
+        <methods>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="startDriver"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="stopDriver"/>
+          <include name="checkFilterArea"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkDeleteTestCase"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.AnnualIncomeCRUDTest -->
+      <class name="tests.CRUDTest.CompaniesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="checkFilterArea"/>
+          <include name="stopDriver"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkDeleteTestCase"/>
+          <include name="checkUpdateTestCase"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.CompaniesCRUDTest -->
+      <class name="tests.CRUDTest.SectorsCRUDTest">
+        <methods>
+          <include name="checkDeleteTestCase"/>
+          <include name="startDriver"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="stopDriver"/>
+          <include name="checkUpdateTestCase"/>
           <include name="CheckLogin"/>
-          <include name="takeScreenshots"/>
+          <include name="checkFilterArea"/>
         </methods>
-      </class> <!-- tests.MonthlyDependOnTransactionTest -->
-      <class name="tests.ProductSetupAfterRepPlan">
+      </class> <!-- tests.CRUDTest.SectorsCRUDTest -->
+      <class name="tests.CRUDTest.IDTypesCRUDTest">
         <methods>
           <include name="startDriver"/>
-          <include name="SaveProductSetup"/>
-          <include name="FillData"/>
+          <include name="checkFilterArea"/>
+          <include name="checkUpdateTestCase"/>
           <include name="stopDriver"/>
-          <include name="PostButton"/>
-          <include name="takeScreenshots"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkDeleteTestCase"/>
+          <include name="checkRetrieveAllAndPaging"/>
         </methods>
-      </class> <!-- tests.ProductSetupAfterRepPlan -->
+      </class> <!-- tests.CRUDTest.IDTypesCRUDTest -->
+      <class name="tests.CRUDTest.CountriesCRUDTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="checkFilterArea"/>
+          <include name="stopDriver"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkRetrieveAllAndPaging"/>
+          <include name="CheckSaveTestCase"/>
+          <include name="checkDeleteTestCase"/>
+        </methods>
+      </class> <!-- tests.CRUDTest.CountriesCRUDTest -->
     </classes>
-  </test> <!-- MytestCase(failed) -->
+  </test> <!-- test(failed) -->
 </suite> <!-- Failed suite [testSuite] -->

@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.util.Hashtable;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,8 +74,64 @@ public class RetailMurabahaPage extends PageBase {
 	@FindBy(css="#Body1 > div.lobibox.lobibox-info.draggable.animated-super-fast.zoomIn > div.lobibox-footer.text-center > button")
 	WebElement objectReferenceConfirmationBtn;
 
+	@FindBy(xpath = "//*[@id=\"ddlAppliedWorkflows\"]")
+	WebElement workFlowDropList;
+	
+	@FindBy(xpath = "//*[@id=\"SaveButton\"]")
+	WebElement saveWorkFlow;
+	
+	
+	@FindBy(xpath = "//*[@id=\"V1TC_V0TP_WD_DECISION\"]")
+	WebElement selectApprovalCycle;
+	
+	@FindBy(xpath = "//*[@id=\"SaveButton__Button\"]")
+	WebElement saveApprovalCycle;
+	
+	@FindBy(xpath = "//*[@id=\"FIN_DEC\"]")
+	WebElement selectFinalDecisionMaintained;
+	
 	public static  String MurabahaCode;
 
+
+	@FindBy(css="#CUS_NAME")
+	WebElement customerName;
+
+	@FindBy(css="#FPROD_LATIN_NAME")
+	WebElement productSetupName;
+
+	@FindBy(id="CUS_CODE_lovImage")
+	WebElement customerLOVIcon;
+
+	@FindBy(xpath ="//*[@id=\"advancedFilter\"]")
+	WebElement LOVQuickSearchField;
+
+	String SubLovFrame = "parentModuleID1500900011";
+
+	@FindBy(css="#filtergrid > div.k-grid-content > table > tbody > tr")
+	WebElement LOVSearchResult;
+
+	@FindBy(id="FPROD_CODE1_lovImage")
+	WebElement productLOVIcon;
+
+	//Change the repayment details from repayment tab
+	@FindBy (xpath = "//*[@id=\"__tab_V18TC_V17TP\"]")
+	WebElement repaymentTab;
+
+	@FindBy (xpath = "//*[@id=\"V18TC_V17TP_REP_TENURE\"]")
+	WebElement tenureEntry;
+
+	@FindBy (xpath = "//*[@id=\"V18TC_V17TP_FST_INSTALLMENT_DATE\"]")
+	WebElement firstInstallmentDate;
+
+	//Check the Generated Installments from Installments tab
+	@FindBy (xpath = "//*[@id=\"__tab_V18TC_V5TP\"]")
+	WebElement installmentsTab;
+	
+	
+
+	
+	@FindBy (xpath = "//*[@id=\"V18PostButton\"]")
+	WebElement postButton;
 
 	//Search on RetailMurabahamoduleID and open it for RetailMurabahaTest
 
@@ -83,8 +140,7 @@ public class RetailMurabahaPage extends PageBase {
 					throws InterruptedException
 	{
 
-		//Thread.sleep(7000);
-
+		Thread.sleep(7000);
 		driver1.switchTo().defaultContent();
 		//waitMethod(5);
 		waitForElement(searchBox);
@@ -98,7 +154,7 @@ public class RetailMurabahaPage extends PageBase {
 		searchBox.sendKeys(Keys.SHIFT, Keys.ENTER);
 		//Thread.sleep(5000);
 		waitForFrame(ParentframeID);
-		switchFrame(ParentframeID);
+		//switchFrame(ParentframeID);
 
 		waitMethod(7);
 	}
@@ -121,8 +177,87 @@ public class RetailMurabahaPage extends PageBase {
 
 		waitMethod(7);
 	}
+	public void FillRequiredFields(String RequestedDateValue,
+			String ValueDateValue,
+			String CustomerIDValue,
+			String ProductCodeValue,
+			String NonListedVendorValue,
+			String CurrencyCodeValue,
+			String ItemNameValue,
+			String ItemCategoryValue,
+			String PriceValue,
+			String CostValue,
+			String ParentframeID,
+			String SubFrameID,
+			String TenuresCount,
+			String FirstInstallmentDate)
+					throws InterruptedException, IOException
+	{
+		fluentWaitMethod(RequestedDateTxt);
 
-	
+		setTextElementText(RequestedDateTxt, RequestedDateValue);
+		setTextElementText(ValueDateTxt, ValueDateValue);
+
+		openLOVAndSearch(customerLOVIcon, SubLovFrame, LOVQuickSearchField, CustomerIDValue, LOVSearchResult, ParentframeID);
+		//waitForFrame(ParentframeID);
+		Thread.sleep(5000);
+
+		openLOVAndSearch(productLOVIcon, SubLovFrame, LOVQuickSearchField, ProductCodeValue, LOVSearchResult, ParentframeID);
+		//waitForFrame(ParentframeID);
+		Thread.sleep(5000);
+
+		waitForElement(NonListedVendorTxt);
+		setTextElementText(NonListedVendorTxt, NonListedVendorValue);
+		setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
+		waitForElement(addNewRowbBtn);
+		clickButton(addNewRowbBtn);
+		//Thread.sleep(3000);
+		//waitMethod(3);
+		waitForElement(ViewItemBtn);
+		clickButton(ViewItemBtn);
+		//Thread.sleep(7000);
+		//switchFrame(SubFrameID);
+		waitForFrame(SubFrameID);
+		waitForElement(ItemNameTxt);
+		setTextElementText(ItemNameTxt, ItemNameValue);
+		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
+		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
+		setTextElementText(PriceTxt, PriceValue);
+		setTextElementText(CostTxt, CostValue);
+		//Thread.sleep(3000);
+		waitForElement(SaveAndCloseBtn);
+		clickButton(SaveAndCloseBtn);
+		//Thread.sleep(8000);
+		waitForFrame(ParentframeID);
+		//Change the Tenures and first installment date from Rapayment Tab
+		JavascriptExecutor js = (JavascriptExecutor) driver1;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+		waitMethod(3);
+		clickButton(repaymentTab);
+		//clickButton(tenureEntry);
+		waitForSelection(tenureEntry);
+
+		deleteValueFromControl(tenureEntry);
+		
+		setTextElementText(tenureEntry,TenuresCount);
+		//waitForElement(firstInstallmentDate);
+		//clickButton(firstInstallmentDate);
+		
+		//select all on a textbox and delete the text 
+		String selectAll = Keys.chord(Keys.CONTROL, "a");
+		setTextElementText(firstInstallmentDate, selectAll);
+		firstInstallmentDate.sendKeys(Keys.BACK_SPACE);
+		
+		
+		//setTextElementText(firstInstallmentDate,"");
+		setTextElementText(firstInstallmentDate,FirstInstallmentDate);
+		firstInstallmentDate.sendKeys(Keys.TAB);
+		waitMethod(5);
+		clickButton(installmentsTab);
+
+	}
+
 	public void FillRequiredFieldsByCustomer1(String RequestedDateValue,
 			String ValueDateValue,
 			Hashtable<String, String> CustomerIDValue,
@@ -150,7 +285,7 @@ public class RetailMurabahaPage extends PageBase {
 			state = waitForCheckResult(ProductNameTxt, StoreData(ProductNameTxt));
 			if (state)
 			{
-				
+
 				waitForElement(NonListedVendorTxt);
 				setTextElementText(NonListedVendorTxt, NonListedVendorValue);
 				setTextElementText(CurrencyCodeTxt, CurrencyCodeValue);
@@ -517,7 +652,6 @@ public class RetailMurabahaPage extends PageBase {
 		Thread.sleep(7000);
 		switchFrame(SubFrameID);
 		setTextElementText(ItemNameTxt, ItemNameValue);
-		//setTextElementText(ItemCategoryDropdownSelect, ItemCategoryValue);
 		DropListSelect(ItemCategoryDropdownSelect, ItemCategoryValue);
 		setTextElementText(PriceTxt, PriceValue);
 		setTextElementText(CostTxt, CostValue);
@@ -530,66 +664,68 @@ public class RetailMurabahaPage extends PageBase {
 
 	public void SaveRetailMurabaha() throws InterruptedException
 	{
-
+		waitForElement(MasterSaveBtn);
 		clickButton(MasterSaveBtn);
-		Thread.sleep(7000);
-		waitMethod(3);
-		waitForElement(saveConfirmationMsg);
-		if (saveConfirmationMsg.isDisplayed()) {
-
-			clickButton(saveConfirmationBtn);
-
-		}
+		//checkPageIsReady();
+		Thread.sleep(5000);
 		MurabahaCode = StoreData(ContractCodeTxt);
-		Thread.sleep(2000);
 		System.out.println(MurabahaCode);
-
 	}
 
 	public void CheckRequestApproval() throws InterruptedException {
 
-		Thread.sleep(5000);
+		fluentWaitMethod(RequestBtn);
+		//waitForElement(RequestBtn);
+		JavascriptExecutor js = (JavascriptExecutor) driver1;
 
+		//This will scroll the web page till top.		
+		js.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+		
+		checkPageIsReady();
+		waitForElement(RequestBtn);
+		Thread.sleep(5000);
+		clickButton(RequestBtn);		
+		//waitForGeneratedValue(StatusTxt);
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Entry");
+		System.out.println(StatusTxt);
+		
+		Thread.sleep(5000);
+		DropListSelect(workFlowDropList, "791");
+		clickButton(saveWorkFlow);
+		checkPageIsReady();
+		assertEquals(StatusTxt.getAttribute("Value"), "Request");
 		clickButton(RequestBtn);
-		Thread.sleep(5000);
-		waitMethod(3);
-		waitForElement(approvalConfirmationMsg);
-		if (approvalConfirmationMsg.isDisplayed()) {
-
-			clickButton(approvalConfirmationBtn);
-
-		}
-
-		Thread.sleep(5000);
-		waitMethod(3);
-		waitForElement(objectReferenceConfirmationMsg);
-		if(objectReferenceConfirmationMsg.isDisplayed()) {
-
-			clickButton(objectReferenceConfirmationBtn);
-
-		}
-
-		Thread.sleep(5000);
-		waitMethod(3);
-
-		String CustomerCode = CustomerIDTxt.getAttribute("Value");
-
-		if (CustomerCode == "988052")
-		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Rejected");
-
-		}
-		else
-		{
-			assertEquals(StatusTxt.getAttribute("Value"), "Approved");
-		}
-		Thread.sleep(7000);
-
-
+		
+		
+		Thread.sleep(3000);
+		DropListSelect(selectApprovalCycle, "APP");
+		clickButton(saveApprovalCycle);
+		checkPageIsReady();
+		assertEquals(StatusTxt.getAttribute("Value"), "Approved");
+		
+		Thread.sleep(3000);	
+		clickButton(selectFinalDecisionMaintained);
+		checkPageIsReady();
+		clickButton(MasterSaveBtn);
+		checkPageIsReady();
+		
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Ready");
+		checkPageIsReady();
 
 	}
+	public void CheckPosting() throws InterruptedException {
 
+		waitForElement(postButton);
+		//waitForElement(RequestBtn);
+		clickButton(postButton);		
+		//waitForGeneratedValue(StatusTxt);
+		Thread.sleep(3000);
+		assertEquals(StatusTxt.getAttribute("Value"), "Active");
+		
+		System.out.println(StatusTxt);
 
-
+	}
 
 }

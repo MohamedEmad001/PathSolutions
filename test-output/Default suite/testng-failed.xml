@@ -3,19 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.MonthlyDependOnTransaction">
+      <class name="tests.CRUDTest.QardHassanCRUDTest">
         <methods>
           <include name="startDriver"/>
-          <include name="fillRepaymentsOptionsData"/>
-          <include name="OpenRepaymentPlanModule"/>
-          <include name="fillProfitRateData"/>
+          <include name="checkFilterArea"/>
+          <include name="checkRetrieveAllAndPaging"/>
           <include name="stopDriver"/>
           <include name="CheckLogin"/>
-          <include name="fillRepaymentPlanMasterData"/>
-          <include name="takeScreenshots"/>
-          <include name="fillIntervalsDataWithSpecificDay"/>
+          <include name="checkUpdateTestCase"/>
+          <include name="checkDeleteTestCase"/>
+          <include name="CheckSaveTestCase"/>
         </methods>
-      </class> <!-- tests.MonthlyDependOnTransaction -->
+      </class> <!-- tests.CRUDTest.QardHassanCRUDTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
